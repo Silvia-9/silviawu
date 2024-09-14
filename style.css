@@ -77,6 +77,8 @@ body > header> nav> ul {
 body > main article {
     width: 80%;
     margin: auto;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    line-height: 1.5;
 }
 
 #main-content{
@@ -95,6 +97,7 @@ h2 {
     text-align: center;
     margin: 0px;
     padding:0px;
+    font-size: 40px;
 }
 
 body> footer {
