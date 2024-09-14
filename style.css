@@ -1,0 +1,138 @@
+body {
+    background-color: lightyellow;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.5vw;
+    margin: 0px;
+    }
+
+
+#logo {
+    margin: 0px;
+    padding: 8px;
+    font-family: "Dela Gothic One", sans-serif;
+    width: 56%;
+    border-radius: 10%;
+    max-width: 100%;
+    height: auto;
+    text-shadow: 
+    2px 2px 0px white, /*Bottom-right shadow*/
+    -2px 2px 0px white, /*Bottom-left shadow */
+    2px -2px 0px white, /*Top-right shadow*/
+    -2px -2px 0px white; /*Top-left shadow*/
+}
+    
+#nav-ul {
+    display:flex;
+
+}
+
+#nav-ul > li{
+    padding: 8px;
+    margin: 8px;
+}
+
+cite > a {
+    display:inline-block;
+    width: 100px;
+    height: 50px;
+
+}
+
+ul {
+    margin: 0px;
+}
+
+body > header {
+    background-color:#47C072;
+    color: #f11e8b;
+    font-family: "Dela Gothic One", sans-serif;
+    display: flex;
+    height:20vh;
+    align-items: center;
+    justify-content: space-around;
+    }
+
+
+body > header> nav> ul {
+    list-style: none;
+    text-decoration: none;
+}
+
+
+
+.navbutton {
+    color:#5170D7;
+    text-decoration:none;
+    background-color:#FFAB0F;
+    font-family: "Arial", sans-serif;
+    font-weight: bold; 
+    padding: 10px;
+    border: 0px;
+    border-radius: 50%;
+    cursor:pointer;
+    transition: backgrround-color 0.5s ease;
+       
+}
+
+body > main article {
+    width: 80%;
+    margin: auto;
+}
+
+#main-content{
+    display: flex;
+    justify-content: space-around;
+}
+#main-content >div {
+    width: 80%;
+}
+
+form {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    margin: 0px;
+    padding:0px;
+}
+
+body> footer {
+    background-color: #47C072;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+
+}
+#footer-header {
+    color:#d2066fd9;
+    font-size: 20px;
+    margin: 30px;
+    padding: 20px;
+    text-align: right;
+}
+
+#footer-ul {
+    display: flex;
+    list-style: none;
+}
+
+#footer-ul >div >li {
+    margin-left: 25px;
+    padding: 10px;
+      
+}
+
+#footer-ul> div >li >a {
+    text-decoration: none;
+    color:#c82c01e0;
+    font-weight: bold; 
+    font-family: "Arial", sans-serif;
+    font-size: 20px;
+    margin: 80px;
+}
+
+img{
+    border-radius: 50%;
+}
+
