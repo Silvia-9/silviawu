@@ -1,0 +1,84 @@
+body {
+    margin:0px;
+}
+header {
+    padding: 10px;
+    background-color: #ef557ec9;
+    color: #afec4c;
+    font-size: 25px;
+    font-family: "Anton", sans-serif;
+    text-align: center;
+    text-shadow: 
+    2px 2px 0px #2e9ebc, /*Bottom-right shadow*/
+    -2px 2px 0px #2e9ebc, /*Bottom-left shadow */
+    2px -2px 0px #2e9ebc, /*Top-right shadow*/
+    -2px -2px 0px #2e9ebc; /*Top-left shadow*/
+    grid-area: header;
+}
+#menu {
+    padding:10px;
+    margin: 0px;
+    line-height: 5;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #ea5cdc;
+    grid-area: menu;
+}
+
+nav {
+    margin:10px;
+    display: flex;
+    align-items: left;
+    flex-flow: column;
+}
+
+
+#main-content {
+    padding: 32px;
+    text-align: center;
+    font-size: larger;
+    grid-area: main;
+}
+
+p {
+    line-height: 2; 
+    /* Adjust the value for more or less space between lines */
+    font-size: 20px;
+    text-align: left;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+#photo {
+    padding: 10px;
+    grid-area:photo;
+}
+
+img {
+    max-width: 100%; /* Ensures the image fits within its parent container */
+    height: auto; /* Maintains the aspect ratio */
+}
+
+
+footer {
+    padding: 16px;
+    background-color: #FAFE4B;
+    color: black;
+    font-weight: bold;
+    text-align: right;
+    grid-area: footer;
+
+}
+
+#grid-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
+    grid-template-areas: 
+    "header header header"
+    "menu main photo"
+    "footer footer footer"
+    ;
+    grid-template-columns: 1fr 8fr 2fr;
+    grid-gap: 10px;
+    height:100vh;
+}
