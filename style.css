@@ -57,7 +57,9 @@ body > header> nav> ul {
     text-decoration: none;
 }
 
-
+.nav-ul {
+    align-items: right;
+}
 
 .navbutton {
     color:#5170D7;
