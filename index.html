@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
-    <link href="https://fonts.google.com/specimen/Dela+Gothic+One" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silvia Blog Site</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Mobile styles */
+        @media (max-width: 600px) {
+            body {
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 10px;
+                flex-direction: column;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
     <header id="main-header">
@@ -47,10 +90,10 @@
                     <nav>
                         <ul>
                             <li><a href=""></a><a href="">Life @ London</a></li>
-                            <li><a href=""></a><a href="">Life @ Newcastle</a></li>
-                            <li><a href=""></a><a href="">Events</a></li>
-                            <li><a href=""></a><a href="">Activities</a></li>
-                            <li><a href=""></a><a href="">Poetry</a></li>
+                            <li><a href="">Life @ Newcastle</a></li>
+                            <li><a href="">Events</a></li>
+                            <li><a href="">Activities</a></li>
+                            <li><a href="">Poetry</a></li>
                        </ul>
                     </nav>
       
@@ -160,12 +203,12 @@
         <h2> Leave your message </h2>
         
         <form action="" method="get">
-          <label for="first_name">First Name:</label>
-           <input type="first_name" id="first name" name="first_name" required>
+          <label for="first_name">First name:</label>
+           <input type="text" id="first name" name="first_name" required>
           <br>
 
-           <label for="last_name">Last Name:</label>
-           <input type="last_name" id="last name" name="last_name" required>
+           <label for="last_name">Last name:</label>
+           <input type="text" id="last name" name="last_name" required>
             <br>
 
             <label for="email">Email</label>
@@ -185,16 +228,16 @@
             </select>
             <br>
 
-            <label for="Interested _articles">Interested articles:</label>
-            <input type="radio" name="Interested _articles" id="Life @London" value="Life at London">
+            <label for="Interested_articles">Interested articles:</label>
+            <input type="radio" name="Interested_articles" id="Life @London" value="Life at London">
             <label for="Life at London">Life at London</label>
-            <input type="radio" name="Interested _articles" id="Event" value="Event">
+            <input type="radio" name="Interested_articles" id="Event" value="Event">
             <label for="event">Event</label>
-            <input type="radio" name="Interested _articles" id="Activities" value="Activities">
+            <input type="radio" name="Interested_articles" id="Activities" value="Activities">
             <label for="activities">Activities</label>
-            <input type="radio" name="Interested _articles" id="Poetry" value="Poetry">
+            <input type="radio" name="Interested_articles" id="Poetry" value="Poetry">
             <label for="poetry">Poetry</label>
-            </br>
+            <br>
 
              <label for="bio">Comment</label>
              <textarea name="bio" id="bio" cols="30" rows="5"></textarea>
@@ -204,7 +247,7 @@
             <label for="subscribe"> Subscribe to our newsletter!</label>
             <br>
 
-            <input type="Sumbit" value="Send">
+            <input type="Submit" value="Send">
 
         </form>
         <hr>
