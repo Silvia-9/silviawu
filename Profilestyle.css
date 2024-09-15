@@ -43,8 +43,7 @@ nav > a {
 }
 
 p {
-    line-height: 2; 
-    /* Adjust the value for more or less space between lines */
+    line-height: 2;/* Adjust the value for more or less space between lines */
     font-size: 20px;
     text-align: left;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
