@@ -67,7 +67,7 @@ body > header> nav> ul {
     background-color:#FFAB0F;
     font-family: "Arial", sans-serif;
     font-weight: bold; 
-    padding: 10px;
+    padding: 20px;
     border: 0px;
     border-radius: 50%;
     cursor:pointer;
@@ -95,22 +95,50 @@ form {
 }
 
 h2 {
-    text-align: center;
+    text-align:left;
+    line-height: 2;
+    margin: 5px;
+    padding:3px;
+    font-size: 30;
+}
+
+article > header> h3 {
+    text-align: left;
+    line-height: 1;
+    font-size: 20px;
+    padding: 0px;
     margin: 0px;
-    padding:0px;
-    font-size: 40px;
 }
 
 body> footer {
     background-color: #47C072;
+    font-size: 15px;
     margin: 0px;
     padding: 0px;
     display: flex;
 
 }
+
+article >header > h4{
+    font-size: 20px;
+    text-align: right;
+}
+
+h5 {
+    text-align: center;
+    font-size: 35px;
+    padding: 0px;
+    margin:10px;
+}
+
+article > footer > a {
+    font-size: 15px;
+}
+
+
+
 #footer-header {
     color:#d2066fd9;
-    font-size: 20px;
     margin: 30px;
     padding: 20px;
     text-align: right;
@@ -124,6 +152,7 @@ body> footer {
 #footer-ul >div >li {
     margin-left: 25px;
     padding: 10px;
+
       
 }
 
@@ -139,4 +168,6 @@ body> footer {
 img{
     border-radius: 50%;
 }
+
+
 
