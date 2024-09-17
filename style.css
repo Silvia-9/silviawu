@@ -103,11 +103,11 @@ h2 {
 }
 
 article > header> h3 {
-    text-align: left;
-    line-height: 1;
+    text-align:left;
+    line-height: 2;
     font-size: 20px;
-    padding: 0px;
-    margin: 0px;
+    padding: 3px;
+    margin: 5px;
 }
 
 body> footer {
@@ -117,11 +117,6 @@ body> footer {
     padding: 0px;
     display: flex;
 
-}
-
-article >header > h4{
-    font-size: 20px;
-    text-align: right;
 }
 
 h5 {
