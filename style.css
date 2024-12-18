@@ -131,7 +131,6 @@ article > footer > a {
 }
 
 
-
 #footer-header {
     color:#d2066fd9;
     margin: 30px;
@@ -167,6 +166,12 @@ article > footer > a {
 img{
     width:100%
     height:auto;
+}
+
+.content {
+    width:90%;
+    margin:auto;
+    
 }
 
 
