@@ -164,5 +164,9 @@ article > footer > a {
     border-radius: 60%;
 }
 
+img{
+    width:100%
+    height:auto;
+}
 
 

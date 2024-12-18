@@ -56,7 +56,7 @@ p {
 }
 
 img {
-    max-width: 100%; /* Ensures the image fits within its parent container */
+    width: 100%; /* Ensures the image fits within its parent container */
     height: auto; /* Maintains the aspect ratio */
 }
 
