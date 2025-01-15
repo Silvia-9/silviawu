@@ -1,6 +1,7 @@
+<script>
     function scrollGallery(direction) {
         const gallery = document.querySelector('.photo-gallery');
-        const scrollAmount = 300; // Adjust the scroll amount if needed
+        const scrollAmount = 300; // Adjust this value as needed
 
         if (direction === 'left') {
             gallery.scrollBy({
@@ -14,4 +15,5 @@
             });
         }
     }
+</script>
 
