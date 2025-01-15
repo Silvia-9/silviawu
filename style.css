@@ -38,7 +38,7 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr; /* Adjust this for your left, main, and right columns */
+    grid-template-columns: 1fr 4fr 1fr; /* Adjust this for your left, main, and right columns */
     grid-template-areas: 
         "left main right"
         "footer footer footer"; /* Define the footer to span across the bottom */
@@ -114,13 +114,13 @@ body > header {
 
 body > main {
     flex-direction: column;
-    width: 65%;
+    width: 70%;
     margin: 30px;
     align-items: center;
 }
 
 article {
-    flex-grow: 1; /* Allow article to take remaining space */
+    flex-grow: 2; /* Allow article to take remaining space */
     margin-left: 20px; /* Space between navbar and article */
     padding: 20px;
     background-color: #f9f9f9;
@@ -135,10 +135,9 @@ article img {
 }
 
 .content {
-    width: 90%;
+    width: 100%;
     margin: 20px auto;
 }
-
 
 /* Horizontal Scrolling Photo Gallery */
 #horizontal-scrolling-photo {
@@ -216,11 +215,11 @@ article img {
     display: flex;                      /* Use Flexbox for the columns */
     justify-content: space-between;     /* Space out the columns evenly */
     padding: 20px;                      /* Optional, padding for main content */
-    flex-grow: 1;
+    flex-grow: 2;
 }
 
 .left-column, .right-column, .main-content {
-    padding: 20px;
+    padding: 10px;
 }
 
 /* Left column */
@@ -232,16 +231,18 @@ article img {
 
 /* Middle column */
 .middle-column {
-    flex: 2;                            /* Middle column takes more space */
-    margin-left: 20px;                  /* Add spacing to the left */
-    margin-right: 20px;                 /* Add spacing to the right */
+    flex: 4;                            /* Middle column takes more space */
+    margin-left: 10px;                  /* Add spacing to the left */
+    margin-right: 10px;                 /* Add spacing to the right */
     grid-area: main;
+    max-width:100%;
+    grid-area: center;
 }
 
 /* Right column */
 .right-column {
     flex: 1;                            /* Take up equal space */
-    margin-left: 20px;                  /* Add spacing to the left */
+    margin-left: 40px;                  /* Add spacing to the left */
     grid-area: right;
 }
 
@@ -328,10 +329,91 @@ article img {
     background-color: #0056b3;
 }
 
-h5 {
-    font-weight: bold;
-    font-size: 20px;
+/* General Reset for Margin and Padding */
+body, h5, form, label, input, select, textarea {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+#contact-form {
+    width: 80%;                  /* Set width to 80% of the container */
+    max-width: 800px;            /* Limit max width to 800px */
+    margin: 20px auto 0;         /* Reduce top margin and no extra bottom space */
+    padding: 10px;               /* Less padding around the form */
+    background-color: #f9f9f9;   /* Light background color */
+    border-radius: 10px;         /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#contact-form h5 {
+    font-weight: bold;           /* Make the heading bold */
+    font-size: 1.2rem;           /* Slightly larger font size */
+    text-align: center;          /* Center the heading */
+    color: #333;                 /* Dark color for text */
+    margin-bottom: 10px;         /* Reduced space below heading */
+}
+
+#contact-form form {
+    display: grid;               /* Use grid layout for the form */
+    grid-gap: 10px;              /* Reduce space between elements */
+}
+
+#contact-form label {
+    font-size: 1rem;             /* Set font size for labels */
+    color: #333;                 /* Dark color for labels */
+}
+
+#contact-form input, 
+#contact-form select, 
+#contact-form textarea {
+    width: 100%;                 /* Make inputs take full width */
+    padding: 8px;                /* Reduce padding inside inputs */
+    border-radius: 5px;          /* Rounded corners */
+    border: 1px solid #ccc;      /* Light border color */
+    font-size: 1rem;             /* Set font size */
+}
+
+#contact-form textarea {
+    resize: vertical;            /* Allow vertical resize */
+}
+
+#contact-form input[type="submit"] {
+    background-color: #007bff;   /* Blue background for submit button */
+    color: white;                /* White text color */
+    padding: 8px 15px;           /* Reduced padding inside button */
+    font-size: 1rem;             /* Slightly smaller font size */
+    border: none;                /* Remove border */
+    border-radius: 5px;          /* Rounded corners */
+    cursor: pointer;             /* Show pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+#contact-form input[type="submit"]:hover {
+    background-color: #0056b3;   /* Darker blue on hover */
+}
+
+/* Reduce space between elements globally */
+article {
+    margin-bottom: 10px;         /* Less margin between articles and form */
+}
+
+/* Optional: Add responsive design for smaller screens */
+@media (max-width: 600px) {
+    #contact-form {
+        width: 95%;              /* Make the form wider on small screens */
+    }
+}
+
+/* Optional: Add responsive design for smaller screens */
+@media (max-width: 600px) {
+    #contact-form {
+        width: 95%;               /* Make the form wider on small screens */
+    }
+}
+
+
+
 
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
