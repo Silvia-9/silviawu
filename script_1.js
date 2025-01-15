@@ -1,15 +1,17 @@
-function scrollLeft() {
-    const gallery = document.querySelector('.photo-gallery');
-    gallery.scrollBy({
-        left: -300, // Scroll left by 300px
-        behavior: 'smooth',
-    });
-}
+    function scrollGallery(direction) {
+        const gallery = document.querySelector('.photo-gallery');
+        const scrollAmount = 300; // Adjust the scroll amount if needed
 
-function scrollRight() {
-    const gallery = document.querySelector('.photo-gallery');
-    gallery.scrollBy({
-        left: 300, // Scroll right by 300px
-        behavior: 'smooth',
-    });
-}
+        if (direction === 'left') {
+            gallery.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        } else if (direction === 'right') {
+            gallery.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    }
+
