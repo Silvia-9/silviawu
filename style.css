@@ -1,51 +1,19 @@
-body {
+/* Universal Box Sizing */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* General Body Styling */
+  body {
     background-color: lightyellow;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 1.5vw;
     margin: 0px;
-    box-sizing: border-box;
-}
-
-#logo {
-    margin: 0px;
-    padding: 8px;
-    font-family: "Dela Gothic One", sans-serif;
-    width: 56%;
-    border-radius: 10%;
-    max-width: 100%;
-    height: auto;
-    text-shadow: 
-    2px 2px 0px white, /* Bottom-right shadow */
-    -2px 2px 0px white, /* Bottom-left shadow */
-    2px -2px 0px white, /* Top-right shadow */
-    -2px -2px 0px white; /* Top-left shadow */
-}
-
-#nav-ul {
-    display: flex;
-    flex-direction: row;
     padding: 0;
-    margin: 0;
-    justify-content: center;
-}
-
-#nav-ul > li {
-    padding: 8px;
-    margin: 8px;
-    text-align: center;
-}
-
-cite > a {
-    display: inline-block;
-    width: 100px;
-    height: 50px;
-}
-
-ul {
-    margin: 0px;
-}
-
-body > header {
+  }
+  
+  /* Header Styling */
+  header {
     background-color: #47C072;
     color: #f11e8b;
     font-family: "Dela Gothic One", sans-serif;
@@ -53,162 +21,117 @@ body > header {
     height: 20vh;
     align-items: center;
     justify-content: space-around;
-}
-
-body > header > nav > ul {
-    list-style: none;
-    text-decoration: none;
-}
-
-.nav-ul {
-    align-items: right;
-}
-
-.navbutton {
-    color: #5170D7;
-    text-decoration: none;
-    background-color: #FFAB0F;
-    font-family: "Arial", sans-serif;
-    font-weight: bold;
+  }
+  
+  /* Navigation Menu */
+  nav {
+    float: left;
+    width: 30%; /* Adjust to fit your layout */
+    background: #ccc;
     padding: 20px;
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.5s ease;
-    width: auto;
-    margin: 0 10px;
-}
-
-/* Ensure the main content and filter bar align */
-.main-content-container {
+  }
+  
+  /* List Style inside the Menu */
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Main Article */
+  article {
+    float: left;
+    padding: 20px;
+    width: 70%; /* Adjust width for proper alignment */
+    background-color: #f1f1f1;
+  }
+  
+  /* Section to clear floats after the columns */
+  section::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Main Content Container */
+  .main-content-container {
     display: flex;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-start; /* Aligns items at the top */
+    align-items: flex-start;
     width: 100%;
     margin: 20px auto;
-}
-
-/* Filters bar: Years, Months, Categories */
-.filters {
+  }
+  
+  /* Filters (Years, Months, Categories) */
+  .filters {
     flex: 1;
     display: flex;
-    flex-direction: column; /* Stack the filter items vertically */
-    align-items: flex-start; /* Align filter items to the left */
-    margin-right: 20px; /* Space between the filters and the content */
-}
-
-.filters > div {
-    margin-bottom: 15px; /* Space between filter items */
-}
-
-.filters h4 {
-    font-size: 1.5rem; /* Set size for headings */
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 20px;
+  }
+  
+  .filters > div {
+    margin-bottom: 15px;
+  }
+  
+  .filters h4 {
+    font-size: 1.5rem;
     margin-bottom: 10px;
-}
-
-.filters nav ul {
+  }
+  
+  .filters nav ul {
     padding: 0;
     margin: 0;
     list-style: none;
-}
-
-.filters nav ul li {
-    margin-bottom: 8px; /* Space between filter options */
-}
-
-
-body > main article {
-    flex:3;
+  }
+  
+  .filters nav ul li {
+    margin-bottom: 8px;
+  }
+  
+  /* Main Content (Article) */
+  .main-article {
+    flex: 3;
     width: 65%;
-    margin: auto;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    line-height: 1.5;
-}
-
-
-form {
-    text-align: center;
-    margin-top: 20px;
-}
-
-h2 {
-    text-align: center;
-    margin: 5px;
-    padding: 3px;
-    font-size: 15px;
-    font-weight: bolder;
-}
-
-article > header > h3 {
-    text-align: left;
-    line-height: 2;
-    font-size: 20px;
-    padding: 3px;
-    margin: 5px;
-}
-
-body > footer {
-    background-color: #47C072;
-    font-size: 15px;
-    margin: 0px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column; /* Arrange content vertically */
-    align-items: center;    /* Center content horizontally */
-    justify-content: center; /* Center content vertically */
-    text-align: center;      /* Center text */
-    width: 100%;             /* Ensure footer spans the full width */
-}
-
-h5 {
-    text-align: center;
-    font-size: 35px;
-    padding: 0px;
-    margin: 10px;
-}
-
-article > footer > a {
-    font-size: 15px;
-}
-
-/* Horizontal Scrolling Photo Gallery */
-#horizontal-scrolling-photo {
+  }
+  
+  /* Horizontal Scrolling Photo Gallery */
+  #horizontal-scrolling-photo {
+    margin-bottom: 20px;
     width: 100%;
     overflow: hidden;
     padding: 20px 0;
     position: relative;
-    border-top: 2px solid #ccc;
-    margin-bottom: 20px;
-}
-
-.photo-gallery-container {
+  }
+  
+  .photo-gallery-container {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     width: 100%;
-}
-
-.photo-gallery {
+  }
+  
+  .photo-gallery {
     display: flex;
     gap: 20px;
     padding-bottom: 10px;
-    overflow-x: scroll; /* Enable scrolling horizontally */
-    overflow-x: auto;
+    overflow-x: scroll;
     scroll-behavior: smooth;
-    white-space: nowrap; /* Ensure images stay in one line */
-    padding-left: 50px; /* Ensure space for left arrow */
-    padding-right: 50px; /* Ensure space for right arrow */
-}
-
-.gallery-item {
+    white-space: nowrap;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  
+  .gallery-item {
     width: 300px;
     height: 300px;
     object-fit: cover;
-}
-
-.scroll-arrow {
+  }
+  
+  .scroll-arrow {
     background-color: transparent;
     border: none;
     font-size: 30px;
@@ -220,86 +143,92 @@ article > footer > a {
     z-index: 2;
     padding: 10px;
     opacity: 0.7;
-}
-
-.scroll-arrow:hover {
+  }
+  
+  .scroll-arrow:hover {
     opacity: 1;
-}
-
-.left {
+  }
+  
+  .left {
     left: 10px;
-}
-
-.right {
+  }
+  
+  .right {
     right: 10px;
-}
-
-/* Hide the scrollbar */
-.photo-gallery::-webkit-scrollbar {
+  }
+  
+  .photo-gallery::-webkit-scrollbar {
     display: none;
-}
-
-.photo-gallery {
-    -ms-overflow-style: none; /* For Internet Explorer */
-    scrollbar-width: none; /* For Firefox */
-}
-
-#footer-header {
-    color: #d2066fd9;
-    margin: 10px;
-    padding: 10px;
-    font-size: 20px;
-    font-weight: bold;
+  }
+  
+  .photo-gallery {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* Footer Styling */
+  footer {
+    background-color: #47C072;
+    font-size: 15px;
+    margin: 0px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-}
-
-#footer-ul {
+    width: 100%;
+  }
+  
+  h5 {
+    text-align: center;
+    font-size: 35px;
+    padding: 0px;
+    margin: 10px;
+  }
+  
+  #footer-ul {
     display: flex;
     list-style: none;
     justify-content: center;
     flex-wrap: wrap;
     padding: 0;
     margin: 10px 0;
-}
-
-#footer-ul > li {
+  }
+  
+  #footer-ul > li {
     margin-left: 15px;
     padding: 10px;
-}
-
-#footer-ul > li > a {
+  }
+  
+  #footer-ul > li > a {
     text-decoration: none;
     color: #c82c01e0;
     font-weight: bold;
     font-family: "Arial", sans-serif;
     font-size: 20px;
-    margin: 80px;
-}
-
-#footer > img {
+  }
+  
+  #footer > img {
     border-radius: 60%;
-}
-
-article img {
+  }
+  
+  article img {
     width: auto;
     height: auto;
     max-width: 100%;
     display: block;
     margin: 0 auto;
-}
-
-.content {
-    width: 90%;
-    margin: auto;
-}
-
-.more-text {
+  }
+  
+  /* Read More Text Button */
+  .more-text {
     display: none;
     color: #555;
     margin-top: 10px;
-}
-
-.read-more-btn {
+  }
+  
+  .read-more-btn {
     background-color: #007bff;
     color: white;
     border: none;
@@ -307,80 +236,72 @@ article img {
     cursor: pointer;
     font-size: 16px;
     margin-top: 10px;
-}
-
-.read-more-btn:hover {
+  }
+  
+  .read-more-btn:hover {
     background-color: #0056b3;
-}
-
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media (max-width: 768px) {
     body {
-        font-size: 5vw;
+      font-size: 5vw;
     }
-
-    #main-content {
-        display: block;
-    }
-
-    #main-content > div, aside {
-        width: 100%;
-        margin: 10px;
-    }
-
+  
     header {
-        flex-direction: column;
-        text-align: center;
-        height: auto;
+      flex-direction: column;
+      text-align: center;
+      height: auto;
     }
-
+  
     #logo {
-        width: 100%;
-        height: auto;
-        margin-bottom: 10px;
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
     }
-
+  
     #nav-ul {
-        flex-direction: column;
-        align-items: center;
+      flex-direction: column;
+      align-items: center;
     }
-
+  
     #nav-ul > li {
-        margin: 10px;
-        padding: 10px;
+      margin: 10px;
+      padding: 10px;
     }
-
+  
     .navbutton {
-        padding: 10px 10px;
-        font-size: 4vw;
-        border-radius: 20px;
+      padding: 10px 10px;
+      font-size: 4vw;
+      border-radius: 20px;
     }
-
+  
     form {
-        padding: 10px;
+      padding: 10px;
     }
-
+  
     h2, h3 {
-        font-size: 5vw;
+      font-size: 5vw;
     }
-
+  
     footer {
-        flex-direction: column;
-        text-align: right;
+      flex-direction: column;
+      text-align: right;
     }
-
+  
     #footer-header {
-        margin: 10px;
-        text-align: center;
+      margin: 10px;
+      text-align: center;
     }
-
+  
     #footer-ul {
-        flex-direction: column;
-        align-items: center;
+      flex-direction: column;
+      align-items: center;
     }
-
+  
     #footer-ul > div > li {
-        margin-left: 0;
-        padding: 5px;
+      margin-left: 0;
+      padding: 5px;
     }
-}
+  }
+  
