@@ -70,7 +70,7 @@ body > header> nav> ul {
     border: 0px;
     border-radius: 50%;
     cursor:pointer;
-    transition: backgrround-color 0.5s ease;
+    transition: background-color 0.5s ease;
        
 }
 
@@ -98,7 +98,7 @@ h2 {
     line-height: 2;
     margin: 5px;
     padding:3px;
-    font-size: 30;
+    font-size: 30px;
 }
 
 article > header> h3 {
@@ -151,6 +151,7 @@ article > footer > a {
     gap: 20px;
     padding-bottom: 10px;
     overflow-x: scroll; /* Enable scrolling horizontally */
+    overflow-x: auto;
     scroll-behavior: smooth;
     white-space: nowrap; /* Ensure images stay in one line */
     padding-left: 50px; /* Ensure space for left arrow */
@@ -201,18 +202,20 @@ article > footer > a {
 
 #footer-header {
     color:#d2066fd9;
-    margin: 30px;
-    padding: 20px;
-    text-align: right;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
 }
 
 #footer-ul {
     display: flex;
     list-style: none;
+    justify-content: center;
+    flex-wrap:wrap;
 }
 
 #footer-ul >div >li {
-    margin-left: 25px;
+    margin-left: 15px;
     padding: 10px;
 }
 
@@ -230,7 +233,7 @@ article > footer > a {
 }
 
 img{
-    width:100%
+    width:100%;
     height:auto;
 }
 
