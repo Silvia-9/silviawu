@@ -329,6 +329,11 @@ article img {
     background-color: #0056b3;
 }
 
+h5 {
+    font-weight: bold;
+    font-size: 20px;
+}
+
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
     body {
