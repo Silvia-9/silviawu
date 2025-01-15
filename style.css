@@ -135,6 +135,7 @@ article > footer > a {
     overflow: hidden;
     padding: 20px 0;
     position: relative;
+    border-top: 2px solid ＃ccc;
 }
 
 .photo-gallery-container {
