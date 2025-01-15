@@ -43,7 +43,6 @@ body {
         "left main right"
         "footer footer footer"; /* Define the footer to span across the bottom */
     height: 100%; /* Ensures full height of container */
-    background-color: lightgray;        /* Optional background color */
 }
 
 /* Navbar Styling */
