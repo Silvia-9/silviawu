@@ -171,6 +171,7 @@ article > footer > a {
     gap: 20px;
     padding-bottom: 10px;
     overflow-x: scroll; /* Enable scrolling horizontally */
+    overflow-x: auto; 
     scroll-behavior: smooth;
     white-space: nowrap; /* Ensure images stay in one line */
     padding-left: 50px; /* Ensure space for left arrow */
