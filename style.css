@@ -225,7 +225,7 @@ article img {
 
 /* Left column */
 .left-column {
-    flex: 2;                            /* Take up equal space */
+    flex: 1;                            /* Take up equal space */
     margin-right: 20px;                 /* Add spacing to the right */
     grid-area: left;
 }
