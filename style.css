@@ -160,6 +160,7 @@ article > footer > a {
     white-space: nowrap; /* Ensure images stay in one line */
     padding-left: 50px; /* Ensure space for left arrow */
     padding-right: 50px; /* Ensure space for right arrow */
+    border:2px solid red;
 }
 
 .gallery-item {
