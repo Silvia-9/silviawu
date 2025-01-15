@@ -23,7 +23,9 @@ body {
     
 #nav-ul {
     display:flex;
-
+    flex-direction:column;
+    padding:0;
+    margin:0;
 }
 
 #nav-ul > li{
@@ -84,10 +86,17 @@ body > main article {
 
 #main-content{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items:flex-start;
+    gap:20px;
 }
+
 #main-content >div {
-    width: 80%;
+    width: 60%;
+}
+
+#main-content > aside {
+    width: 20%;
 }
 
 form {
@@ -142,6 +151,7 @@ article > footer > a {
     padding: 20px 0;
     position: relative;
     border-top: 2px solid ＃ccc;
+    margin-bottom:20px;
 }
 
 .photo-gallery-container {
@@ -157,7 +167,6 @@ article > footer > a {
     gap: 20px;
     padding-bottom: 10px;
     overflow-x: scroll; /* Enable scrolling horizontally */
-    overflow-x: auto;
     scroll-behavior: smooth;
     white-space: nowrap; /* Ensure images stay in one line */
     padding-left: 50px; /* Ensure space for left arrow */
