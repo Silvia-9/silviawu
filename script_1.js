@@ -1,4 +1,3 @@
-<script>
     function scrollGallery(direction) {
         const gallery = document.querySelector('.photo-gallery');
         const scrollAmount = 300; // Adjust this value as needed
@@ -15,5 +14,5 @@
             });
         }
     }
-</script>
+
 
