@@ -139,18 +139,21 @@ article > footer > a {
 
 .photo-gallery-container {
     display: flex;
+    justify-content: center;
     align-items: center;
     position: relative;
     width: 100%;
 }
 
 .photo-gallery {
-    display: inline-flex;
+    display: flex;
     gap: 20px;
     padding-bottom: 10px;
     overflow-x: scroll; /* Enable scrolling horizontally */
     scroll-behavior: smooth;
     white-space: nowrap; /* Ensure images stay in one line */
+    padding-left: 50px; /* Ensure space for left arrow */
+    padding-right: 50px; /* Ensure space for right arrow */
 }
 
 .gallery-item {
@@ -163,7 +166,7 @@ article > footer > a {
     background-color: transparent;
     border: none;
     font-size: 30px;
-    color: #333;
+    color: #e60e0e;
     cursor: pointer;
     position: absolute;
     top: 50%;
