@@ -23,45 +23,78 @@ body {
 
 #nav-ul {
     display: flex;
-    flex-direction: row;
     padding: 0;
     margin: 0;
-    justify-content: center;
+    justify-content: space-between;
+    list-style: none;
+
 }
 
 #nav-ul > li {
-    padding: 8px;
-    margin: 8px;
-    text-align: center;
+    padding: 8px 15px;
+    margin: 0;
+    text-align: left;
 }
 
-cite > a {
-    display: inline-block;
-    width: 100px;
-    height: 50px;
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr; /* Adjust this for your left, main, and right columns */
+    grid-template-areas: 
+        "left main right"
+        "footer footer footer"; /* Define the footer to span across the bottom */
+    height: 100%; /* Ensures full height of container */
+    background-color: lightgray;        /* Optional background color */
 }
 
-ul {
-    margin: 0px;
+/* Navbar Styling */
+.navbar {
+    background-color: #ffffffb6;
+    box-shadow: 2px 0 2px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for navbar */
+    display: flex;
+    flex-direction: column;       /* Stack items vertically */
+    justify-content: flex-start;  /* Align items to the top */
+    align-items: flex-start;      /* Align items to the left */
+    margin-left: 20px;            /* Space from the left edge */
+    margin-top: 4px;             /* Space from the top */
 }
+
+.navbar ul {
+    list-style: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    margin: 20px 0; /* Add vertical spacing between navbar items */
+}
+
+.navbar a {
+    display: block;
+    text-decoration: none;
+    color: #5170D7;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 18px;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: left;
+    margin: 5px 0;
+}
+
+.navbar a:hover {
+    background-color: #FFAB0F;
+    color: white;
+    padding-left: 20px;
+}
+
 
 body > header {
     background-color: #47C072;
     color: #f11e8b;
     font-family: "Dela Gothic One", sans-serif;
     display: flex;
-    height: 20vh;
+    height: 150vh;
     align-items: center;
-    justify-content: space-around;
-}
-
-body > header > nav > ul {
-    list-style: none;
-    text-decoration: none;
-}
-
-.nav-ul {
-    align-items: right;
+    justify-content: space-between;
 }
 
 .navbutton {
@@ -70,68 +103,43 @@ body > header > nav > ul {
     background-color: #FFAB0F;
     font-family: "Arial", sans-serif;
     font-weight: bold;
-    padding: 20px;
+    font-size: 30px;
+    padding: 10px 15px;
     border: 0px;
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.5s ease;
     width: auto;
-    margin: 0 10px;
+    margin: 0 5px;
 }
 
-body > main article {
-    flex:3;
+body > main {
+    flex-direction: column;
     width: 65%;
-    margin: auto;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    line-height: 1.5;
+    margin: 30px;
+    align-items: center;
 }
 
-
-form {
-    text-align: center;
-    margin-top: 20px;
-}
-
-h2 {
-    text-align: center;
-    margin: 5px;
-    padding: 3px;
-    font-size: 15px;
-    font-weight: bolder;
-}
-
-article > header > h3 {
-    text-align: left;
-    line-height: 2;
-    font-size: 20px;
-    padding: 3px;
-    margin: 5px;
-}
-
-body > footer {
-    background-color: #47C072;
-    font-size: 15px;
-    margin: 0px;
+article {
+    flex-grow: 1; /* Allow article to take remaining space */
+    margin-left: 20px; /* Space between navbar and article */
     padding: 20px;
-    display: flex;
-    flex-direction: column; /* Arrange content vertically */
-    align-items: center;    /* Center content horizontally */
-    justify-content: center; /* Center content vertically */
-    text-align: center;      /* Center text */
-    width: 100%;             /* Ensure footer spans the full width */
+    background-color: #f9f9f9;
+    box-sizing: border-box;
 }
 
-h5 {
-    text-align: center;
-    font-size: 35px;
-    padding: 0px;
-    margin: 10px;
+article img {
+    width: 100%; /* Full width to ensure images scale properly */
+    height: auto;
+    object-fit: cover; /* Ensure the images cover the area without distortion */
+    margin: 10px 0;
 }
 
-article > footer > a {
-    font-size: 15px;
+.content {
+    width: 90%;
+    margin: 20px auto;
 }
+
 
 /* Horizontal Scrolling Photo Gallery */
 #horizontal-scrolling-photo {
@@ -155,18 +163,18 @@ article > footer > a {
     display: flex;
     gap: 20px;
     padding-bottom: 10px;
-    overflow-x: scroll; /* Enable scrolling horizontally */
+    overflow-x: auto; /* Enable scrolling horizontally */
     scroll-behavior: smooth;
     white-space: nowrap; /* Ensure images stay in one line */
-    padding-left: 50px; /* Ensure space for left arrow */
-    padding-right: 50px; /* Ensure space for right arrow */
-    border:2px solid red;
+    width: 100%;
+
 }
 
 .gallery-item {
     width: 300px;
     height: 300px;
     object-fit: cover;
+    flex-grow: 0;
 }
 
 .scroll-arrow {
@@ -205,26 +213,72 @@ article > footer > a {
     scrollbar-width: none; /* For Firefox */
 }
 
-#footer-header {
+.main-content {
+    display: flex;                      /* Use Flexbox for the columns */
+    justify-content: space-between;     /* Space out the columns evenly */
+    padding: 20px;                      /* Optional, padding for main content */
+    flex-grow: 1;
+}
+
+.left-column, .right-column, .main-content {
+    padding: 20px;
+}
+
+/* Left column */
+.left-column {
+    flex: 2;                            /* Take up equal space */
+    margin-right: 20px;                 /* Add spacing to the right */
+    grid-area: left;
+}
+
+/* Middle column */
+.middle-column {
+    flex: 2;                            /* Middle column takes more space */
+    margin-left: 20px;                  /* Add spacing to the left */
+    margin-right: 20px;                 /* Add spacing to the right */
+    grid-area: main;
+}
+
+/* Right column */
+.right-column {
+    flex: 1;                            /* Take up equal space */
+    margin-left: 20px;                  /* Add spacing to the left */
+    grid-area: right;
+}
+
+
+footer {
+    color: white;                /* White text color */
+    padding: 20px;             /* Padding at the top and bottom */
+    position: relative;          /* Ensures footer stays at the bottom */
+    text-align: center;          /* Center the text inside the footer */
+    width: 100%;
+    margin-top:auto;
+    grid-area: footer;
+    margin-top: auto;
+}
+
+#footer-header{
+    background-color: #47C072; /* Change to your desired background color */
     color: #d2066fd9;
-    margin: 10px;
-    padding: 10px;
+    margin: 0;
+    padding: 20px;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
+    justify-content: space-around;
 }
 
 #footer-ul {
     display: flex;
-    list-style: none;
     justify-content: center;
     flex-wrap: wrap;
     padding: 0;
-    margin: 10px 0;
+    margin: 10px;
 }
 
 #footer-ul > li {
-    margin-left: 15px;
+    margin: 5px;
     padding: 10px;
 }
 
@@ -234,7 +288,6 @@ article > footer > a {
     font-weight: bold;
     font-family: "Arial", sans-serif;
     font-size: 20px;
-    margin: 80px;
 }
 
 #footer > img {
@@ -242,16 +295,18 @@ article > footer > a {
 }
 
 article img {
-    width: auto;
-    height: auto;
+    width: 50%;
+    height: 50%;
     max-width: 100%;
-    display: block;
+    display: left;
     margin: 0 auto;
 }
 
 .content {
     width: 90%;
     margin: auto;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 .more-text {
@@ -280,19 +335,11 @@ article img {
         font-size: 5vw;
     }
 
-    #main-content {
-        display: block;
-    }
-
-    #main-content > div, aside {
-        width: 100%;
-        margin: 10px;
-    }
-
-    header {
+    body > header {
         flex-direction: column;
         text-align: center;
         height: auto;
+        padding: 10px 0;
     }
 
     #logo {
@@ -312,9 +359,34 @@ article img {
     }
 
     .navbutton {
-        padding: 10px 10px;
-        font-size: 4vw;
-        border-radius: 20px;
+        width: 100%; /* Make the navbar full width on small screens */
+        height: auto; /* Allow navbar height to adjust */
+        position: relative;
+        box-shadow: none; /* Remove shadow for smaller screens */
+    }
+
+    .container {
+       flex-direction: column;
+    }
+
+    article {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .navbar {
+        width: 100%; /* Make the navbar full width on small screens */
+        height: auto; /* Allow navbar height to adjust */
+        position: relative;
+        box-shadow: none; /* Remove shadow for smaller screens */
+    }
+
+    .navbar ul {
+        flex-direction: row; /* Stack navbar items horizontally on small screens */
+    }
+
+    .navbar ul li {
+        margin: 0 10px;
     }
 
     form {
@@ -327,7 +399,7 @@ article img {
 
     footer {
         flex-direction: column;
-        text-align: right;
+        align-items: center;
     }
 
     #footer-header {

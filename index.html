@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silvia Blog Site</title>
-    <link rel="stylesheet" href="script_1.js">
+    <link rel="stylesheet" href="script.js">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="contact_style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
@@ -15,7 +16,7 @@
 <body>
     <header id="main-header">
         <!-- the content of the header goes here -->
-         <h1 id="logo"> Silvia's Dreamland </h1>
+        <h1 id="logo"> Silvia's Dreamland </h1>
         <nav>
             <ul id="nav-ul">
                 <li><a href="index.html" class="navbutton">Home</a></li>
@@ -24,97 +25,71 @@
             </ul>
          </nav>
     </header>
-   
-    <section>
-        <h4>Years</h4>
-        <nav>
-            <ul>
-                <li><a href=""></a>2024</li>
-                <li><a href=""></a>2025</li> 
-            </ul>
-        </nav>
-    </section>
+    <main>
+        <div class="container">
+            <div class="left-column">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="">Year</a></li>
+                    <li><a href="">Month</a></li>
+                    <li><a href="">Categories</a></li>
+                </ul>
+            </nav>
+            </div>
 
-    <section>
-        <h4>Month</h4>
-        <nav>
-            <ul>
-                <li><a href="＃"></a>September</li>
-                <li><a href="＃"></a>October</li>
-                <li><a href="＃"></a>November</li>
-            </ul>
-        </nav>
-    </section>
-                    <section>
-                        <h4>Categories</h4>
-                        <nav>
-                            <ul>
-                                <li><a href="＃">London</a></li>
-                                <li><a href="＃">Events</a></li>
-                                <li><a href="＃">Activities</a></li>
-                                <li><a href="＃">Poetry</a></li>
-                           </ul>
-                        </nav>
-                    </section>
-                    
-                </div>
-            
-            <article>
+        <main>
+            <div class="middle-column">
+            <article id="womenhackai">
                 <header> 
                     <h2>WomenHack AI</h2>
                     <h3>Posted: 24th September 2024</h3>
                 </header>
                 <main>
                     <figure>
-                        <img src="WomenHackAI_1.jpg" alt="WomenHack AI Bootcamp Siemens" width=＂100%＂>
+                        <img src="WomenHackAI_1.jpg" alt="Siemens" style="max-width:300;height:300">
                         <figcaption> Can you find me in this photo?</figcaption>
                     </figure>
                     <p>
-                     Last week, I had an opportunity to participate in three-day online WomenHack AI bootcamp hosted by Siemens. </p>
-                     <p class="more-text"> 
-                        Most of the participants were employees working based in Germany. Before joining the bootcamp, I spent almost two weeks figuring out how to access their Microsoft Teams. When I was about to give up, I managed to join the group.                      
-                        When the bootcamp started, I was assigned a task that was differnt from what I had chosen during the registration. However, I quickly adapted to the new task and understood what needed to be done. It turned out to be a similar process to what I had done during the previous summar data innovation bootcamp, but with different tasks and a focus on Siemens' powering system consulting. Our group's task was to create a chatbot that can assist their daily works.
-                        During this bootcamp, I learned how to create the MVP from scratch by myself, which was a different experience and acquired another way to form the pitch. Meanwhile, I also found more solutions for the previous bootcamp. Most importantly, I learned how to collaborate with teammates from different countries during this bootcamp.
-                    </p>
+                    Last week, I had an opportunity to participate in three-day online WomenHack AI bootcamp hosted by Siemens. </p>
+                    <p class="more-text"> Most of the participants were employees working based in Germany. Before joining the bootcamp, I spent almost two weeks figuring out how to access their Microsoft Teams. When I was about to give up, I managed to join the group.
+                    When the bootcamp started, I was assigned a task that was differnt from what I had chosen during the registration.        However, I quickly adapted to the new task and understood what needed to be done. It turned out to be a similar process to what I had done during the previous summar data innovation bootcamp, but with different tasks and a focus on Siemens' powering system consulting. Our group's task was to create a chatbot that can assist their daily works.
+                    During this bootcamp, I learned how to create the MVP from scratch by myself, which was a different experience and acquired another way to form the pitch. Meanwhile, I also found more solutions for the previous bootcamp. Most importantly, I learned how to collaborate with teammates from different countries during this bootcamp.</p>
                     <button class="read-more-btn" onclick="toggleContent()">Read more</button>
                     <script src="button.js"></script>
                 </main>
-                   <style>
+                <style>
                     .featured-image {
                         width: 900px;
                         border: 2px solid #ccc;
                         font-size: small;
                         font-family: Georgia, 'Times New Roman', Times, serif;
                     }
-                   </style>
-                    
+                </style>
             </article>
-        </section>
 
-        <section>
-                <article>
-                    <header>
-                        <h2>Happy Mid-Autumn Festival</h2>
-                        <h3>Posted: 17th September 2024</h3>
-                    </header>
-                        <main>
-                          <Figure>
-                            <img src="WhatsApp Image 2024-09-17 at 17.52.18_93513884.jpg" alt="Mid-Autumn Festival" width="100%" height="100%">
-                            <figcaption>Mid-Autumn Festival</figcaption>
-                         </Figure>
-                       </main>
-                </article>
-            </section>
-
-            <section>
-                <article>
-                   <header>
-                        <!-- Article's header goes here -->
-                         <h2>I am nobody! Who are you?</h2>
-                         <h3>Posted:12th 09 2024</h3>
-                    </header>
+            <article id="mid-autumn-festival">
+                <header>
+                    <h2>Happy Mid-Autumn Festival</h2>
+                    <h3>Posted: 17th September 2024</h3>
+                </header>
                     <main>
-                         <p>
+                        <p>
+                        <Figure>
+                        <img src="WhatsApp Image 2024-09-17 at 17.52.18_93513884.jpg" alt="Mid-Autumn Festival" width="300" height="300">
+                        <figcaption>Mid-Autumn Festival</figcaption>
+                        </Figure>
+                        </p>
+                    </main>
+            </article>
+         
+
+            <article id="nobody">
+                <header>
+                    <h2>I am Nobody! Who are you?</h2>
+                    <h3>Posted: 12th September 2024</h3>
+                </header>
+                    <main>
+                        <p>
                             I’m Nobody! Who are you? <br>
                             Are you – Nobody – too? <br>
                             Then there’s a pair of us! <br>
@@ -124,24 +99,22 @@
                             How public – like a Frog – <br>
                             To tell one’s name – the livelong June – <br>
                             To an admiring Bog! <br>
-                        </p>                    
+                        </p>
                     </main>
                     <footer>
                         <img src="pexels-elli-559179-1854652.jpg" alt="cake" style="width:90px;height:90px;">
                         <a href="https://poets.org/poem/im-nobody-who-are-you-260" target="_blank">Reference</a>
+        
                     </footer>
-                </article>
-            </section>
-                <!-- main content of the website can go here -->
-            <section>
-                <article>
-                    <header>
-                        <!-- Article's header goes here -->
-                         <h2>i carry your heart with me</h2>
-                         <h3>Posted:9th 09 2024</h3>
-                    </header>
-                      <main>
-                         <p>
+            </article>
+
+            <article id="carry-heart">
+                <header>
+                        <h2>I Carry Your Heart</h2>
+                        <h3>Posted: 9th September 2024</h3>
+                </header>
+                    <main>
+                        <p>
                             i carry your heart with me (i carry it in <br>
                             my heart) i am never without it (anywhere <br>
                             i go you go, my dear; and whatever is done <br>
@@ -157,27 +130,27 @@
                             and the sky of the sky of a tree called life; which grows <br>
                             higher than soul can hope or mind can hide) <br>
                             and this is the wonder that's keeping the stars apart <br>
-                        </p>    
+                            
                             i carry your heart (i carry it in my heart) <br>
                         <blockquote>
                                 "I carry <a href="">your heart</a> with me!"- <cite> E.E. Cummings, 1904-1962</cite>
                         </blockquote>
+                        </p>
                     </main>
                     <footer>
                         <img src="pexels-hatice-kavas-temel-749993311-28377850.jpg" alt="heart" style="width:90px;height:90px;">
                         <a href="https://allpoetry.com/i-carry-your-heart-with-me" target="_blank">Reference</a>
+        
                     </footer>
-                </article>
-            </section>
-
-            <section>
-                <article>
+            </article>
+         
+            
+            <article id="social-network">
                     <header>
-                        <!-- Article's header goes here -->
-                         <h2>The end of the social network</h2>
-                         <h3>Posted:01-09-2024</h3>
+                        <h2>The End of the Social Network</h2>
+                        <h3>Posted: 1st September 2024</h3>
                     </header>
-                      <main>
+                    <main>
                          <p>
                             Social media is no longer very social. <br>
                             According to the article from The Economist, Americans have decreased their online life documentation from 40% to 28% since 2020, and this article also discussed the possibility of closing platforms such as WhatsApp and Telegram (Wilson, 2024).
@@ -188,38 +161,22 @@
                     <footer>
                         <img src="pexels-jonaskakaroto-736230.jpg" alt="flowers" style="width:80px;height:80px;">
                         <a href="https://www.economist.com/leaders/2024/02/01/the-end-of-the-social-network" target="_blank">Reference</a>
-                     </footer>
-                </article>
-            </section>
         
-        
-            <section id="horizontal-scrolling-photo">
-                <h2>Photo Album</h2>
-                <div class="photo-gallery-container">
-                    <button class="scroll-arrow left" onclick="scrollGallery('left')">&#8249;</button>
-                <div class="photo-gallery">
-                    <img src="1.jpg" alt="Photo 1" class="gallery-item">
-                    <img src="2.jpg" alt="Photo 2" class="gallery-item">
-                    <img src="3.jpg" alt="Photo 3" class="gallery-item">
-                    <img src="4.jpg" alt="Photo 4" class="gallery-item">
-                    <img src="5.jpg" alt="Photo 5" class="gallery-item">
-                    <img src="6.jpg" alt="Photo 6" class="gallery-item">
-                    <img src="7.jpg" alt="Photo 7" class="gallery-item">
-                    <!-- Add more photos as needed -->
-                </div>
-                    <button class="scroll-arrow right" onclick="scrollGallery('right')">&#8250;</button>
-                 </div>          
-            </section>
-
-        <hr>
-        <h5> Leave your messages </h5>
-          <form action="＃" method="get">
+                    </footer>
+            </article>
+            </div>
+        </main>
+    </div>
+    <hr>
+    <section id="contact-form"
+          <h5> Leave your messages </h5>
+          <form action="" method="get">
           <label for="first_name">First name:</label>
-           <input type="text" id="first_name" name="first_name" required>
+           <input type="text" id="first name" name="first_name" required>
           <br>
 
            <label for="last_name">Last name:</label>
-           <input type="text" id="last_name" name="last_name" required>
+           <input type="text" id="last name" name="last_name" required>
             <br>
 
             <label for="email">Email:</label>
@@ -256,13 +213,19 @@
              <label for="date">Date</label>
              <input type="date" name="date" type="date">
              <br>
+             
+            <input type="checkbox" id="subscribe" name="subscribe">
+            <label for="subscribe"> Subscribe to the newsletter!</label>
+            <br>
 
             <input type="Submit" value="Send">
+
         </form>
-     </main>
+    </section>
+    </hr>
+    
     <footer>
         <h2 id="footer-header"> &copy;2025 Silvia. All rights reserved.</h2>
     </footer>
-    <script src="script_1.js"></script>
 </body>
 </html>
