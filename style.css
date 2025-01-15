@@ -89,22 +89,19 @@ body > main article {
 }
 
 #main-content{
-    display: flex;
-    justify-content: center;
-    align-items:flex-start;
-    gap:20px;
+    display: block;
+    margin:auto;
+    width:100%;
 }
 
-#main-content >div {
-    width: 60%;
-}
-
-#main-content > aside {
-    width: 20%;
+#main-content >div,aside {
+    width: 100%;
+    margin:10px 0;
 }
 
 form {
     text-align: center;
+    margin-top:20px;
 }
 
 h2 {
