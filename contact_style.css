@@ -1,0 +1,214 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #87e1d8;
+    display:flex;
+    flex-direction:column;
+    height:100vh;
+  }
+  
+  /* Container */
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    flex-grow:1;
+  }
+  
+  /* Header */
+  .header {
+    background-color: #3B2C28;
+    color: #EE62B3;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .header h1 {
+    font-size: 2.5rem;
+  }
+  
+  /* Main Content Section */
+  .main-content {
+    margin: 40px 0;
+  }
+  
+  /* Flexbox Layout for the three columns */
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+/* Left Column: Navigation - Shrinkable but no growth */
+.left-column {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 0 1 300px; /* Shrinkable based on content */
+    min-width: 300px; /* Minimum width for left column */
+  }
+  
+  /* Middle Column: Contact Form - Takes equal space */
+  .middle-column {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 2; /* Takes up remaining space equally */
+  }
+  
+  /* Right Column: Other Information - Takes equal space */
+  .right-column {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex:0 1 300px; 
+    min-width:300px;
+  }
+  
+  /* Left Column: Navigation */
+  
+  .left-column ul {
+    list-style: none;
+  }
+  
+  .left-column ul li {
+    margin-bottom: 10px;
+  }
+  
+  .left-column ul li a {
+    text-decoration: none;
+    color: #9100AA;
+    font-weight:bold;
+    font-size:22px;
+  }
+  
+  .left-column ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Middle Column: Contact Form */
+  .middle-column h2 {
+    color: #81C309;
+  }
+  
+  .middle-column form {
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    height:500px;
+  }
+  
+  .middle-column label {
+    margin: 10px 0 2px;
+    font-weight: bold;
+  }
+  
+  .middle-column input,
+  .middle-column textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  
+  .middle-column textarea {
+    resize: vertical;
+    height: 1000px;
+  }
+  
+  .middle-column button {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bolder;
+    background-color: #ff8800;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .middle-column button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Right Column: Other Information */
+  .right-column h2 {
+    color: #C90075;
+    line-height: 1.5;
+  }
+  
+  .right-column ul {
+    list-style: none;
+  }
+  
+  .right-column ul li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+
+  /* Styling the Subscribe Form */
+.right-column form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.right-column input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.right-column button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.right-column button:hover {
+    background-color: #0056b3;
+}
+  
+  /* Footer */
+  .footer {
+    background-color: #F7CF77;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    border-top: 1px solid #F2D5DA;
+  }
+  
+  .footer p {
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .flex-container {
+      flex-direction: column; /* Stack the columns vertically on smaller screens */
+    }
+  
+    .left-column,
+    .middle-column,
+    .right-column {
+      flex: 1 1 100%; /* Ensure full width for each section */
+    }
+  }
+  
