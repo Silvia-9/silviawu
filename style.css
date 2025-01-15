@@ -45,47 +45,6 @@ body {
     height: 100%; /* Ensures full height of container */
 }
 
-/* Navbar Styling */
-.navbar {
-    background-color: #ffffffb6;
-    box-shadow: 2px 0 2px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for navbar */
-    display: flex;
-    flex-direction: column;       /* Stack items vertically */
-    justify-content: flex-start;  /* Align items to the top */
-    align-items: flex-start;      /* Align items to the left */
-    margin-left: 20px;            /* Space from the left edge */
-    margin-top: 4px;             /* Space from the top */
-}
-
-.navbar ul {
-    list-style: none; /* Remove default list styling */
-    padding: 0;
-    margin: 0;
-}
-
-.navbar ul li {
-    margin: 20px 0; /* Add vertical spacing between navbar items */
-}
-
-.navbar a {
-    display: block;
-    text-decoration: none;
-    color: #5170D7;
-    font-weight: bold;
-    padding: 10px;
-    font-size: 18px;
-    transition: background-color 0.3s, color 0.3s;
-    text-align: left;
-    margin: 5px 0;
-}
-
-.navbar a:hover {
-    background-color: #FFAB0F;
-    color: white;
-    padding-left: 20px;
-}
-
-
 body > header {
     background-color: #47C072;
     color: #f11e8b;
