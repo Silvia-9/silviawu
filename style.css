@@ -141,13 +141,16 @@ article > footer > a {
     display: flex;
     align-items: center;
     position: relative;
+    width: 100%;
 }
 
 .photo-gallery {
     display: inline-flex;
-    overflow-x: hidden;  /* Hides the horizontal scrollbar */
     gap: 20px;
     padding-bottom: 10px;
+    overflow-x: scroll; /* Enable scrolling horizontally */
+    scroll-behavior: smooth;
+    white-space: nowrap; /* Ensure images stay in one line */
 }
 
 .gallery-item {
@@ -182,6 +185,15 @@ article > footer > a {
     right: 10px;
 }
 
+/* Hide the scrollbar */
+.photo-gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.photo-gallery {
+    -ms-overflow-style: none; /* For Internet Explorer */
+    scrollbar-width: none; /* For Firefox */
+}
 
 #footer-header {
     color:#d2066fd9;
