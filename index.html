@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silvia Blog Site</title>
-    <link rel="stylesheet" href="script.js">
     <link rel="stylesheet" href="script_1.js">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="contact_style.css">
@@ -27,8 +26,7 @@
     </header>
     <main>
         <div id="main-content">
-            <aside>
-                <section>
+            <div class="left-column">
                     <h4>Years</h4>
                     <nav>
                         <ul>
@@ -36,49 +34,48 @@
                             <li><a href=""></a>2025</li>
                         </ul>
                     </nav>
-                </section>
-                <section>
+
                     <h4>Month</h4>
                     <nav>
                         <ul>
-                            <li><a href=""></a>September</li>
-                            <li><a href=""></a>October</li>
-                            <li><a href=""></a>November</li>
+                            <li><a href="＃"></a>September</li>
+                            <li><a href="＃"></a>October</li>
+                            <li><a href="＃"></a>November</li>
                         </ul>
                     </nav>
-                </section>
-                <section>
+
                     <h4>Categories</h4>
                     <nav>
                         <ul>
-                            <li><a href="">London</a></li>
-                            <li><a href="">Events</a></li>
-                            <li><a href="">Activities</a></li>
-                            <li><a href="">Poetry</a></li>
+                            <li><a href="＃">London</a></li>
+                            <li><a href="＃">Events</a></li>
+                            <li><a href="＃">Activities</a></li>
+                            <li><a href="＃">Poetry</a></li>
                        </ul>
                     </nav>
-      
-                </section>
-            </aside>
-            <div>
-                <article>
-                    <header> 
+                </div>
+
+        <section>
+             <article>
+                <header> 
                     <h2>WomenHack AI</h2>
                     <h3>Posted: 24th September 2024</h3>
-                   </header>
-                   <main>
+                </header>
+                <main>
                     <figure>
-                        <img src="WomenHackAI_1.jpg" alt="Siemens" style="max-width:300;height:300">
+                        <img src="WomenHackAI_1.jpg" alt="WomenHack AI Bootcamp Siemens" style="max-width:300;height:300">
                         <figcaption> Can you find me in this photo?</figcaption>
                     </figure>
                     <p>
                      Last week, I had an opportunity to participate in three-day online WomenHack AI bootcamp hosted by Siemens. </p>
-                     <p class="more-text"> Most of the participants were employees working based in Germany. Before joining the bootcamp, I spent almost two weeks figuring out how to access their Microsoft Teams. When I was about to give up, I managed to join the group.
-                     When the bootcamp started, I was assigned a task that was differnt from what I had chosen during the registration.        However, I quickly adapted to the new task and understood what needed to be done. It turned out to be a similar process to what I had done during the previous summar data innovation bootcamp, but with different tasks and a focus on Siemens' powering system consulting. Our group's task was to create a chatbot that can assist their daily works.
-                    During this bootcamp, I learned how to create the MVP from scratch by myself, which was a different experience and acquired another way to form the pitch. Meanwhile, I also found more solutions for the previous bootcamp. Most importantly, I learned how to collaborate with teammates from different countries during this bootcamp.</p>
+                     <p class="more-text"> 
+                        Most of the participants were employees working based in Germany. Before joining the bootcamp, I spent almost two weeks figuring out how to access their Microsoft Teams. When I was about to give up, I managed to join the group.                      
+                        When the bootcamp started, I was assigned a task that was differnt from what I had chosen during the registration. However, I quickly adapted to the new task and understood what needed to be done. It turned out to be a similar process to what I had done during the previous summar data innovation bootcamp, but with different tasks and a focus on Siemens' powering system consulting. Our group's task was to create a chatbot that can assist their daily works.
+                        During this bootcamp, I learned how to create the MVP from scratch by myself, which was a different experience and acquired another way to form the pitch. Meanwhile, I also found more solutions for the previous bootcamp. Most importantly, I learned how to collaborate with teammates from different countries during this bootcamp.
+                    </p>
                     <button class="read-more-btn" onclick="toggleContent()">Read more</button>
                     <script src="button.js"></script>
-                   </main>
+                </main>
                    <style>
                     .featured-image {
                         width: 900px;
@@ -88,28 +85,32 @@
                     }
                    </style>
                     
-                </article>
+            </article>
+        </section>
+
+            <section>
                 <article>
                     <header>
                         <h2>Happy Mid-Autumn Festival</h2>
                         <h3>Posted: 17th September 2024</h3>
-                        </header>
+                    </header>
                         <main>
-                            <p>
-                            <Figure>
+                          <Figure>
                             <img src="WhatsApp Image 2024-09-17 at 17.52.18_93513884.jpg" alt="Mid-Autumn Festival" width="300" height="300">
                             <figcaption>Mid-Autumn Festival</figcaption>
-                            </Figure>
-                            </p>
-                         </main>
+                         </Figure>
+                       </main>
                 </article>
+            </section>
+
+            <section>
                 <article>
                    <header>
                         <!-- Article's header goes here -->
                          <h2>I am nobody! Who are you?</h2>
                          <h3>Posted:12th 09 2024</h3>
                     </header>
-                      <main>
+                    <main>
                          <p>
                             I’m Nobody! Who are you? <br>
                             Are you – Nobody – too? <br>
@@ -120,16 +121,16 @@
                             How public – like a Frog – <br>
                             To tell one’s name – the livelong June – <br>
                             To an admiring Bog! <br>
-                        </p>
-                        
-                        </main>
+                        </p>                    
+                    </main>
                     <footer>
                         <img src="pexels-elli-559179-1854652.jpg" alt="cake" style="width:90px;height:90px;">
                         <a href="https://poets.org/poem/im-nobody-who-are-you-260" target="_blank">Reference</a>
-        
                     </footer>
                 </article>
+            </section>
                 <!-- main content of the website can go here -->
+            <section>
                 <article>
                     <header>
                         <!-- Article's header goes here -->
@@ -153,19 +154,20 @@
                             and the sky of the sky of a tree called life; which grows <br>
                             higher than soul can hope or mind can hide) <br>
                             and this is the wonder that's keeping the stars apart <br>
-                            
+                        </p>    
                             i carry your heart (i carry it in my heart) <br>
                         <blockquote>
                                 "I carry <a href="">your heart</a> with me!"- <cite> E.E. Cummings, 1904-1962</cite>
                         </blockquote>
-                        </p>
-                        </main>
+                    </main>
                     <footer>
                         <img src="pexels-hatice-kavas-temel-749993311-28377850.jpg" alt="heart" style="width:90px;height:90px;">
                         <a href="https://allpoetry.com/i-carry-your-heart-with-me" target="_blank">Reference</a>
-        
                     </footer>
                 </article>
+            </section>
+
+            <section>
                 <article>
                     <header>
                         <!-- Article's header goes here -->
@@ -179,15 +181,15 @@
                             This article reminded me of my first time recording my life and posting it online. It dates back to my university days. At that time, writing a blog, posting your photos, and sharing your thoughts on the platform were popular. However, I encountered my blog being hacked, and all of my photos were being deleted.  It was a horrible experience for me. After that, I only posted my things in private.  Those posts and photos are only for my records and remind me of what I did and how I felt at that time.
                             In the future, I think people may tend to use photos and videos to record their daily lives and post them on social media instead of sharing their daily lives through words. 
                         </p>
-                         </main>
+                    </main>
                     <footer>
                         <img src="pexels-jonaskakaroto-736230.jpg" alt="flowers" style="width:80px;height:80px;">
                         <a href="https://www.economist.com/leaders/2024/02/01/the-end-of-the-social-network" target="_blank">Reference</a>
-        
-                    </footer>
+                     </footer>
                 </article>
-            </div>
-        </div>
+            </section>
+        
+        
         <section id="horizontal-scrolling-photo">
             <h2>Photo Album</h2>
             <div class="@photo-gallery-container">
@@ -203,18 +205,18 @@
                 <!-- Add more photos as needed -->
                 </div>
                 <button class="scroll-arrow right" onclick="scrollGallery('right')">&#8250;</button>
-                </div>          
-            </div>
+            </div>          
         </section>
+        
         <hr>
         <h5> Leave your messages </h5>
-          <form action="" method="get">
+          <form action="＃" method="get">
           <label for="first_name">First name:</label>
-           <input type="text" id="first name" name="first_name" required>
+           <input type="text" id="first_name" name="first_name" required>
           <br>
 
            <label for="last_name">Last name:</label>
-           <input type="text" id="last name" name="last_name" required>
+           <input type="text" id="last_name" name="last_name" required>
             <br>
 
             <label for="email">Email:</label>
@@ -255,10 +257,9 @@
             <input type="Submit" value="Send">
         </form>
      </main>
-
     <footer>
         <h2 id="footer-header"> &copy;2025 Silvia. All rights reserved.</h2>
     </footer>
-    <script src="script.js"></script>
+    <script src="script_1.js"></script>
 </body>
 </html>
