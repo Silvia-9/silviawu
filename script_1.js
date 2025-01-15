@@ -1,9 +1,15 @@
-function scrollGallery(direction) {
+function scrollLeft() {
     const gallery = document.querySelector('.photo-gallery');
-    const scrollAmount = 300;  // Scroll amount in pixels
-    if (direction === 'left') {
-        gallery.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    } else if (direction === 'right') {
-        gallery.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
+    gallery.scrollBy({
+        left: -300, // Scroll left by 300px
+        behavior: 'smooth',
+    });
+}
+
+function scrollRight() {
+    const gallery = document.querySelector('.photo-gallery');
+    gallery.scrollBy({
+        left: 300, // Scroll right by 300px
+        behavior: 'smooth',
+    });
 }
