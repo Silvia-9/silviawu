@@ -1,23 +1,35 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Silvia's blog, sharing experiences, thoughts, and updates.">
     <title>Silvia Blog Site</title>
-    <link rel="stylesheet" href="script.js">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="contact_style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
-
-
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Animation for Header */
+        @keyframes slideRight {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        #logo {
+            animation: slideRight 2s ease-out;
+        }
+    </style>
 </head>
 <body>
     <header id="main-header">
         <!-- the content of the header goes here -->
         <h1 id="logo"> Silvia's Dreamland </h1>
-        <nav>
+        <nav ariel-label="Primary navigation">
             <ul id="nav-ul">
                 <li><a href="index.html" class="navbutton">Home</a></li>
                 <li><a href="profile.html" class="navbutton">Profile</a></li>
@@ -25,21 +37,45 @@
             </ul>
          </nav>
     </header>
+    <section id="vertical-photo-album">
+        <div class="photo-gallery-container">
+            <button class="scroll-arrow left" onclick="scrollGallery('left')">&#10094;</button>
+            <div class="photo-gallery">
+                <img src="1.jpg" alt="Image 1">
+                <img src="2.jpg" alt="Image 2">
+                <img src="3.jpg" alt="Image 3">
+                <img src="4.jpg" alt="Image 4">
+                <img src="5.jpg" alt="Image 5">
+                <img src="6.jpg" alt="Image 6">
+                <img src="7.jpg" alt="Image 7">
+                <img src="8.jpg" alt="Image 8">
+                <img src="9.jpg" alt="Image 9">
+                <img src="10.jpg" alt="Image 10">
+                <img src="11.jpg" alt="Image 11">
+            <!-- Add more images as needed -->
+        </div>
+            <button class="scroll-arrow right" onclick="scrollGallery('right')">&#10095;</button>
+    </section>
     <main>
         <div class="container">
-            <div class="left-column">
-        </div>
-
-        <main>
-            <div class="middle-column">
-            <article id="womenhackai">
-                <header> 
-                    <h2>WomenHack AI</h2>
-                    <h3>Posted: 24th September 2024</h3>
-                </header>
-                <main>
+            <div class="blog-header">
+                <h1>Welcome to Silvia's Blog</h1>
+            </div>
+            <div class="navbar"> 
+                <ul id="nav-ul">
+                    <li><a href="#">Years</a></li>
+                    <li><a href="#">Months</a></li>
+                    <li><a href="#">Categories</a></li>
+                </ul>
+            </div>
+            <section class="middle-column">
+                <article id="womenhackai">
+                    <header> 
+                        <h2>WomenHack AI</h2>
+                        <h3>Posted: 24th September 2024</h3>
+                    </header>
                     <figure>
-                        <img src="WomenHackAI_1.jpg" alt="Siemens" style="max-width:300;height:300">
+                        <img src="WomenHackAI_1.jpg" alt="Participants at Siemens WomenHack AI Bootcamp" style="width:500px;height:300px;object-fit:cover;">
                         <figcaption> Can you find me in this photo?</figcaption>
                     </figure>
                     <p>
@@ -49,40 +85,34 @@
                     During this bootcamp, I learned how to create the MVP from scratch by myself, which was a different experience and acquired another way to form the pitch. Meanwhile, I also found more solutions for the previous bootcamp. Most importantly, I learned how to collaborate with teammates from different countries during this bootcamp.</p>
                     <button class="read-more-btn" onclick="toggleContent()">Read more</button>
                     <script src="button.js"></script>
-                </main>
-                <style>
+                </article>
+                    <style>
                     .featured-image {
                         width: 900px;
                         border: 2px solid #ccc;
                         font-size: small;
                         font-family: Georgia, 'Times New Roman', Times, serif;
                     }
-                </style>
-            </article>
-
-            <article id="mid-autumn-festival">
-                <header>
-                    <h2>Happy Mid-Autumn Festival</h2>
-                    <h3>Posted: 17th September 2024</h3>
-                </header>
-                    <main>
-                        <p>
-                        <Figure>
-                        <img src="WhatsApp Image 2024-09-17 at 17.52.18_93513884.jpg" alt="Mid-Autumn Festival" width="300" height="300">
+                     </style>
+           
+                <article id="mid-autumn-festival">
+                    <header>
+                        <h2>Happy Mid-Autumn Festival</h2>
+                        <h3>Posted: 17th September 2024</h3>
+                    </header>
+                    <figure>
+                        <img src="WhatsApp Image 2024-09-17 at 17.52.18_93513884.jpg" alt="Mid-Autumn Festival" style="width:300px;height:300px;object-fit:cover;">
                         <figcaption>Mid-Autumn Festival</figcaption>
-                        </Figure>
-                        </p>
-                    </main>
-            </article>
+                    </figure>
+                </article>
          
 
-            <article id="nobody">
-                <header>
-                    <h2>I am Nobody! Who are you?</h2>
-                    <h3>Posted: 12th September 2024</h3>
-                </header>
-                    <main>
-                        <p>
+                <article id="nobody">
+                    <header>
+                        <h2>I am Nobody! Who are you?</h2>
+                        <h3>Posted: 12th September 2024</h3>
+                    </header>
+                    <p>
                             I’m Nobody! Who are you? <br>
                             Are you – Nobody – too? <br>
                             Then there’s a pair of us! <br>
@@ -92,92 +122,89 @@
                             How public – like a Frog – <br>
                             To tell one’s name – the livelong June – <br>
                             To an admiring Bog! <br>
-                        </p>
-                    </main>
+                    </p>
                     <footer>
                         <img src="pexels-elli-559179-1854652.jpg" alt="cake" style="width:90px;height:90px;">
                         <a href="https://poets.org/poem/im-nobody-who-are-you-260" target="_blank">Reference</a>
-        
-                    </footer>
-            </article>
+                     </footer>
+                </article>
 
-            <article id="carry-heart">
-                <header>
+                <article id="carry-heart">
+                    <header>
                         <h2>I Carry Your Heart</h2>
                         <h3>Posted: 9th September 2024</h3>
-                </header>
-                    <main>
-                        <p>
-                            i carry your heart with me (i carry it in <br>
-                            my heart) i am never without it (anywhere <br>
-                            i go you go, my dear; and whatever is done <br>
-                            by only me is your doing, my darling) <br>
+                    </header>
+                    <p>
+                        i carry your heart with me (i carry it in <br>
+                        my heart) i am never without it (anywhere <br>
+                        i go you go, my dear; and whatever is done <br>
+                        by only me is your doing, my darling) <br>
                                                      i fear 
-                            no fate (for you are my fate, my sweet) i want <br>
-                            no world (for beautiful you are my world, my true) <br>
-                            and it's you are whatever a moon has always meant <br>
-                            and whatever a sun will always sing is you <br>
+                        no fate (for you are my fate, my sweet) i want <br>
+                        no world (for beautiful you are my world, my true) <br>
+                        and it's you are whatever a moon has always meant <br>
+                        and whatever a sun will always sing is you <br>
                                                         
-                            here is the deepest secret nobody knows <br>
-                            (here is the root of the root and the bud of the bud <br>
-                            and the sky of the sky of a tree called life; which grows <br>
-                            higher than soul can hope or mind can hide) <br>
-                            and this is the wonder that's keeping the stars apart <br>
-                            
-                            i carry your heart (i carry it in my heart) <br>
-                        <blockquote>
-                                "I carry <a href="">your heart</a> with me!"- <cite> E.E. Cummings, 1904-1962</cite>
-                        </blockquote>
-                        </p>
-                    </main>
+                        here is the deepest secret nobody knows <br>
+                        (here is the root of the root and the bud of the bud <br>
+                        and the sky of the sky of a tree called life; which grows <br>
+                        higher than soul can hope or mind can hide) <br>
+                        and this is the wonder that's keeping the stars apart <br>
+                    </p>       
+                        i carry your heart (i carry it in my heart) <br>
+                    <blockquote>
+                        "I carry <a href="">your heart</a> with me!"- <cite> E.E. Cummings, 1904-1962</cite>
+                    </blockquote>
                     <footer>
                         <img src="pexels-hatice-kavas-temel-749993311-28377850.jpg" alt="heart" style="width:90px;height:90px;">
                         <a href="https://allpoetry.com/i-carry-your-heart-with-me" target="_blank">Reference</a>
-        
                     </footer>
-            </article>
+                </article>
          
             
-            <article id="social-network">
+                <article id="social-network">
                     <header>
                         <h2>The End of the Social Network</h2>
                         <h3>Posted: 1st September 2024</h3>
                     </header>
-                    <main>
-                         <p>
-                            Social media is no longer very social. <br>
-                            According to the article from The Economist, Americans have decreased their online life documentation from 40% to 28% since 2020, and this article also discussed the possibility of closing platforms such as WhatsApp and Telegram (Wilson, 2024).
-                            This article reminded me of my first time recording my life and posting it online. It dates back to my university days. At that time, writing a blog, posting your photos, and sharing your thoughts on the platform were popular. However, I encountered my blog being hacked, and all of my photos were being deleted.  It was a horrible experience for me. After that, I only posted my things in private.  Those posts and photos are only for my records and remind me of what I did and how I felt at that time.
-                            In the future, I think people may tend to use photos and videos to record their daily lives and post them on social media instead of sharing their daily lives through words. 
-                        </p>
-                    </main>
+                    <p>
+                        Social media is no longer very social. <br>
+                        According to the article from The Economist, Americans have decreased their online life documentation from 40% to 28% since 2020, and this article also discussed the possibility of closing platforms such as WhatsApp and Telegram (Wilson, 2024).
+                        This article reminded me of my first time recording my life and posting it online. It dates back to my university days. At that time, writing a blog, posting your photos, and sharing your thoughts on the platform were popular. However, I encountered my blog being hacked, and all of my photos were being deleted.  It was a horrible experience for me. After that, I only posted my things in private.  Those posts and photos are only for my records and remind me of what I did and how I felt at that time.
+                        In the future, I think people may tend to use photos and videos to record their daily lives and post them on social media instead of sharing their daily lives through words. 
+                    </p>
                     <footer>
                         <img src="pexels-jonaskakaroto-736230.jpg" alt="flowers" style="width:80px;height:80px;">
                         <a href="https://www.economist.com/leaders/2024/02/01/the-end-of-the-social-network" target="_blank">Reference</a>
         
                     </footer>
-            </article>
-            </div>
-        </main>
-    </div>
-    <hr>
-    <section id="contact-form">
-          <h5> Leave your messages </h5>
-          <form action="" method="get">
-          <label for="first_name">First name:</label>
-           <input type="text" id="first name" name="first_name" required>
-          <br>
+                </article>
+            </section>
+            <div class="right-column"> 
+                <p> 
+                    <a href="https://www.linkedin.com/in/shihhsuanwu/">LinkedIn</a>
+                </p>
+            </aside>
+        </div>
+    </main>
 
-           <label for="last_name">Last name:</label>
-           <input type="text" id="last name" name="last_name" required>
+    <section id="contact-form">
+        <h5> Leave your messages </h5>
+        <form action="#" method="get">
+            <label for="first_name">First name:</label>
+            <input type="text" id="first name"name="first_name" required>
+            <br>
+
+            <label for="last_name">Last name:</label>
+            <input type="text" id="last name"name="last_name" required>
             <br>
 
             <label for="email">Email:</label>
-            <input type="email" name="email" id="email">
+            <input type="email" id="email" name="email" required>
             <br>
 
             <label for="Sector">Sector:</label>
-            <input type="sector" name="sector" id="sector">
+            <input type="text" id="sector" name="sector" >
             <br>
 
             <label for="country">Country:</label>
@@ -186,28 +213,24 @@
                 <option value="scotland">Scotland</option>
                 <option value="Wales">Wales</option>
                 <option value="Nothern_ireland">Northern Ireland</option>
-            </select>
-            <br>
+            </select><br>
 
-             <label for="bio">Comment</label>
-             <textarea name="bio" id="bio" cols="30" rows="15"></textarea>
+            <label for="bio">Comment</label>
+             <textarea name="bio" id="bio" cols="30" rows="5"></textarea>
              <br>
              <label for="date">Date</label>
-             <input type="date" name="date" type="date">
+             <input type="date" name="date">
              <br>
-             
-            <input type="checkbox" id="subscribe" name="subscribe">
-            <label for="subscribe"> Subscribe to the newsletter!</label>
-            <br>
-
-            <input type="Submit" value="Send">
+                   
+         
+            <input type="submit" value="Send">
 
         </form>
     </section>
-</hr>
-    
+     
     <footer>
         <h2 id="footer-header"> &copy;2025 Silvia. All rights reserved.</h2>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
