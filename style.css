@@ -60,6 +60,9 @@ body {
     border-radius: 8px;
     margin-top: -33px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative; /* For enabling transform */
+    animation: moveHeader 4s ease-in-out forwards; /* Add animation */
+}
 }
 
 .blog-header h1 {
@@ -67,6 +70,19 @@ body {
     font-size: 2rem;
     color: #ea13df;
     font-weight: bolder;
+}
+
+/* Keyframes for Moving Header */
+@keyframes moveHeader {
+    0% {
+        transform: translateX(-100%); /* Start at the left column (normal position) */
+    }
+    50% {
+        transform: translateX(100%); /* Move to the right column */
+    }
+    100% {
+        transform: translateX(0); /* Move back to the left column */
+    }
 }
 
 /* Navbar Styling */
