@@ -126,6 +126,8 @@
     color: #9100AA;
     font-weight:bold;
     font-size:22px;
+    line-height: 1.5; /* Ensures consistent vertical alignment */
+    display: inline-block;
   }
   
   .left-column ul li a:hover {
