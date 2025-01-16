@@ -88,14 +88,14 @@ body {
 /* Navbar Styling */
 .navbar {
     background-color: #ffffffb6;
-    box-shadow: 2px 0 2px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for navbar */
+    box-shadow: 2px 0 2px rgba(0.2, 0.2, 0.2, 0.2); /* Optional: Add shadow for navbar */
     display: flex;
     flex-direction: column;       /* Stack items vertically */
-    align-items: flex-start;      /* Align items to the left */
+    align-items: center;      /* Align items to the left */
     margin: 0;
-    padding: 10px;
+    padding: 5px;
     grid-area: navbar;
-    height: 100vh;
+    margin-top: -1px;
 
 }
 
@@ -127,6 +127,7 @@ body {
     color: white;
     padding-left: 20px;
 }
+
 
 
 body > header {
@@ -308,9 +309,9 @@ article img {
 .right-column {
     grid-area: right;
     text-align: center;
+    font-weight: bolder;
     padding: 10px;
     background-color: #e6f7ff;
-    text-align: center;        /* Center-align content */
     margin: 0;                 /* Remove extra margin */
 }
 
