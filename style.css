@@ -75,16 +75,17 @@ body {
     box-shadow: 2px 0 2px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for navbar */
     display: flex;
     flex-direction: column;       /* Stack items vertically */
-    justify-content: flex-start;  /* Align items to the top */
     align-items: flex-start;      /* Align items to the left */
     margin: 0;
     padding: 10px;
     grid-area: navbar;
+    height: 100vh;
 
 }
 
 .navbar ul {
     list-style: none; /* Remove default list styling */
+    width: 100%;
     padding: 0;
     margin: 0;
 }
@@ -102,7 +103,7 @@ body {
     font-size: 18px;
     transition: background-color 0.3s, color 0.3s;
     text-align: left;
-    margin: 5px 0;
+    width: 100%;
 }
 
 .navbar a:hover {
