@@ -1,1 +1,1 @@
-Hi, this is my website. Welcome!
+Hello everyone! Welcome to my website.
