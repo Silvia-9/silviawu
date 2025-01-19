@@ -1,4 +1,4 @@
-<script>
+
 document.addEventListener("DOMContentLoaded", function () {
     // Get the left and right buttons
     const leftArrow = document.querySelector('.scroll-arrow.left');
@@ -27,4 +27,3 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-</script>

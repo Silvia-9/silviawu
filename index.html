@@ -302,6 +302,35 @@
             });
         });
     </script>
-    <script src="scripts.js"></script>   
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get the left and right buttons and the photo gallery container
+            const leftArrow = document.querySelector('.scroll-arrow.left');
+            const rightArrow = document.querySelector('.scroll-arrow.right');
+            const gallery = document.querySelector('.photo-gallery');
+            
+            // Check if the gallery and arrows exist before proceeding
+            if (!gallery || !leftArrow || !rightArrow) {
+                console.error("Could not find photo gallery or scroll arrows!");
+                return; // Stop the script if essential elements are missing
+            }
+        
+            // Function to scroll left when left arrow is clicked
+            leftArrow.addEventListener('click', function () {
+                gallery.scrollBy({
+                    left: -200,  // Scroll 200px to the left
+                    behavior: 'smooth'  // Smooth scroll
+                });
+            });
+        
+            // Function to scroll right when right arrow is clicked
+            rightArrow.addEventListener('click', function () {
+                gallery.scrollBy({
+                    left: 200,  // Scroll 200px to the right
+                    behavior: 'smooth'  // Smooth scroll
+                });
+            });
+        });
+    </script>   
 </body>
 </html>
