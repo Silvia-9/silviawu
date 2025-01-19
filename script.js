@@ -1,35 +1,30 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const scrollContainer = document.querySelector('.photo-gallery');
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Get the left and right buttons
     const leftArrow = document.querySelector('.scroll-arrow.left');
     const rightArrow = document.querySelector('.scroll-arrow.right');
+    const gallery = document.querySelector('.photo-gallery');
+    
+    // Check for null, and if not present, console log error (just for debugging)
+    if (!gallery || !leftArrow || !rightArrow) {
+        console.error("Could not find photo gallery or scroll arrows!");
+        return;
+    }
 
-    const imageWidth = 150; // Width of one image
-    const imageMargin = 15; // Margin between images
-    const visibleImages = 8; // Number of images visible at a time
-    const totalImages = 12; // Total number of images
-    const scrollAmount = imageWidth + imageMargin; // Scroll amount for one image
-
-    let currentIndex = 0; // Track the current scroll position
-
-    // Event listener for the left arrow
+    // Scroll left function
     leftArrow.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            scrollContainer.scrollBy({
-                left: -scrollAmount,
-                behavior: 'smooth',
-            });
-        }
+        gallery.scrollBy({
+            left: -200,  // Scroll amount (can be adjusted as necessary)
+            behavior: 'smooth'  // Smooth scrolling
+        });
     });
 
-    // Event listener for the right arrow
+    // Scroll right function
     rightArrow.addEventListener('click', () => {
-        if (currentIndex < totalImages - visibleImages) {
-            currentIndex++;
-            scrollContainer.scrollBy({
-                left: scrollAmount,
-                behavior: 'smooth',
-            });
-        }
+        gallery.scrollBy({
+            left: 200,  // Scroll amount (can be adjusted as necessary)
+            behavior: 'smooth'  // Smooth scrolling
+        });
     });
 });
+</script>

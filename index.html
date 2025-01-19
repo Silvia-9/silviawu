@@ -24,12 +24,17 @@
             animation: slideRight 2s ease-out;
         }
     </style>
+    <!-- Include flatpickr CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/en.js"></script>
+
 </head>
 <body>
     <header id="main-header">
         <!-- the content of the header goes here -->
         <h1 id="logo"> Silvia's Dreamland </h1>
-        <nav ariel-label="Primary navigation">
+        <nav aria-label="Primary navigation">
             <ul id="nav-ul">
                 <li><a href="index.html" class="navbutton">Home</a></li>
                 <li><a href="profile.html" class="navbutton">Profile</a></li>
@@ -39,7 +44,7 @@
     </header>
     <section id="horizontal-scrolling-photo">
         <div class="photo-gallery-container">
-            <button class="scroll-arrow left" >&#10094;</button>
+            <button class="scroll-arrow left">&#10094;</button>
             <div class="photo-gallery">
                 <img src="1.jpg" alt="Image 1">
                 <img src="2.jpg" alt="Image 2">
@@ -54,8 +59,9 @@
                 <img src="11.jpg" alt="Image 11">
                 <img src="12.jpg" alt="Image 12">
             <!-- Add more images as needed -->
-        </div>
+            </div>
             <button class="scroll-arrow right">&#10095;</button>
+        </div>
     </section>
     <main>
         <div class="container">
@@ -191,16 +197,20 @@
 
     <section id="contact-form">
         <h5> Leave your messages </h5>
-        <form action="#" method="get">
-            <label for="first_name">First name:</label>
-            <input type="text" id="first name"name="first_name" required>
+        <form id="myForm">
+            <label for="date">Date:<span style="color: red;">*</span></label>
+            <input type="date" name="date" id="date-picker">
             <br>
 
-            <label for="last_name">Last name:</label>
-            <input type="text" id="last name"name="last_name" required>
+            <label for="first_name">First name:<span style="color: red;">*</span></label>
+            <input type="text" id="first_name"name="first_name" required>
             <br>
 
-            <label for="email">Email:</label>
+            <label for="last_name">Last name:<span style="color: red;">*</span></label>
+            <input type="text" id="last_name"name="last_name" required>
+            <br>
+
+            <label for="email">Email:<span style="color: red;">*</span></label>
             <input type="email" id="email" name="email" required>
             <br>
 
@@ -208,19 +218,21 @@
             <input type="text" id="telephone" name="telephone" >
             <br>
 
-            <label for="country">Country:</label>
-            <select name="country" id="country">
+            <label for="country">Country:<span style="color: red;">*</span></label>
+            <select name="country" id="country" required>
+                <option value="" disabled selected>Select a country</option>
+                <option value="USA">USA</option>
+                <option value="Canada">Canada</option>
+                <option value="Europe">Europe</option>
                 <option value="England">England</option>
                 <option value="scotland">Scotland</option>
                 <option value="Wales">Wales</option>
                 <option value="Nothern_ireland">Northern Ireland</option>
+                <option value="Others">Others</option>
             </select><br>
 
-            <label for="bio">Comment</label>
-             <textarea name="bio" id="bio" cols="30" rows="5"></textarea>
-             <br>
-             <label for="date">Date</label>
-             <input type="date" name="date">
+            <label for="bio">Comment:<span style="color: red;">*</span></label>
+             <textarea name="bio" id="bio" cols="30" rows="5"  required></textarea>
              <br>
                    
          
@@ -232,6 +244,64 @@
     <footer>
         <h2 id="footer-header"> &copy;2025 Silvia. All rights reserved.</h2>
     </footer>
-<script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize flatpickr with the custom date format and English locale
+            flatpickr("#date-picker", {
+                dateFormat: "M, d, Y",  // Format the date as "Jan, 16, 2024"
+                altInput: true,         // Show alternative format in the input field
+                locale: "en"            // Force the calendar to be in English
+            });
+
+            const form = document.getElementById('myForm');
+
+            form.addEventListener('submit', async function (event) {
+                event.preventDefault();  // Prevent form from submitting automatically
+
+                // Check if the form is valid
+                if (!form.checkValidity()) {
+                    form.reportValidity();  // Show validation messages
+                    return;  // Exit to prevent form submission
+                }
+
+                // If the form is valid, collect the form data
+                const data = {
+                    date: document.getElementById('date-picker').value,
+                    first_name: document.getElementById('first_name').value,
+                    last_name: document.getElementById('last_name').value,
+                    email: document.getElementById('email').value,
+                    country: document.getElementById('country').value,
+                    bio: document.getElementById('bio').value
+                };
+
+                console.log('Form Data:', data);  // Log the form data
+
+                try {
+                    const response = await fetch('https://sheetdb.io/api/v1/zxuvhmfu8aghd', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify( data )   // Send data directly (no "data" wrapper)
+                    });
+
+                    // Log response
+                    const responseData = await response.json();
+                    console.log('API Response:', responseData);  // Log the API response
+
+                    if (response.ok) {
+                        alert('Your form was submitted successfully!');
+                        form.reset();  // Reset the form after successful submission
+                    } else {
+                        alert('The form submission was unsuccessful.');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('There was an error submitting the form.');
+                }
+            });
+        });
+    </script>
+    <script src="scripts.js"></script>   
 </body>
 </html>

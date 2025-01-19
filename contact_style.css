@@ -35,14 +35,14 @@
   
   /* Main Content Section */
   .main-content {
-    margin: 40px 0;
+    margin: 100px 0;
   }
   
   /* Flexbox Layout for the three columns */
   .flex-container {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 50px;
   }
   
 /* Left Column: Navigation - Shrinkable but no growth */
@@ -162,7 +162,7 @@
   
   .middle-column textarea {
     resize: vertical;
-    height: 1000px;
+    height: 500px;
   }
   
   .middle-column button {
@@ -177,7 +177,7 @@
   }
   
   .middle-column button:hover {
-    background-color: #0056b3;
+    background-color: #5400b3;
   }
   
   /* Right Column: Other Information */
@@ -237,6 +237,51 @@
     color: #333;
     font-weight: bold;
   }
+      /* Basic styles for the form */
+      #contactForm {
+        font-family: Arial, sans-serif;  /* Font for the entire form */
+        font-size: 16px;  /* Set a uniform font size */
+        max-width: 800px;  /* Optional, for form container */
+        margin: 0 auto;  /* Center the form */
+        padding: 5px 15px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        margin-top:2px;
+        margin-bottom: 2px;
+      }
+  
+      label {
+        display: block;
+        margin-top: 5px;
+        font-weight: bold;
+      }
+
+      input, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-family: Arial, sans-serif; /* Ensure font is consistent */
+        font-size: 16px; /* Ensure font size is consistent */
+      }
+  
+      button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-bottom: 20px;
+      }
+  
+      button:hover {
+        background-color: #45a049; /* Change color on hover */
+      }
   
   /* Responsive Design */
   @media (max-width: 768px) {

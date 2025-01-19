@@ -66,7 +66,7 @@ nav > a:hover::before {
     display: flex;
     justify-content: space-between;  /* Aligns the header and audio control on opposite ends */
     align-items:center; /* Vertically align both elements */
-    width: 100%;
+    width: 95%;
     margin-bottom: 20px; /* Adds space below the header */
   }
   
@@ -76,6 +76,8 @@ nav > a:hover::before {
     font-size: 2rem;
     font-weight: bold;
     color: #333;
+    text-align: center;
+    width: 95%;
   }
   
   /* Styling the audio control */
@@ -87,15 +89,21 @@ nav > a:hover::before {
     padding: 32px;
     text-align:left;
     line-height: 2;
-    font-size: 35;
+    font-size: 35px;
     grid-area: main;
+    width: 100%;
 }
 
 p {
-    line-height: 2;/* Adjust the value for more or less space between lines */
-    font-size: 20px;
-    text-align: left;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  line-height: 2; /* Adjust the value for more or less space between lines */
+  font-size: 20px;
+  text-align: left;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  width: 100%; /* Ensures it takes full width */
+  max-width: 750px; /* Optional: Sets a max width to prevent a very long line */
+  word-wrap: break-word; /* Breaks long words if they don't fit the container */
+  overflow-wrap: break-word; /* Ensures words break properly within container */
+  margin: 0 auto; /* Centers the paragraph */
 }
 
 /* Container for the gallery */

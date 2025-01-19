@@ -185,9 +185,9 @@ article img {
 /* Horizontal Scrolling Photo Gallery */
 
 #horizontal-scrolling-photo {
-    margin: 50px auto;
+    margin: 20px auto;
     text-align: center;
-    width: 90%;
+    width: 80%;
 }
 
 #horizontal-scrolling-photo h2 {
@@ -196,20 +196,27 @@ article img {
 }
 
 .photo-gallery-container {
-    width: calc(150px *12 +15px* 11);
-    overflow: hidden;
     position: relative;
-    justify-content: center;
+    align-items: center;
     display: flex;
+    padding: 20px 0; /* Add padding to create space for arrows */
+    margin-top: -2px;
+    overflow: hidden; /* Hide horizontal scrollbar */
+    justify-content: center;
+    width:100%;
 }
 
 .photo-gallery {
     display: flex;
     gap: 10px;
-    transition: transform 0.3s ease;
-    overflow-x: scroll;
-    scroll-behavior: smooth; /* Smooth scroll */
-
+    white-space: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 0 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    justify-content: flex-start; /* Align items left */
+    transition: transform 0.3s ease-in-out; /* Smooth scroll on button click */
 }
 
 .photo-gallery::-webkit-scrollbar {
@@ -217,44 +224,51 @@ article img {
 }
 
 .photo-gallery img{
-    width: 150px;
+    width: 200px;
     height: 150px;
     object-fit: cover;
-    margin-right: 15px; /* Space between images */
+    margin-right: 10px; /* Space between images */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    border-radius: 8px; /* Rounded corners for images */
-    flex-shrink: 0;  /* Prevent images from shrinking */
+    border-radius: 10px; /* Rounded corners for images */
+    flex-shrink: 0; /* Prevent images from shrinking */
 }
 
 .photo-gallery img:hover {
-    transform: scale(1.1); /* Zoom effect on hover */
+    transform: scale(1.1); /* Small zoom effect */
 }
 
 .scroll-arrow {
-    background-color: rgba(249, 77, 3, 0.5);
-    border: none;
-    color: #dc0b0b;
-    cursor: pointer;
     position: absolute;
     top: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(201, 52, 15, 0.9);
+    border: none;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+    z-index: 1;
     transform: translateY(-50%);
-    padding: 10px;
-    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
-    opacity: 0.7;
-}
-
-.scroll-arrow:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Darken the button on hover */
-    opacity: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
 }
 
 .scroll-arrow.left {
-    left: 10px;
+    left: -10px;
 }
 
 .scroll-arrow.right {
-    right: 10px;
+    right: -10px;
+}
+
+.scroll-arrow:hover {
+    background-color: #3d0a9b;
+    color: rgb(226, 21, 21);
 }
 
 .left-column,.middle-column,.right-column {
