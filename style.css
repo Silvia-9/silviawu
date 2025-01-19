@@ -38,15 +38,15 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr; /* Adjust this for your left, main, and right columns */
+    grid-template-columns: 2fr 4fr 2fr; /* Adjust this for your left, main, and right columns */
     grid-template-areas: 
         "header header header"
-        "navbar main right"
+        "navbar  main  right"
         "gallery gallery gallery"
         "message message message"
         "footer footer footer";
-    grid-template-columns: 1fr 3fr 1fr; /* Left, middle, right column sizes */
-    grid-gap: 0; /* Space between grid items */
+    gap: 10px; /* Space between grid items */
+    margin-left:50px;
     padding: 0;
 
 }
@@ -58,7 +58,7 @@ body {
     background-color: #f6f5f6;
     padding: 20px;
     border-radius: 8px;
-    margin-top: -33px;
+    margin-top: -55px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative; /* For enabling transform */
     animation: moveHeader 4s ease-in-out forwards; /* Add animation */
@@ -66,7 +66,6 @@ body {
 }
 
 .blog-header h1 {
-    margin: 0;
     font-size: 2rem;
     color: #ea13df;
     font-weight: bolder;
@@ -197,7 +196,7 @@ article img {
 
 .photo-gallery-container {
     position: relative;
-    align-items: center;
+    align-items:center;
     display: flex;
     padding: 20px 0; /* Add padding to create space for arrows */
     margin-top: -2px;
@@ -208,11 +207,13 @@ article img {
 
 .photo-gallery {
     display: flex;
-    gap: 10px;
+    width: 80%;       /* You can adjust the percentage to control the width */
+    max-width: 1200px; /* Optional: add a maximum width limit */
+    gap: 5px;
     white-space: nowrap;
     overflow-x: auto;
     scroll-behavior: smooth;
-    padding: 0 20px;
+    padding: 0 10px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     justify-content: flex-start; /* Align items left */
@@ -287,8 +288,8 @@ article img {
     font-size: 14px; /* Adjust the font size */
     line-height: 2; /* Adjust line spacing for better readability */
     margin-bottom: 2px; /* Adds space at the bottom */
-    padding-left: 10px; /* Optional: adds space on the left side */
-    padding-right: 10px; /* Optional: adds space on the right side */
+    padding-left: 50px; /* Optional: adds space on the left side */
+    padding-right: 50px; /* Optional: adds space on the right side */
     font-family: 'Georgia', serif; /* Change font for paragraphs */
 }
 
