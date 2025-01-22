@@ -325,11 +325,14 @@ article img {
 
 .right-column {
     grid-area: right;
-    text-align: center;
+    text-align: left;
     font-weight: bolder;
     padding: 10px;
     background-color: #e6f7ff;
     margin: 0;                 /* Remove extra margin */
+    padding:5px;
+    box-sizing: border-box; /* Include padding and border in width/height calculations */
+    width:100%;
 }
 
 .right-column a {
@@ -517,8 +520,31 @@ article img {
             "right"
             "message"
             "footer";
+    }
+    /* Tablets (Screens wider than 768px) */
+    @media (min-width: 768px) {
+    .right-column {
+        padding: 10px; /* Add more padding for larger screens */
+        width: 50%; /* Occupy half the container width */
+        text-align: left; /* Maintain left alignment */
+         }
+    }
+
+    / * Desktops (Screens wider than 1024px) */
+    @media (min-width: 1024px) {
+    .right-column {
+        padding: 15px; /* Enhance spacing for a cleaner design */
+        width:33%; /* Allocate one-third width in a 3-column layout */
         }
- 
+    }
+
+    /* Larger Desktops (Screens wider than 1440px) */
+    @media (min-width: 1440px) {
+    .right-column {
+        padding: 20px; /* Increase padding for a spacious look */
+        font-size: 1.2rem; /* Adjust font size for readability on large screens */
+        }
+    }
      article {
          margin-left: 0;
          width: 100%;
