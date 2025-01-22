@@ -317,6 +317,9 @@ article img {
     text-align: left; /* Aligns the text to the left */
     margin-left: 0; /* Optional: removes any left margin */
     padding-left: 0; /* Optional: removes any left padding */
+    font-size: 1.1em; /* Slightly larger text size */
+    font-family: Arial, sans-serif; /* Consistent font */
+    letter-spacing: 0.5px; /* Optional: Improve readability */
 }
 
 
@@ -328,6 +331,20 @@ article img {
     background-color: #e6f7ff;
     margin: 0;                 /* Remove extra margin */
 }
+
+.right-column a {
+    display: block; /* Each link on its own line */
+    margin: 10px 0; /* Space between links */
+    text-decoration: none; /* Remove underline (optional) */
+    text-align: left;
+    font-weight: bolder;
+    font-size: medium;
+}
+.right-column a:hover {
+    color: #1c1d1d; /* Optional: Hover effect color */
+    background-color: #eecd13;
+}
+
 
 footer {
     color: white;                /* White text color */
@@ -394,7 +411,7 @@ article img {
 
 .read-more-btn {
     background-color: #007bff;
-    color: white;
+    color: rgb(250, 250, 250);
     border: none;
     padding: 10px 15px;
     cursor: pointer;
@@ -543,6 +560,10 @@ article img {
 
     h2, h3 {
         font-size: 5vw;
+    }
+    .right-column {
+        padding: 5px;
+        text-align: left; /* Align text to the left for better readability */
     }
 
     footer {
