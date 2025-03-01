@@ -226,7 +226,7 @@ article img {
 }
 
 .photo-gallery img{
-    width: 100px;
+    width: 200px;
     height: 150px;
     object-fit: cover;
     margin-right: 10px; /* Space between images */
@@ -487,143 +487,9 @@ article img {
     background-color: #A459D1;   /* Darker blue on hover */
 }
 
-/* Media Queries for Responsive Design */
-@media screen and (max-width: 600px) {
-    body {
-        font-size: 4vw;
-        margin:0;
-        padding:0 10px;
-    }
-
-    body > header {
-        flex-direction: column;
-        text-align: center;
-        height: auto;
-        padding: 15px 0;
-    }
-
-    #logo {
-        width: 80%;
-        height: auto;
-        margin-bottom: 0 auto 10px;
-    }
-
-    #nav-ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-    @media screen and (max-width: 600px) {    
-    .container {
-        grid-template-columns: 1fr; /* Single column layout */
-        grid-template-areas: 
-            "header"
-            "gallery"
-            "left-column"
-            "middle-column"
-            "right-column"
-            "message"
-            "footer";
-            margin: 0 auto; }
-    }
-    /* Tablets (Screens wider than 768px) */
-    @media screen and (max-width: 600px) {
-    .right-column {
-        margin: 0%; /* Occupy half the container width */
-         }
-    }
-
-    .middle-column {
-        padding: 5px; /* Adjusted for smaller screens */
-    }
-
-    .left-column {
-        margin:0%;
-        box-shadow: none; /* Remove shadow for smaller screens */
-    }
-
-    iframe, img {
-        max-width: 100%;
-        height: auto;
-    }
-    
-    #nav-ul  li {
-        margin: 10px 0;
-        padding: 10px;
-    }
-
-    .navbutton {
-        width: 100%; /* Make the navbar full width on small screens */
-        height: auto; /* Allow navbar height to adjust */
-        position: relative;
-        box-shadow: none; /* Remove shadow for smaller screens */
-    }
-
-
-    .navbar ul {
-        flex-direction: column;
-        align-items: center; /* Stack navbar items horizontally on small screens */
-    }
-
-    .navbar ul li {
-        margin: 0 10px;
-    }
-
-    form {
-        padding: 10px;
-    }
-
-    h2, h3 {
-        font-size: 5vw;
-    }
-
-    footer {
-        text-align:center;
-        padding:10px;
-        font-size: 3vw;
-    }
-
-    #footer-ul {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        padding: 0;
-        margin: 10px;
-    }
-    
-    #footer-ul > li {
-        margin: 5px;
-        padding: 10px;
-    }
-}
 
 /* Media Queries for Responsive Design */
-@media screen and (max-width: 768px) {
-    body {
-        font-size: 4vw;
-        margin: 0;
-        padding: 0 10px;
-    }
-
-    body > header {
-        flex-direction: column;
-        text-align: center;
-        height: auto;
-        padding: 15px 0;
-    }
-
-    #logo {
-        width: 80%;
-        height: auto;
-        margin: 0 auto 10px;
-    }
-
-    #nav-ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
+@media screen and (max-width: 1024px) {
     .container {
         grid-template-columns: 1fr; /* Single column layout */
         grid-template-areas: 
@@ -698,15 +564,5 @@ article img {
     #footer-ul > li {
         margin: 5px;
         padding: 10px;
-    }
-}
-
-/* CSS Animation for Header */
-@keyframes slideRight {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(0);
     }
 }
