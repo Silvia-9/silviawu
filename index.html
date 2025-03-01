@@ -8,26 +8,10 @@
     <link rel="stylesheet" href="contact_style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
-    <style>
-        /* CSS Animation for Header */
-        @keyframes slideRight {
-            0% {
-                transform: translateX(-100%);
-            }
-            100% {
-                transform: translateX(0);
-            }
-        }
-
-        #logo {
-            animation: slideRight 2s ease-out;
-        }
-    </style>
     <!-- Include flatpickr CSS and JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/en.js"></script>
-
 </head>
 <body>
     <header id="main-header">
@@ -64,18 +48,33 @@
     </section>
     <main>
         <div class="container">
-            <div class="blog-header">
-                <h1>Welcome to Silvia's Blog</h1>
+            <div class="left-column"> 
+                <section id="years">
+                    <h2>Years</h2>
+                    <ul>
+                        <li><a href="#2025">2025</a></li>
+                        <li><a href="#2024">2024</a></li>
+                    </ul>
+                </section>
+                <section id="months">
+                    <h2>Months</h2>
+                    <ul>
+                        <li><a href="#february-2025">February 2025</a></li>
+                        <li><a href="#september-2024">September 2024</a></li>
+                        <li><a href="#august-2024">August 2024</a></li>
+                    </ul>
+                </section>
+                <section id="categories">
+                    <h2>Categories</h2>
+                    <ul>
+                        <li><a href="#poetry">Poetry</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#technology">Technology</a></li>
+                    </ul>
+                </section>
             </div>
-            <div class="navbar"> 
-                <ul id="nav-ul">
-                    <li><a href="#">Years</a></li>
-                    <li><a href="#">Months</a></li>
-                    <li><a href="#">Categories</a></li>
-                </ul>
-            </div>
-            <section class="middle-column">
-                <article id="Happy New Year">
+            <div class="middle-column">
+                <article id="happy-new-year">
                     <header>
                       <h2>Happy New Year</h2>
                       <h3> Posted: 3rd February 2025</h3>
@@ -84,7 +83,7 @@
                       <iframe width="640" height="301" src="https://www.loom.com/embed/01ef0caec36640ea8df552e8881a0bd9?sid=4a4ccfa1-d69f-40a1-baab-e393e1d4f710" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                     </a>
                   </article>
-                <article id="womenhackai">
+                <article id="womenhack-ai">
                     <header> 
                         <h2>WomenHack AI</h2>
                         <h3>Posted: 24th September 2024</h3>
@@ -194,7 +193,7 @@
         
                     </footer>
                 </article>
-            </section>
+            </div>
             <div class="right-column">
                 <aside>
                     <p> 
@@ -206,6 +205,7 @@
                     </p>
                 </aside>
             </div>
+        </div>
     </main>
 
     <section id="contact-form">
@@ -254,7 +254,7 @@
         </form>
     </section>
      
-    <footer>
+    <footer></footer>
         <h2 id="footer-header"> &copy;2025 Silvia. All rights reserved.</h2>
     </footer>
     <script>

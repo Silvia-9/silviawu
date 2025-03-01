@@ -1,5 +1,11 @@
+html {
+    box-sizing: border-box;
+    padding-left: 5%; /* Consider if you still want this padding */
+    padding-right: 5%;
+}
+
 body {
-    background-color: lightyellow;
+    background-color: rgb(247, 247, 244);
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1.5vw;
     margin: 0px;
@@ -12,13 +18,15 @@ body {
     font-family: "Dela Gothic One", sans-serif;
     width: 56%;
     border-radius: 10%;
-    max-width: 100%;
+    width:100%;
+    max-width: 200%;
     height: auto;
     text-shadow: 
     2px 2px 0px white, /* Bottom-right shadow */
     -2px 2px 0px white, /* Bottom-left shadow */
     2px -2px 0px white, /* Top-right shadow */
     -2px -2px 0px white; /* Top-left shadow */
+    animation: slideRight 2s ease-out;
 }
 
 #nav-ul {
@@ -38,120 +46,114 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: 2fr 4fr 2fr; /* Adjust this for your left, main, and right columns */
+    grid-template-columns: 2fr 3fr 2fr; /* Adjust this for your left, main, and right columns */
     grid-template-areas: 
         "header header header"
-        "navbar  main  right"
+        "left  main  right"
         "gallery gallery gallery"
         "message message message"
         "footer footer footer";
-    gap: 10px; /* Space between grid items */
-    margin-left:50px;
-    padding: 0;
-
-}
-
-/* Blog Header */
-.blog-header {
-    grid-area: header;
-    text-align: center;
-    background-color: #f6f5f6;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: -55px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative; /* For enabling transform */
-    animation: moveHeader 4s ease-in-out forwards; /* Add animation */
-}
-}
-
-.blog-header h1 {
-    font-size: 2rem;
-    color: #ea13df;
-    font-weight: bolder;
-}
-
-/* Keyframes for Moving Header */
-@keyframes moveHeader {
-    0% {
-        transform: translateX(-100%); /* Start at the left column (normal position) */
-    }
-    50% {
-        transform: translateX(100%); /* Move to the right column */
-    }
-    100% {
-        transform: translateX(0); /* Move back to the left column */
-    }
+    grid-gap: 10px; /* Space between grid items */
+    margin: 0 auto 20px; /* Adjust margin to move columns up */
+    display: flex;
+    justify-content: center;
 }
 
 /* Navbar Styling */
-.navbar {
-    background-color: #ffffffb6;
-    box-shadow: 2px 0 2px rgba(0.2, 0.2, 0.2, 0.2); /* Optional: Add shadow for navbar */
-    display: flex;
-    flex-direction: column;       /* Stack items vertically */
-    align-items: center;      /* Align items to the left */
+.left-column {
+    background-color: #f7f5f5; /* Set background color to gray */
+    box-shadow: 2px 0 2px rgba(38, 37, 37, 0.2); /* Optional: Add shadow for navbar */
+    align-items: flex-start;      /* Align items to the left */
     margin: 0;
     padding: 5px;
-    grid-area: navbar;
-    margin-top: -1px;
-
+    grid-area:left;
+    border-radius: 5px;   
+    text-align: left;
 }
 
-.navbar ul {
+
+.left-column  #nav-ul {
     list-style: none; /* Remove default list styling */
-    width: 100%;
     padding: 0;
     margin: 0;
-}
-
-.navbar ul li {
-    margin: 20px 0; /* Add vertical spacing between navbar items */
-}
-
-.navbar a {
     display: block;
-    text-decoration: none;
-    color: #FF3562;
-    font-weight: bold;
-    padding: 10px;
-    font-size: 18px;
-    transition: background-color 0.3s, color 0.3s;
-    text-align: left;
-    width: 100%;
+    gap: 5px;
 }
 
-.navbar a:hover {
-    background-color: #FFAB0F;
-    color: white;
-    padding-left: 20px;
-}
-
-
-
-body > header {
-    background-color: #47C072;
-    color: #f11e8b;
-    font-family: "Dela Gothic One", sans-serif;
+#nav-ul li {
+    margin: 2px 0; /* Reduce vertical spacing between navbar items */
     display: flex;
-    height: 150vh;
-    align-items: center;
-    justify-content: space-between;
+    align-items: center; /* Align items vertically */
 }
 
+/* Remove the star signs */
+#nav-ul li::before {
+    content: ""; /* Remove star before each item */
+    margin-right: 0; /* Remove space between star and text */
+}
+
+
+/* Separate design for Home, Profile, and Contact buttons */
 .navbutton {
     color: #5170D7;
     text-decoration: none;
-    background-color: #FFAB0F;
-    font-family: "Arial", sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 30px;
-    padding: 10px 15px;
+    padding: 10px 10px; /* Further increase padding for larger size */
+    font-size: 30px; /* Further increase font size */
     border: none;
+    background-color:#FFAB0F; /* Set background color to yellow */
     border-radius: 50%;
-    cursor: pointer;
     transition: background-color 0.5s ease;
+    cursor:pointer;
     margin: 0 5px;
+}
+
+/* Separate design for Years, Months, and Categories buttons */
+.left-column #nav-ul a {
+    color: #b835ff;
+    padding: 5px;
+    font-size: 20px;
+    text-align: left;
+    font-weight: bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    width: 100%;
+    text-decoration: none; /* Remove underline */
+}
+
+.left-column #nav-ul a:hover {
+    background-color: #f5af45;
+    color: rgb(13, 12, 12);
+    padding-left: 5px;
+}
+
+/* Adjust font family for Years, Months, and Categories sections */
+.left-column h2 {
+    font-family: 'Georgia', serif; /* Change font family */
+    font-size: 20px; /* Adjust font size */
+    font-weight: bold; /* Make the font bold */
+    margin-bottom: 5px; /* Add space below the headers */
+    color: rgb(32, 31, 33);
+}
+
+.left-column ul li a {
+    color: #FF70AB !important; /* Change font color for links under Years, Months, Categories */
+    font-size: 15px !important; /* Adjust font size to be smaller */
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Ensure consistent font family */
+}
+
+body > header {
+    background-color: #00DFA2;
+    color: #f11e8b;
+    font-family: "Dela Gothic One", sans-serif;
+    display: flex;
+    height: auto;
+    width: 100%;
+    padding:20px;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
 }
 
 body > main {
@@ -166,14 +168,14 @@ article {
     flex-grow: 2; /* Allow article to take remaining space */
     margin-left: 20px 0; /* Space between navbar and article */
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #f9f4f4;
     box-sizing: border-box;
 }
 
 article img {
-    width: 300%; /* Full width to ensure images scale properly */
-    height: 300%;
-    object-fit: cover; /* Ensure the images cover the area without distortion */
+    max-width: 100%; /* Full width to ensure images scale properly */
+    height: auto;
+    display:block; /* Ensure the images cover the area without distortion */
 }
 
 .content {
@@ -184,7 +186,7 @@ article img {
 /* Horizontal Scrolling Photo Gallery */
 
 #horizontal-scrolling-photo {
-    margin: 20px auto;
+    margin: 10px auto; /* Reduce the top and bottom margin */
     text-align: center;
     width: 80%;
 }
@@ -196,19 +198,19 @@ article img {
 
 .photo-gallery-container {
     position: relative;
-    align-items:center;
+    align-items: center;
     display: flex;
-    padding: 20px 0; /* Add padding to create space for arrows */
-    margin-top: -2px;
+    padding: 30px 0; /* Adjust padding to create equal space on top and bottom */
+    margin-top: 0; /* Remove negative margin */
     overflow: hidden; /* Hide horizontal scrollbar */
     justify-content: center;
-    width:100%;
+    width:auto;
 }
 
 .photo-gallery {
     display: flex;
-    width: 80%;       /* You can adjust the percentage to control the width */
-    max-width: 1200px; /* Optional: add a maximum width limit */
+    width: auto;       /* You can adjust the percentage to control the width */
+    max-width: 100%; /* Optional: add a maximum width limit */
     gap: 5px;
     white-space: nowrap;
     overflow-x: auto;
@@ -216,7 +218,6 @@ article img {
     padding: 0 10px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    justify-content: flex-start; /* Align items left */
     transition: transform 0.3s ease-in-out; /* Smooth scroll on button click */
 }
 
@@ -225,13 +226,14 @@ article img {
 }
 
 .photo-gallery img{
-    width: 200px;
+    width: 100px;
     height: 150px;
     object-fit: cover;
     margin-right: 10px; /* Space between images */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     border-radius: 10px; /* Rounded corners for images */
     flex-shrink: 0; /* Prevent images from shrinking */
+    display:block;
 }
 
 .photo-gallery img:hover {
@@ -243,7 +245,7 @@ article img {
     top: 50%;
     width: 40px;
     height: 40px;
-    background-color: rgba(201, 52, 15, 0.9);
+    background-color: #EF4040;
     border: none;
     font-size: 20px;
     color: black;
@@ -260,37 +262,36 @@ article img {
 }
 
 .scroll-arrow.left {
-    left: -10px;
+    left: -1px;
 }
 
 .scroll-arrow.right {
-    right: -10px;
+    right: -1px;
 }
 
+/* Scroll arrow hover effect */
 .scroll-arrow:hover {
-    background-color: #3d0a9b;
+    background-color: #4f06d7;
     color: rgb(226, 21, 21);
 }
 
 .left-column,.middle-column,.right-column {
     padding: 10px;
     box-sizing: border-box;
+    flex: 1;
+    margin: 0 10px;
 }
 
 /* Middle column */
 .middle-column {
     grid-area: main; /* Place middle content under the blog header */
-    padding: 0;
-    background-color: #f9f9f9;
+    padding: 10px;
+    background-color: #ffffff;
     margin: 0;                /* Remove extra margin */
-    width: 100%;              /* Ensure it fills the grid area */
-    margin-top: -1px;
     font-size: 14px; /* Adjust the font size */
     line-height: 2; /* Adjust line spacing for better readability */
-    margin-bottom: 2px; /* Adds space at the bottom */
-    padding-left: 50px; /* Optional: adds space on the left side */
-    padding-right: 50px; /* Optional: adds space on the right side */
     font-family: 'Georgia', serif; /* Change font for paragraphs */
+    text-align: left; /* Align middle column content to the left */
 }
 
 .middle-column p {
@@ -322,30 +323,31 @@ article img {
     letter-spacing: 0.5px; /* Optional: Improve readability */
 }
 
-
-.right-column {
-    grid-area: right;
+.middle-column article header,
+.middle-column article p,
+.middle-column article figure,
+.middle-column article footer {
     text-align: left;
-    font-weight: bolder;
-    padding: 10px;
-    background-color: #e6f7ff;
-    margin: 0;                 /* Remove extra margin */
-    padding:5px;
-    box-sizing: border-box; /* Include padding and border in width/height calculations */
-    width:100%;
 }
 
-.right-column a {
+.right-column {
+    background-color: #c8c6c6; /* Set background color to gray */
+    grid-area: right;
+    font-weight: bolder;
+    margin: 0px;                 /* Remove extra margin */
+    padding: 5px;
+    box-sizing: border-box; /* Include padding and border in width/height calculations */      text-align: right;  }    .right-column a {
     display: block; /* Each link on its own line */
     margin: 10px 0; /* Space between links */
     text-decoration: none; /* Remove underline (optional) */
     text-align: left;
-    font-weight: bolder;
-    font-size: medium;
+    font-size:20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color:#f75050;
 }
 .right-column a:hover {
-    color: #1c1d1d; /* Optional: Hover effect color */
-    background-color: #eecd13;
+    color: #1d1d1d; /* Optional: Hover effect color */
+    background-color: #FF52A2;
 }
 
 
@@ -423,7 +425,7 @@ article img {
 }
 
 .read-more-btn:hover {
-    background-color: #0056b3;
+    background-color: #36BA98;
 }
 
 #contact-form {
@@ -438,10 +440,11 @@ article img {
 }
 
 #contact-form h5 {
-    font-weight: bold;           /* Make the heading bold */
-    font-size: 1.2rem;           /* Slightly larger font size */
+    font-weight: bolder;           /* Make the heading bold */
+    font-size: 25px;           /* Slightly larger font size */
+    font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;          /* Center the heading */
-    color: #333;                 /* Dark color for text */
+    color: #1d1d1d;                 /* Dark color for text */
     margin-bottom: 10px;         /* Reduced space below heading */
 }
 
@@ -470,7 +473,7 @@ article img {
 }
 
 #contact-form input[type="submit"] {
-    background-color: #007bff;   /* Blue background for submit button */
+    background-color: #2CD3E1;   /* Blue background for submit button */
     color: white;                /* White text color */
     padding: 8px 15px;           /* Reduced padding inside button */
     font-size: 1rem;             /* Slightly smaller font size */
@@ -481,11 +484,11 @@ article img {
 }
 
 #contact-form input[type="submit"]:hover {
-    background-color: #564d80;   /* Darker blue on hover */
+    background-color: #A459D1;   /* Darker blue on hover */
 }
 
 /* Media Queries for Responsive Design */
-@media (max-width: 768px) {
+@media screen and (max-width: 600px) {
     body {
         font-size: 4vw;
         margin:0;
@@ -510,47 +513,40 @@ article img {
         align-items: center;
         gap: 10px;
     }
+    @media screen and (max-width: 600px) {    
     .container {
         grid-template-columns: 1fr; /* Single column layout */
         grid-template-areas: 
             "header"
             "gallery"
-            "main"
-            "left"
-            "right"
+            "left-column"
+            "middle-column"
+            "right-column"
             "message"
             "footer";
+            margin: 0 auto; }
     }
     /* Tablets (Screens wider than 768px) */
-    @media (min-width: 768px) {
+    @media screen and (max-width: 600px) {
     .right-column {
-        padding: 10px; /* Add more padding for larger screens */
-        width: 50%; /* Occupy half the container width */
-        text-align: left; /* Maintain left alignment */
+        margin: 0%; /* Occupy half the container width */
          }
     }
 
-    / * Desktops (Screens wider than 1024px) */
-    @media (min-width: 1024px) {
-    .right-column {
-        padding: 15px; /* Enhance spacing for a cleaner design */
-        width:33%; /* Allocate one-third width in a 3-column layout */
-        }
+    .middle-column {
+        padding: 5px; /* Adjusted for smaller screens */
     }
 
-    /* Larger Desktops (Screens wider than 1440px) */
-    @media (min-width: 1440px) {
-    .right-column {
-        padding: 20px; /* Increase padding for a spacious look */
-        font-size: 1.2rem; /* Adjust font size for readability on large screens */
-        }
+    .left-column {
+        margin:0%;
+        box-shadow: none; /* Remove shadow for smaller screens */
     }
-     article {
-         margin-left: 0;
-         width: 100%;
-     }
- 
 
+    iframe, img {
+        max-width: 100%;
+        height: auto;
+    }
+    
     #nav-ul  li {
         margin: 10px 0;
         padding: 10px;
@@ -563,13 +559,6 @@ article img {
         box-shadow: none; /* Remove shadow for smaller screens */
     }
 
-
-    .navbar {
-        width: 100%; /* Make the navbar full width on small screens */
-        height: auto; /* Allow navbar height to adjust */
-        margin:0;
-        box-shadow: none; /* Remove shadow for smaller screens */
-    }
 
     .navbar ul {
         flex-direction: column;
@@ -586,10 +575,6 @@ article img {
 
     h2, h3 {
         font-size: 5vw;
-    }
-    .right-column {
-        padding: 5px;
-        text-align: left; /* Align text to the left for better readability */
     }
 
     footer {
@@ -610,3 +595,118 @@ article img {
         margin: 5px;
         padding: 10px;
     }
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 4vw;
+        margin: 0;
+        padding: 0 10px;
+    }
+
+    body > header {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 15px 0;
+    }
+
+    #logo {
+        width: 80%;
+        height: auto;
+        margin: 0 auto 10px;
+    }
+
+    #nav-ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .container {
+        grid-template-columns: 1fr; /* Single column layout */
+        grid-template-areas: 
+            "header"
+            "gallery"
+            "left"
+            "main"
+            "right"
+            "message"
+            "footer";
+        margin: 0 auto;
+    }
+
+    .left-column, .middle-column, .right-column {
+        margin: 0;
+        padding: 10px;
+        box-shadow: none; /* Remove shadow for smaller screens */
+    }
+
+    .middle-column {
+        padding: 5px; /* Adjusted for smaller screens */
+    }
+
+    iframe, img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #nav-ul li {
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    .navbutton {
+        width: 100%; /* Make the navbar full width on small screens */
+        height: auto; /* Allow navbar height to adjust */
+        position: relative;
+        box-shadow: none; /* Remove shadow for smaller screens */
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center; /* Stack navbar items horizontally on small screens */
+    }
+
+    .navbar ul li {
+        margin: 0 10px;
+    }
+
+    form {
+        padding: 10px;
+    }
+
+    h2, h3 {
+        font-size: 5vw;
+    }
+
+    footer {
+        text-align: center;
+        padding: 10px;
+        font-size: 3vw;
+    }
+
+    #footer-ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 10px;
+    }
+
+    #footer-ul > li {
+        margin: 5px;
+        padding: 10px;
+    }
+}
+
+/* CSS Animation for Header */
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
