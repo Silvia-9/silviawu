@@ -1,7 +1,6 @@
 html {
     box-sizing: border-box;
-    padding-left: 5%; /* Consider if you still want this padding */
-    padding-right: 5%;
+    padding:0;
 }
 
 body {
