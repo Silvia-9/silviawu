@@ -1,15 +1,15 @@
 html {
     box-sizing: border-box;
-    padding-left: 5%; /* Consider if you still want this padding */
-    padding-right: 5%;
+    padding: 0; /* Remove padding */
 }
 
 body {
-    background-color: rgb(247, 247, 244);
+    background-color: lightyellow;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1.5vw;
-    margin: 0px;
+    margin: 0; /* Remove margin */
     box-sizing: border-box;
+    width: 100%; /* Ensure body takes full width */
 }
 
 #logo {
@@ -18,7 +18,7 @@ body {
     font-family: "Dela Gothic One", sans-serif;
     width: 56%;
     border-radius: 10%;
-    width:100%;
+    width: 100%;
     max-width: 200%;
     height: auto;
     text-shadow: 
@@ -54,77 +54,52 @@ body {
         "message message message"
         "footer footer footer";
     grid-gap: 10px; /* Space between grid items */
-    margin: 0 auto 20px; /* Adjust margin to move columns up */
-    display: flex;
-    justify-content: center;
+    margin: 0 auto; /* Center the container */
+    width: 100%; /* Ensure container takes full width */
 }
 
 /* Navbar Styling */
 .left-column {
-    background-color: #f7f5f5; /* Set background color to gray */
-    box-shadow: 2px 0 2px rgba(38, 37, 37, 0.2); /* Optional: Add shadow for navbar */
+    background-color: #f7f5f5;
+    box-shadow: 2px 0 2px rgba(0.2, 0.2, 0.2, 0.2); /* Optional: Add shadow for navbar */
     align-items: flex-start;      /* Align items to the left */
     margin: 0;
     padding: 5px;
     grid-area:left;
-    border-radius: 5px;   
-    text-align: left;
+    border-radius: 10px;
+    text-align: left;    
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 12px;
 }
 
-
-.left-column  #nav-ul {
+.left-column #nav-ul {
     list-style: none; /* Remove default list styling */
     padding: 0;
     margin: 0;
     display: block;
     gap: 5px;
+    font-size: 15px;
 }
 
-#nav-ul li {
-    margin: 2px 0; /* Reduce vertical spacing between navbar items */
-    display: flex;
-    align-items: center; /* Align items vertically */
+.left-column #nav-ul li {
+    margin: 5px 0; /* Add vertical spacing between navbar items */
 }
 
-/* Remove the star signs */
-#nav-ul li::before {
-    content: ""; /* Remove star before each item */
-    margin-right: 0; /* Remove space between star and text */
-}
-
-
-/* Separate design for Home, Profile, and Contact buttons */
-.navbutton {
-    color: #5170D7;
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    padding: 10px 10px; /* Further increase padding for larger size */
-    font-size: 30px; /* Further increase font size */
-    border: none;
-    background-color:#FFAB0F; /* Set background color to yellow */
-    border-radius: 50%;
-    transition: background-color 0.5s ease;
-    cursor:pointer;
-    margin: 0 5px;
-}
-
-/* Separate design for Years, Months, and Categories buttons */
 .left-column #nav-ul a {
-    color: #b835ff;
-    padding: 5px;
-    font-size: 20px;
-    text-align: left;
-    font-weight: bolder;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: block;
+    text-decoration: none;
+    color: #FF3562;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
     transition: background-color 0.3s, color 0.3s;
     width: 100%;
-    text-decoration: none; /* Remove underline */
 }
 
 .left-column #nav-ul a:hover {
     background-color: #f5af45;
-    color: rgb(13, 12, 12);
+    color: rgb(13,12,12);
     padding-left: 5px;
 }
 
@@ -156,10 +131,25 @@ body > header {
     flex-direction: row;
 }
 
+.navbutton {
+    color: #5170D7;
+    text-decoration: none;
+    background-color: #FFAB0F;
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    margin: 0 5px;
+}
+
 body > main {
     display:flex;
     flex-direction: column;
-    width: 70%;
+    width: 100%; /* Ensure main takes full width */
     margin: 30px auto;
     align-items: center;
 }
@@ -168,7 +158,7 @@ article {
     flex-grow: 2; /* Allow article to take remaining space */
     margin-left: 20px 0; /* Space between navbar and article */
     padding: 20px;
-    background-color: #f9f4f4;
+    background-color: #f9f9f9;
     box-sizing: border-box;
 }
 
@@ -186,7 +176,7 @@ article img {
 /* Horizontal Scrolling Photo Gallery */
 
 #horizontal-scrolling-photo {
-    margin: 10px auto; /* Reduce the top and bottom margin */
+    margin: 20px auto;
     text-align: center;
     width: 80%;
 }
@@ -198,23 +188,19 @@ article img {
 
 .photo-gallery-container {
     position: relative;
-    align-items: center;
     display: flex;
-    padding: 30px 0; /* Adjust padding to create equal space on top and bottom */
-    margin-top: 0; /* Remove negative margin */
+    align-items: center;
     overflow: hidden; /* Hide horizontal scrollbar */
-    justify-content: center;
-    width:auto;
+    width: 100%; /* Ensure container takes full width */
+    padding: 20px 0; /* Add padding to create space for arrows */
 }
 
 .photo-gallery {
     display: flex;
-    width: auto;       /* You can adjust the percentage to control the width */
-    max-width: 100%; /* Optional: add a maximum width limit */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-behavior: smooth; /* Smooth scroll */
+    white-space: nowrap; /* Prevent line breaks */
     gap: 5px;
-    white-space: nowrap;
-    overflow-x: auto;
-    scroll-behavior: smooth;
     padding: 0 10px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -222,18 +208,18 @@ article img {
 }
 
 .photo-gallery::-webkit-scrollbar {
-    display: none;
+    display: none; /* Hide scrollbar */
 }
 
-.photo-gallery img{
-    width: 200px;
-    height: 150px;
+.photo-gallery img {
+    width: 200px; /* Adjust width as needed */
+    height: 150px; /* Adjust height as needed */
     object-fit: cover;
     margin-right: 10px; /* Space between images */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     border-radius: 10px; /* Rounded corners for images */
     flex-shrink: 0; /* Prevent images from shrinking */
-    display:block;
+    display: block;
 }
 
 .photo-gallery img:hover {
@@ -245,7 +231,7 @@ article img {
     top: 50%;
     width: 40px;
     height: 40px;
-    background-color: #EF4040;
+    background-color: rgba(201, 52, 15, 0.9);
     border: none;
     font-size: 20px;
     color: black;
@@ -262,16 +248,15 @@ article img {
 }
 
 .scroll-arrow.left {
-    left: -1px;
+    left: 10px; /* Adjust position as needed */
 }
 
 .scroll-arrow.right {
-    right: -1px;
+    right: 10px; /* Adjust position as needed */
 }
 
-/* Scroll arrow hover effect */
 .scroll-arrow:hover {
-    background-color: #4f06d7;
+    background-color: #3d0a9b;
     color: rgb(226, 21, 21);
 }
 
@@ -291,7 +276,7 @@ article img {
     font-size: 14px; /* Adjust the font size */
     line-height: 2; /* Adjust line spacing for better readability */
     font-family: 'Georgia', serif; /* Change font for paragraphs */
-    text-align: left; /* Align middle column content to the left */
+    text-align:left;
 }
 
 .middle-column p {
@@ -321,6 +306,7 @@ article img {
     font-size: 1.1em; /* Slightly larger text size */
     font-family: Arial, sans-serif; /* Consistent font */
     letter-spacing: 0.5px; /* Optional: Improve readability */
+    background-color: #ffffff;
 }
 
 .middle-column article header,
@@ -331,27 +317,31 @@ article img {
 }
 
 .right-column {
-    background-color: #c8c6c6; /* Set background color to gray */
     grid-area: right;
+    text-align: left;
     font-weight: bolder;
+    background-color: #e6f7ff;
     margin: 0px;                 /* Remove extra margin */
-    padding: 5px;
-    box-sizing: border-box; /* Include padding and border in width/height calculations */      text-align: right;  }    .right-column a {
+    padding:5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    box-sizing: border-box; /* Include padding and border in width/height calculations */
+}
+
+.right-column a {
     display: block; /* Each link on its own line */
     margin: 10px 0; /* Space between links */
     text-decoration: none; /* Remove underline (optional) */
     text-align: left;
-    font-size:20px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    color:#f75050;
+    font-weight: bolder;
+    font-size: medium;
 }
 .right-column a:hover {
     color: #1d1d1d; /* Optional: Hover effect color */
     background-color: #FF52A2;
 }
 
-
 footer {
+    background-color: #47C072; /* Ensure the background color fully covers the footer */
     color: white;                /* White text color */
     padding: 20px;             /* Padding at the top and bottom */
     text-align: center;          /* Center the text inside the footer */
@@ -359,11 +349,11 @@ footer {
     grid-area: footer;
 }
 
-#footer-header{
-    background-color: #47C072; /* Change to your desired background color */
+#footer-header {
+    background-color: #47C072; /* Ensure the background color fully covers the footer header */
     color: #d2066fd9;
-    margin: 0;
-    padding: 20px;
+    width: 100%; /* Ensure it covers the full width */
+    padding: 20px; /* Increase padding to make it longer */
     font-size: 20px;
     font-weight: bold;
     text-align: center;
@@ -442,10 +432,10 @@ article img {
 #contact-form h5 {
     font-weight: bolder;           /* Make the heading bold */
     font-size: 25px;           /* Slightly larger font size */
-    font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;          /* Center the heading */
     color: #1d1d1d;                 /* Dark color for text */
     margin-bottom: 10px;         /* Reduced space below heading */
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 #contact-form form {
@@ -487,38 +477,67 @@ article img {
     background-color: #A459D1;   /* Darker blue on hover */
 }
 
-
 /* Media Queries for Responsive Design */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 4vw;
+        margin:0;
+        padding:0 10px;
+    }
+
+    body > header {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 15px 0;
+    }
+
+    #logo {
+        width: 80%;
+        height: auto;
+        margin-bottom: 0 auto 10px;
+    }
+
+    #nav-ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    @media screen and (max-width: 600px) {    
     .container {
         grid-template-columns: 1fr; /* Single column layout */
         grid-template-areas: 
             "header"
             "gallery"
-            "left"
-            "main"
-            "right"
+            "left-column"
+            "middle-column"
+            "right-column"
             "message"
             "footer";
-        margin: 0 auto;
+            margin: 0 auto; }
     }
-
-    .left-column, .middle-column, .right-column {
-        margin: 0;
-        padding: 10px;
-        box-shadow: none; /* Remove shadow for smaller screens */
+    /* Tablets (Screens wider than 768px) */
+    @media screen and (max-width: 600px) {
+    .right-column {
+        margin: 0%; /* Occupy half the container width */
+         }
     }
 
     .middle-column {
         padding: 5px; /* Adjusted for smaller screens */
     }
 
+    .left-column {
+        margin:0%;
+        box-shadow: none; /* Remove shadow for smaller screens */
+    }
+
     iframe, img {
         max-width: 100%;
         height: auto;
     }
-
-    #nav-ul li {
+    
+    #nav-ul  li {
         margin: 10px 0;
         padding: 10px;
     }
@@ -529,6 +548,7 @@ article img {
         position: relative;
         box-shadow: none; /* Remove shadow for smaller screens */
     }
+
 
     .navbar ul {
         flex-direction: column;
@@ -548,8 +568,8 @@ article img {
     }
 
     footer {
-        text-align: center;
-        padding: 10px;
+        text-align:center;
+        padding:10px;
         font-size: 3vw;
     }
 
@@ -560,7 +580,7 @@ article img {
         padding: 0;
         margin: 10px;
     }
-
+    
     #footer-ul > li {
         margin: 5px;
         padding: 10px;

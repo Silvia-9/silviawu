@@ -3,22 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to Silvia Wu's blog. You can explore various topics about my latest posts. Stay tuned 💻 and leave your comments. 😊">
-    <meta name="google-site-verification" content="pKJjhWG-ylqnDbk5MSWaVLlC8YWbMzBGcr_06dSwpJs" />
-    <title>Silvia Wu's Blog</title>
+    <title>Silvia's Blog Site</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="contact_style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Animation for Header */
+        @keyframes slideRight {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        #logo {
+            animation: slideRight 2s ease-out;
+        }
+    </style>
     <!-- Include flatpickr CSS and JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/en.js"></script>
+
 </head>
 <body>
     <header id="main-header">
         <!-- the content of the header goes here -->
-        <h1 id="logo"> Silvia Wu's Dreamland </h1>
+        <h1 id="logo"> Silvia's Dreamland </h1>
         <nav aria-label="Primary navigation">
             <ul id="nav-ul">
                 <li><a href="index.html" class="navbutton">Home</a></li>
@@ -31,7 +45,7 @@
         <div class="photo-gallery-container">
             <button class="scroll-arrow left">&#10094;</button>
             <div class="photo-gallery">
-                <img src="cragside.jpg" alt="cragside">
+                <img src="Cragside.jpg" alt="Cragside">
                 <img src="datainnovation.jpg" alt="datainnovation">
                 <img src="3.jpg" alt="Image 3">
                 <img src="4.jpg" alt="Image 4">
@@ -76,7 +90,7 @@
                 </section>
             </div>
             <div class="middle-column">
-                <article id="happy-new-year">
+                <article id="Happy New Year">
                     <header>
                       <h2>Happy New Year</h2>
                       <h3> Posted: 3rd February 2025</h3>
@@ -85,7 +99,7 @@
                       <iframe width="640" height="301" src="https://www.loom.com/embed/01ef0caec36640ea8df552e8881a0bd9?sid=4a4ccfa1-d69f-40a1-baab-e393e1d4f710" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                     </a>
                   </article>
-                <article id="womenhack-ai">
+                <article id="womenhackai">
                     <header> 
                         <h2>WomenHack AI</h2>
                         <h3>Posted: 24th September 2024</h3>
@@ -172,7 +186,7 @@
                         "I carry <a href="">your heart</a> with me!"- <cite> E.E. Cummings, 1904-1962</cite>
                     </blockquote>
                     <footer>
-                        <img src="coffee.jpg" alt="heart" style="width:90px;height:90px;">
+                        <img src="coffee.jpg" alt="coffee" style="width:90px;height:90px;">
                         <a href="https://allpoetry.com/i-carry-your-heart-with-me" target="_blank">Reference</a>
                     </footer>
                 </article>
@@ -204,7 +218,6 @@
                         <a href="https://pandas.pydata.org/pandas-docs/stable/">Pandas</a>
                         <a href="https://coddy.tech/courses">Coddy Team</a>
                         <a href="https://microsoft.github.io/generative-ai-for-beginners/#/" >Generative AI</a>
-                        <a href="https://wellfound.com/l/2AW4bb">Wellfound</a>
                     </p>
                 </aside>
             </div>
@@ -257,7 +270,7 @@
         </form>
     </section>
      
-    <footer></footer>
+    <footer>
         <h2 id="footer-header"> &copy;2025 Silvia Wu. All rights reserved.</h2>
     </footer>
     <script>
