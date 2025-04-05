@@ -179,7 +179,6 @@ article img {
 }
 
 
-
 .content {
     width: 100%;
     margin: 20px auto;
@@ -296,21 +295,21 @@ article img {
 }
 
 .middle-column p {
-    font-family: 'Georgia', serif; /* Change font for paragraphs */
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Change font for paragraphs */
     font-size: 14px; /* Adjust paragraph font size */
     margin-bottom: 5px; /* Adds space below each paragraph */
 }
 
 .middle-column h2{
-    font-family: 'Georgia', serif; /* Change font for paragraphs */
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Change font for paragraphs */
     font-size: 24px; /* Adjust header font size */
     margin-bottom: 10px; /* Adds space below the headers */
     font-weight: bolder;
 }
 
 .middle-column h3{
-    font-family:'Georgia', serif; /* Change font for paragraphs */
-    font-size: 14px; /* Adjust header font size */
+    font-family:Verdana, Geneva, Tahoma, sans-serif; /* Change font for paragraphs */
+    font-size: 15px; /* Adjust header font size */
     font-weight: bold;
 }
 
@@ -320,7 +319,7 @@ article img {
     margin-left: 0; /* Optional: removes any left margin */
     padding-left: 0; /* Optional: removes any left padding */
     font-size: 1.1em; /* Slightly larger text size */
-    font-family: Arial, sans-serif; /* Consistent font */
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Consistent font */
     letter-spacing: 0.5px; /* Optional: Improve readability */
     background-color: #ebe8e8;
 }
@@ -339,7 +338,7 @@ article img {
     background-color: #e6f7ff;
     margin: 0px;                 /* Remove extra margin */
     padding:5px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     box-sizing: border-box; /* Include padding and border in width/height calculations */
 }
 
@@ -416,8 +415,11 @@ article img {
 
 .more-text {
     display: none;
-    color: #fafafa;
-    margin-top: 10px;
+    color: #000;
+    opacity:1;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
 }
 
 .read-more-btn {
@@ -451,7 +453,7 @@ article img {
     text-align: center;          /* Center the heading */
     color: #1d1d1d;                 /* Dark color for text */
     margin-bottom: 10px;         /* Reduced space below heading */
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #contact-form form {
