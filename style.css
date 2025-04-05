@@ -119,7 +119,7 @@ body {
 }
 
 body > header {
-    background-color: #00DFA2;
+    background-color: #0ae440;
     color: #f11e8b;
     font-family: "Dela Gothic One", sans-serif;
     display: flex;
@@ -168,9 +168,25 @@ article img {
     display:block; /* Ensure the images cover the area without distortion */
 }
 
+#article {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
+
+#article-text{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
+
+
+
 .content {
     width: 100%;
     margin: 20px auto;
+}
+
+#footer {
+    background-color: #f9f9f9;
 }
 
 /* Horizontal Scrolling Photo Gallery */
@@ -400,7 +416,7 @@ article img {
 
 .more-text {
     display: none;
-    color: #555;
+    color: #fafafa;
     margin-top: 10px;
 }
 
