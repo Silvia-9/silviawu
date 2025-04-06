@@ -6,19 +6,19 @@
   }
   
   body {
-    font-family: Arial, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     line-height: 1.6;
     background-color: #87e1d8;
     display:flex;
     flex-direction:column;
-    height:100vh;
+    min-height: 100vh;
   }
   
   /* Container */
   .container {
     width: 80%;
     margin: 0 auto;
-    flex-grow:1;
+
   }
   
   /* Header */
@@ -27,11 +27,10 @@
     color: #EE62B3;
     text-align: center;
     padding: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
   }
   
-  .header h1 {
-    font-size: 2.5rem;
-  }
   
   /* Main Content Section */
   .main-content {
@@ -81,7 +80,7 @@
 .left-column a {
   text-decoration: none;
   color: #333;
-  font-size: 1.1rem;
+  font-size: 20px;
   display: inline-block;
   transition: color 0.3s;
 }
@@ -117,8 +116,8 @@
   
   .left-column ul li {
     margin-bottom: 10px;
-    position: relative; /* Position for the pseudo-element */
     padding-left: 30px; /* Space for the star on the left */
+    position: relative; /* Position for the pseudo-element */
   }
   
   .left-column ul li a {
@@ -127,7 +126,7 @@
     font-weight:bold;
     font-size:22px;
     line-height: 1.5; /* Ensures consistent vertical alignment */
-    display: inline-block;
+    display: block;
   }
   
   .left-column ul li a:hover {
@@ -162,7 +161,7 @@
   
   .middle-column textarea {
     resize: vertical;
-    height: 500px;
+    height: 300px;
   }
   
   .middle-column button {
@@ -184,6 +183,8 @@
   .right-column h2 {
     color: #C90075;
     line-height: 1.5;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:25px;
   }
   
   .right-column ul {
@@ -191,26 +192,26 @@
   }
   
   .right-column ul li {
-    margin-bottom: 10px;
-    line-height: 1.5;
+    margin-bottom: 5px;
+    line-height: 2;
   }
 
   /* Styling the Subscribe Form */
-.right-column form {
+  .right-column form {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
-}
+  }
 
-.right-column input {
+  .right-column input {
     padding: 10px;
-    font-size: 16px;
+    font-size: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-bottom: 10px;
-}
+  }
 
-.right-column button {
+  .right-column button {
     padding: 10px;
     font-size: 16px;
     background-color: #007BFF;
@@ -218,11 +219,11 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
-}
+  }
 
-.right-column button:hover {
+  .right-column button:hover {
     background-color: #0056b3;
-}
+  }
   
   /* Footer */
   .footer {
@@ -237,62 +238,63 @@
     color: #333;
     font-weight: bold;
   }
-      /* Basic styles for the form */
-      #contactForm {
-        font-family: Arial, sans-serif;  /* Font for the entire form */
-        font-size: 16px;  /* Set a uniform font size */
-        max-width: 800px;  /* Optional, for form container */
-        margin: 0 auto;  /* Center the form */
-        padding: 5px 15px;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        margin-top:2px;
-        margin-bottom: 2px;
-      }
+  /* Basic styles for the form */
+  #contactForm {
+    font-family: Arial, sans-serif;  /* Font for the entire form */
+    font-size: 16px;  /* Set a uniform font size */
+    max-width: 800px;  /* Optional, for form container */
+    margin: 0 auto;  /* Center the form */
+    padding: 5px 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top:2px;
+    margin-bottom: 2px;
+  }
   
-      label {
-        display: block;
-        margin-top: 5px;
-        font-weight: bold;
-      }
+  label {
+    display: block;
+    margin-top: 5px;
+    font-weight: bold;
+  }
 
-      input, textarea {
-        width: 100%;
-        padding: 10px;
-        margin-top: 5px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-family: Arial, sans-serif; /* Ensure font is consistent */
-        font-size: 16px; /* Ensure font size is consistent */
-      }
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif; /* Ensure font is consistent */
+    font-size: 16px; /* Ensure font size is consistent */
+  }
   
-      button {
-        width: 100%;
-        padding: 10px;
-        margin-top: 10px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        cursor: pointer;
-        margin-bottom: 20px;
-      }
+  button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
   
-      button:hover {
-        background-color: #45a049; /* Change color on hover */
-      }
+  button:hover {
+    background-color: #45a049; /* Change color on hover */
+  }
   
   /* Responsive Design */
   @media (max-width: 768px) {
-    .flex-container {
-      flex-direction: column; /* Stack the columns vertically on smaller screens */
-    }
+  .flex-container {
+    flex-direction: column; /* Stack the columns vertically on smaller screens */
+    gap:20px;
+  }
   
-    .left-column,
-    .middle-column,
-    .right-column {
-      flex: 1 1 100%; /* Ensure full width for each section */
+  .left-column,
+  .middle-column,
+  .right-column {
+  flex: 1 1 100%; /* Ensure full width for each section */
     }
   }
   
