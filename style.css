@@ -1,6 +1,7 @@
 html {
     box-sizing: border-box;
     padding:0;
+    margin: 0;
 }
 
 body {
@@ -8,15 +9,13 @@ body {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 15px;
     margin: 0; /* Remove margin */
-    box-sizing: border-box;
     width: 100%; /* Ensure body takes full width */
 }
 
 #logo {
     margin: 0px;
     padding: 8px;
-    font-family: "Dela Gothic One", sans-serif;
-    width: 56%;
+    font-family: Dela Gothic One,sans-serif;
     border-radius: 10%;
     width: 100%;
     max-width: 200%;
@@ -44,35 +43,25 @@ body {
     text-align: left;
 }
 
-.container {
+.row {
     display: grid;
-    grid-template-columns: 2fr 3fr 2fr; /* Adjust this for your left, main, and right columns */
-    grid-template-areas: 
-        "header header header"
-        "left  main  right"
-        "gallery gallery gallery"
-        "message message message"
-        "footer footer footer";
-    grid-gap: 10px; /* Space between grid items */
-    margin: 0 auto; /* Center the container */
-    width: 100%; /* Ensure container takes full width */
+    grid-template-columns: 1fr 2fr 1fr; /* Unequal 3-column layout */
+    gap: 20px; /* Space between columns */
+    align-items: start; /* Align items at the start of the row */
 }
 
-/* Navbar Styling */
-.left-column {
-    background-color: #f7f5f5;
+.left-column-side {
+    grid-column: 1; /* Left column */
+    background-color: #ffffff;
     box-shadow: 2px 0 2px rgba(0.2, 0.2, 0.2, 0.2); /* Optional: Add shadow for navbar */
-    align-items: flex-start;      /* Align items to the left */
-    margin: 0;
-    padding: 5px;
-    grid-area:left;
     border-radius: 10px;
-    text-align: left;    
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 12px;
+    overflow: hidden;
+    width:25%;
 }
 
-.left-column #nav-ul {
+.left-column-side #nav-ul {
     list-style: none; /* Remove default list styling */
     padding: 0;
     margin: 0;
@@ -81,11 +70,11 @@ body {
     font-size: 15px;
 }
 
-.left-column #nav-ul li {
+.left-column-side #nav-ul li {
     margin: 5px 0; /* Add vertical spacing between navbar items */
 }
 
-.left-column #nav-ul a {
+.left-column-side #nav-ul a {
     display: block;
     text-decoration: none;
     color: #FF3562;
@@ -97,14 +86,14 @@ body {
     width: 100%;
 }
 
-.left-column #nav-ul a:hover {
+.left-column-side #nav-ul a:hover {
     background-color: #f5af45;
     color: rgb(13,12,12);
     padding-left: 5px;
 }
 
 /* Adjust font family for Years, Months, and Categories sections */
-.left-column h2 {
+.left-column-side h2 {
     font-family: 'Georgia', serif; /* Change font family */
     font-size: 25px; /* Adjust font size */
     font-weight: bold; /* Make the font bold */
@@ -112,7 +101,7 @@ body {
     color: rgb(32, 31, 33);
 }
 
-.left-column ul li a {
+.left-column-side ul li a {
     color: #ee0f47 !important; /* Change font color for links under Years, Months, Categories */
     font-size: 20px !important; /* Adjust font size to be smaller */
     font-family: Georgia, 'Times New Roman', Times, serif; /* Ensure consistent font family */
@@ -148,9 +137,9 @@ body > header {
 }
 
 body > main {
-    display:flex;
+    display:inline-block;
     flex-direction: column;
-    width: 100%; /* Ensure main takes full width */
+    width: 50%; /* Ensure main takes full width */
     margin: 30px auto;
     align-items: center;
 }
@@ -276,45 +265,40 @@ article img {
     color: rgb(226, 21, 21);
 }
 
-.left-column,.middle-column,.right-column {
-    padding: 10px;
-    box-sizing: border-box;
-    flex: 1;
-    margin: 0 10px;
-}
 
 /* Middle column */
-.middle-column {
-    grid-area: main; /* Place middle content under the blog header */
+.column-middle {
+    grid-column: 2; /* Middle column */
     padding: 10px;
     background-color: #ffffff;
     margin: 0;                /* Remove extra margin */
     line-height: 2; /* Adjust line spacing for better readability */
     font-family: 'Georgia', serif; /* Change font for paragraphs */
     text-align:left;
+    width:50%;
 }
 
-.middle-column p {
+.column-middle p {
     font-family: Verdana, Geneva, Tahoma, sans-serif; /* Change font for paragraphs */
     font-size: 15px; /* Adjust paragraph font size */
     margin-bottom: 5px; /* Adds space below each paragraph */
 }
 
-.middle-column h2{
+.column-middle h2{
     font-family: Verdana, Geneva, Tahoma, sans-serif; /* Change font for paragraphs */
     font-size: 28px; /* Adjust header font size */
     margin-bottom: 10px; /* Adds space below the headers */
     font-weight: bolder;
 }
 
-.middle-column h3{
+.column-middle h3{
     font-family:Verdana, Geneva, Tahoma, sans-serif; /* Change font for paragraphs */
     font-size: 18px; /* Adjust header font size */
     font-weight: bold;
 }
 
 
-.middle-column footer {
+.column-middle footer {
     text-align: left; /* Aligns the text to the left */
     margin-left: 0; /* Optional: removes any left margin */
     padding-left: 0; /* Optional: removes any left padding */
@@ -324,24 +308,19 @@ article img {
     background-color: #ebe8e8;
 }
 
-.middle-column article header,
-.middle-column article p,
-.middle-column article figure,
-.middle-column article footer {
-    text-align: left;
-}
 
-.right-column {
-    grid-area: right;
+.right-column-side {
+    grid-column: 3; /* Right column */
     text-align: left;
-    background-color: #e6f7ff;
+    background-color: #fafafa;
     margin: 0px;                 /* Remove extra margin */
     padding:5px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    box-sizing: border-box; /* Include padding and border in width/height calculations */
+    width:25%;
+
 }
 
-.right-column a {
+.right-column-side a {
     display: block; /* Each link on its own line */
     margin: 10px 0; /* Space between links */
     text-decoration: none; /* Remove underline (optional) */
@@ -349,10 +328,20 @@ article img {
     font-size: 20px;
     font-weight: bold;
 }
-.right-column a:hover {
+.right-column-side a:hover {
     color: #1d1d1d; /* Optional: Hover effect color */
     background-color: #FF52A2;
 }
+
+
+.left-column-side,
+.column-middle,
+.right-column-side {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
 
 footer {
     background-color: #47C072; /* Ensure the background color fully covers the footer */
@@ -418,7 +407,6 @@ article img {
     opacity:1;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 15px;
-}
 }
 
 .read-more-btn {
@@ -509,36 +497,20 @@ article img {
         padding: 15px 0;
     }
 
-    #logo {
-        width: 80%;
-        height: auto;
-        margin-bottom: 0 auto 10px;
-    }
-
     #nav-ul {
         flex-direction: column;
         align-items: center;
         gap: 10px;
     }
-    @media screen and (max-width: 600px) {    
-    .container {
-        grid-template-columns: 1fr; /* Single column layout */
-        grid-template-areas: 
-            "header"
-            "gallery"
-            "left-column"
-            "middle-column"
-            "right-column"
-            "message"
-            "footer";
-            margin: 0 auto; }
+   
+    .column.middle, left-column-side, .right-column-side {
+    width:100%;
     }
-    /* Tablets (Screens wider than 768px) */
-    @media screen and (max-width: 600px) {
-    .right-column {
-        margin: 0%; /* Occupy half the container width */
-         }
+
+    .right-column{
+        margin:0;
     }
+    
 
     .middle-column {
         padding: 5px; /* Adjusted for smaller screens */
@@ -570,6 +542,7 @@ article img {
     .navbar ul {
         flex-direction: column;
         align-items: center; /* Stack navbar items horizontally on small screens */
+        gap:10px;
     }
 
     .navbar ul li {
@@ -601,5 +574,18 @@ article img {
     #footer-ul > li {
         margin: 5px;
         padding: 10px;
+    }
+}
+
+/* Responsive layout for smaller screens */
+@media screen and (max-width: 768px) {
+    .row {
+        grid-template-columns: 1fr; /* Switch to 1-column layout */
+    }
+
+    .left-column-side,
+    .column-middle,
+    .right-column-side {
+        grid-column: 1; /* All columns stack vertically */
     }
 }

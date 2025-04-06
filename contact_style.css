@@ -16,9 +16,10 @@
   
   /* Container */
   .container {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
-
+    display: flex;
+    flex-direction: column;
   }
   
   /* Header */
@@ -45,7 +46,7 @@
   }
   
 /* Left Column: Navigation - Shrinkable but no growth */
-.left-column {
+  .left-column {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
@@ -55,39 +56,41 @@
   }
 
 /* Add the star before each item */
-.left-column ul li::before {
-  font-size: 1.4rem;
-  position: absolute;
-  left: 0;
-  top: 0;
-  content: '\2605';  /* Adds a star icon after each link */
-  margin-left: 10px;  /* Adds space between text and star */
-}
+  .left-column ul li::before {
+    font-size: 1.4rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '\2605';  /* Adds a star icon after each link */
+    margin-left: 10px;  /* Adds space between text and star */
+  }
 
-.left-column ul li:nth-child(1)::before {
-  color: #FFAB0F; /* Gold for Home */
-}
+  .left-column ul li:nth-child(1)::before {
+    color: #FFAB0F; /* Gold for Home */
+  }
 
-.left-column ul li:nth-child(2)::before {
-  color: #77DD77; /* Green for Profile */
-}
+  .left-column ul li:nth-child(2)::before {
+    color: #77DD77; /* Green for Profile */
+  }
 
-.left-column ul li:nth-child(3)::before {
-  color: #779ECB; /* Blue for Contact */
-}
+  .left-column ul li:nth-child(3)::before {
+    color: #779ECB; /* Blue for Contact */
+  }
 
   /* Style for anchor tags with stars */
-.left-column a {
-  text-decoration: none;
-  color: #333;
-  font-size: 20px;
-  display: inline-block;
-  transition: color 0.3s;
-}
+  .left-column a {
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    display: block;
+    margin:15px;
+    padding:12px;
+    transition: color 0.3s;
+  }
 
-.left-column a:hover {
-  color: #FF3562;
-}
+  .left-column a:hover {
+    color: #FF3562;
+  }
  
   /* Middle Column: Contact Form - Takes equal space */
   .middle-column {
