@@ -6,7 +6,7 @@ html {
 body {
     background-color: lightyellow;
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 1.5vw;
+    font-size: 15px;
     margin: 0; /* Remove margin */
     box-sizing: border-box;
     width: 100%; /* Ensure body takes full width */
@@ -106,22 +106,23 @@ body {
 /* Adjust font family for Years, Months, and Categories sections */
 .left-column h2 {
     font-family: 'Georgia', serif; /* Change font family */
-    font-size: 20px; /* Adjust font size */
+    font-size: 25px; /* Adjust font size */
     font-weight: bold; /* Make the font bold */
     margin-bottom: 5px; /* Add space below the headers */
     color: rgb(32, 31, 33);
 }
 
 .left-column ul li a {
-    color: #FF70AB !important; /* Change font color for links under Years, Months, Categories */
-    font-size: 15px !important; /* Adjust font size to be smaller */
+    color: #ee0f47 !important; /* Change font color for links under Years, Months, Categories */
+    font-size: 20px !important; /* Adjust font size to be smaller */
     font-family: Georgia, 'Times New Roman', Times, serif; /* Ensure consistent font family */
 }
 
 body > header {
     background-color: #0ae440;
     color: #f11e8b;
-    font-family: "Dela Gothic One", sans-serif;
+    font-size: 35px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     height: auto;
     width: 100%;
@@ -288,7 +289,6 @@ article img {
     padding: 10px;
     background-color: #ffffff;
     margin: 0;                /* Remove extra margin */
-    font-size: 14px; /* Adjust the font size */
     line-height: 2; /* Adjust line spacing for better readability */
     font-family: 'Georgia', serif; /* Change font for paragraphs */
     text-align:left;
@@ -296,20 +296,20 @@ article img {
 
 .middle-column p {
     font-family: Verdana, Geneva, Tahoma, sans-serif; /* Change font for paragraphs */
-    font-size: 14px; /* Adjust paragraph font size */
+    font-size: 15px; /* Adjust paragraph font size */
     margin-bottom: 5px; /* Adds space below each paragraph */
 }
 
 .middle-column h2{
     font-family: Verdana, Geneva, Tahoma, sans-serif; /* Change font for paragraphs */
-    font-size: 24px; /* Adjust header font size */
+    font-size: 28px; /* Adjust header font size */
     margin-bottom: 10px; /* Adds space below the headers */
     font-weight: bolder;
 }
 
 .middle-column h3{
     font-family:Verdana, Geneva, Tahoma, sans-serif; /* Change font for paragraphs */
-    font-size: 15px; /* Adjust header font size */
+    font-size: 18px; /* Adjust header font size */
     font-weight: bold;
 }
 
@@ -334,7 +334,6 @@ article img {
 .right-column {
     grid-area: right;
     text-align: left;
-    font-weight: bolder;
     background-color: #e6f7ff;
     margin: 0px;                 /* Remove extra margin */
     padding:5px;
@@ -347,8 +346,8 @@ article img {
     margin: 10px 0; /* Space between links */
     text-decoration: none; /* Remove underline (optional) */
     text-align: left;
-    font-weight: bolder;
-    font-size: medium;
+    font-size: 20px;
+    font-weight: bold;
 }
 .right-column a:hover {
     color: #1d1d1d; /* Optional: Hover effect color */

@@ -4,7 +4,7 @@ body {
 header {
     background-color: #20DAA6;
     color:#E3179E;
-    font-size: 25px;
+    font-size: 35px;
     font-family: "Anton", sans-serif;
     text-align: center;
     margin-top: -10px;
@@ -13,46 +13,53 @@ header {
 }
 
 #menu {
-    padding:10px;
-    margin: 0px;
-    line-height: 5;
+    padding: 10px;
     font-size: 20px;
-    background-color: #ffb2df;
     grid-area: menu;
-    margin-top: -2px;
+    text-align: left;
+    background-color: antiquewhite;
+    width: 150%;
+  
 }
 
 nav {
     display: flex; /* Use flexbox for vertical layout */
     flex-direction: column; /* Stack the navigation items vertically */
-    align-items: center; /* Center the items horizontally */
-    margin-top: 10px; /* Optional: Adds some space above the navigation */
+    align-items: left; /* Center the items horizontally */
+    margin: 10px; /* Optional: Adds some space above the navigation */
+    padding: 10px;
+    margin-top: -15px;
 }
 
 nav > a {
     color: #6a06d3;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 30px;
     font-family: 'Georgia', 'Times New Roman', Times, serif;
     text-decoration: none;
     display: flex; /* Align star and text horizontally within each item */
     align-items: center; /* Vertically align the text and star */
-    padding: 10px 10px;
-    margin: 5px; /* Vertical spacing between items */
+    margin-bottom: 50px; 
+    height: 50px;
     transition: color 0.3s, transform 0.3s;
 }
 
+nav > a::before {
+    content: '\2605'; /* Unicode star character (★) */
+    margin-right: 10px; /* Space between the star and the text */
+    font-size: 1.5rem; /* Adjust the size of the star */
+    color: #E0432F; /* Set the color of the star */
+    text-align: left;
+}
 
 nav > a:hover {
-    color: white; /* Change text color on hover */
+    color: rgb(199, 21, 21); /* Change text color on hover */
     transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
 nav > a:hover::before {
-    color: yellow; /* Change star color on hover */
+    color: rgb(221, 139, 15); /* Change star color on hover */
 }
-
-
 
 
 /* Container to hold header and audio */
@@ -86,7 +93,7 @@ nav > a:hover::before {
     font-size: 35px;
     grid-area: main;
     width: 100%;
-    background-color: rgb(243, 159, 184);
+
 }
 
 p {
