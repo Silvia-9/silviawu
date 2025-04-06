@@ -42,12 +42,6 @@ nav > a {
     transition: color 0.3s, transform 0.3s;
 }
 
-nav > a::before {
-    content: '\2605'; /* Unicode star character (★) */
-    margin-right: 10px; /* Space between the star and the text */
-    font-size: 1.5rem; /* Adjust the size of the star */
-    color: #E0432F; /* Set the color of the star */
-}
 
 nav > a:hover {
     color: white; /* Change text color on hover */
@@ -92,6 +86,7 @@ nav > a:hover::before {
     font-size: 35px;
     grid-area: main;
     width: 100%;
+    background-color: rgb(243, 159, 184);
 }
 
 p {
