@@ -9,4 +9,5 @@ function toggleContent() {
       moreText.style.display = "none";
       btn.textContent = "Read more";
     }
-  }
+}
+

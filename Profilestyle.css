@@ -18,7 +18,8 @@ header {
     grid-area: menu;
     text-align: left;
     background-color: antiquewhite;
-    width: 150%;
+    width: 180%;
+    padding-top: 80px;
   
 }
 
@@ -68,17 +69,17 @@ nav > a:hover::before {
     justify-content: space-between;  /* Aligns the header and audio control on opposite ends */
     align-items:center; /* Vertically align both elements */
     width: 95%;
-    margin-bottom: 20px; /* Adds space below the header */
+    margin-bottom: 10px; /* Adds space below the header */
   }
   
   /* Styling the header text */
   #main-content h1 {
-    margin: 0;
+    margin: 10px;
     font-size: 2rem;
     font-weight: bold;
     color: #333;
-    text-align: center;
-    width: 95%;
+    text-align:center;
+    width: 100%;
   }
   
   /* Styling the audio control */
@@ -86,7 +87,7 @@ nav > a:hover::before {
     width: 200px; /* Set a fixed width for the audio control */
   }
 
-#main-content {
+   #main-content { 
     padding: 32px;
     text-align:left;
     line-height: 2;
@@ -94,22 +95,22 @@ nav > a:hover::before {
     grid-area: main;
     width: 100%;
 
-}
+  }
 
-p {
+  p {
   line-height: 2; /* Adjust the value for more or less space between lines */
   font-size: 20px;
   text-align: left;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family:Verdana, Geneva, Tahoma, sans-serif
   width: 100%; /* Ensures it takes full width */
   max-width: 750px; /* Optional: Sets a max width to prevent a very long line */
   word-wrap: break-word; /* Breaks long words if they don't fit the container */
   overflow-wrap: break-word; /* Ensures words break properly within container */
   margin: 0 auto; /* Centers the paragraph */
-}
+  }
 
 /* Container for the gallery */
-.gallery {
+  .gallery {
     display: flex;
     flex-direction: column; /* Align images vertically */
     justify-content: flex-start; /* Align images at the top */

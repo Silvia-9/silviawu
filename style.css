@@ -1,6 +1,5 @@
 html {
     box-sizing: border-box;
-    padding:0;
     margin: 0;
 }
 
@@ -12,100 +11,61 @@ body {
     width: 100%; /* Ensure body takes full width */
 }
 
+#main-header {
+    display: flex; /* Arrange items horizontally */
+    justify-content: space-between; /* Space out the logo and image */
+    align-items: center; /* Vertically align items */
+    background-color: #0ae440;
+    color: #f11e8b;
+    font-size: 35px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 20px;
+}
+
 #logo {
-    margin: 0px;
+    margin: 0;
     padding: 8px;
-    font-family: Dela Gothic One,sans-serif;
-    border-radius: 10%;
-    width: 100%;
-    max-width: 200%;
-    height: auto;
+    font-family: 'Dela Gothic One', sans-serif;
     text-shadow: 
-    2px 2px 0px white, /* Bottom-right shadow */
-    -2px 2px 0px white, /* Bottom-left shadow */
-    2px -2px 0px white, /* Top-right shadow */
-    -2px -2px 0px white; /* Top-left shadow */
+        2px 2px 0px white, 
+        -2px 2px 0px white, 
+        2px -2px 0px white, 
+        -2px -2px 0px white;
     animation: slideRight 2s ease-out;
 }
 
-#nav-ul {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    justify-content: space-between;
-    list-style: none;
+#header-image {
+    width: 250px; /* Increase the width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image scales properly */
+    margin-left: 20px; /* Add spacing between the logo and the image */
+    background-color: transparent; /* Ensure no background color */
+}
 
+#nav-ul {
+    display: flex; /* Arrange items horizontally */
+    justify-content: space-between; /* Spread the navigation items evenly */
+    align-items:left; /* Vertically align the items */
+    padding: 10px 20px; /* Add padding around the navigation bar */
+    margin: 0 auto; /* Center the navigation bar */
+    list-style: none; /* Remove bullet points */
+    gap: 20px; /* Adjust spacing between buttons */
+    width: 60%; /* Make the navigation bar wider */
+    border-radius: 2px; /* Optional: Add rounded corners */
 }
 
 #nav-ul > li {
-    padding: 8px 15px;
-    margin: 0;
-    text-align: left;
+    padding: 10px 20px; /* Add padding to each item */
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Center-align text */
 }
 
 .row {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr; /* Unequal 3-column layout */
+    display: flex;
     gap: 20px; /* Space between columns */
-    align-items: start; /* Align items at the start of the row */
+    justify-content: space-around;
 }
 
-.left-column-side {
-    grid-column: 1; /* Left column */
-    background-color: #ffffff;
-    box-shadow: 2px 0 2px rgba(0.2, 0.2, 0.2, 0.2); /* Optional: Add shadow for navbar */
-    border-radius: 10px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 12px;
-    overflow: hidden;
-    width:25%;
-}
-
-.left-column-side #nav-ul {
-    list-style: none; /* Remove default list styling */
-    padding: 0;
-    margin: 0;
-    display: block;
-    gap: 5px;
-    font-size: 15px;
-}
-
-.left-column-side #nav-ul li {
-    margin: 5px 0; /* Add vertical spacing between navbar items */
-}
-
-.left-column-side #nav-ul a {
-    display: block;
-    text-decoration: none;
-    color: #FF3562;
-    font-weight: bold;
-    padding: 10px;
-    font-size: 18px;
-    text-align: center;
-    transition: background-color 0.3s, color 0.3s;
-    width: 100%;
-}
-
-.left-column-side #nav-ul a:hover {
-    background-color: #f5af45;
-    color: rgb(13,12,12);
-    padding-left: 5px;
-}
-
-/* Adjust font family for Years, Months, and Categories sections */
-.left-column-side h2 {
-    font-family: 'Georgia', serif; /* Change font family */
-    font-size: 25px; /* Adjust font size */
-    font-weight: bold; /* Make the font bold */
-    margin-bottom: 5px; /* Add space below the headers */
-    color: rgb(32, 31, 33);
-}
-
-.left-column-side ul li a {
-    color: #ee0f47 !important; /* Change font color for links under Years, Months, Categories */
-    font-size: 20px !important; /* Adjust font size to be smaller */
-    font-family: Georgia, 'Times New Roman', Times, serif; /* Ensure consistent font family */
-}
 
 body > header {
     background-color: #0ae440;
@@ -122,19 +82,36 @@ body > header {
 }
 
 .navbutton {
-    color: #5170D7;
-    text-decoration: none;
-    background-color: #FFAB0F;
-    font-family: "Arial", sans-serif;
+    text-decoration: none; /* Remove underline */
+    color: #FF5765; /* Text color */
+    background-color:#FFDB15;/* Button background color */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    font-size: 30px;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.5s ease;
-    margin: 0 5px;
+    font-size: 24px; /* Increase font size */
+    padding: 30px 90px; /* Increase padding to make buttons longer */
+    margin: 10px;
+    border: none; /* Remove border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    width: 200px; /* Set a fixed width for longer buttons */
+    text-align: center; /* Center-align text inside the button */
 }
+
+.navbutton:hover {
+    background-color:#05E0E9; /* Change background color on hover */
+}
+
+/* Style for the secondary navigation bar */
+#secondary-nav {
+    display: flex; /* Arrange buttons horizontally */
+    justify-content: space-between; /* Center the buttons */
+    gap: 10px; /* Add spacing between buttons */
+    margin: 10px 0; /* Add vertical spacing around the nav */
+    padding: 10px 0; /* Add padding inside the nav */
+
+}
+
 
 body > main {
     display:inline-block;
@@ -344,7 +321,7 @@ article img {
 
 
 footer {
-    background-color: #47C072; /* Ensure the background color fully covers the footer */
+    background-color: #0ae440; /* Ensure the background color fully covers the footer */
     color: white;                /* White text color */
     padding: 20px;             /* Padding at the top and bottom */
     text-align: center;          /* Center the text inside the footer */
@@ -353,13 +330,13 @@ footer {
 }
 
 #footer-header {
-    background-color: #47C072; /* Ensure the background color fully covers the footer header */
     color: #d2066fd9;
     width: 100%; /* Ensure it covers the full width */
-    padding: 20px; /* Increase padding to make it longer */
+    padding: 10px; /* Increase padding to make it longer */
     font-size: 20px;
-    font-weight: bold;
+    font-weight: bolder;
     text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 #footer-ul {
@@ -468,7 +445,7 @@ article img {
 }
 
 #contact-form input[type="submit"] {
-    background-color: #2CD3E1;   /* Blue background for submit button */
+    background-color: #211C84;   /* Blue background for submit button */
     color: white;                /* White text color */
     padding: 8px 15px;           /* Reduced padding inside button */
     font-size: 1rem;             /* Slightly smaller font size */

@@ -42,17 +42,17 @@
   .flex-container {
     display: flex;
     justify-content: space-between;
-    gap: 50px;
+    gap: 20px; /* Space between columns */
   }
   
-/* Left Column: Navigation - Shrinkable but no growth */
+/* Left Column: Navigation */
   .left-column {
     background-color: #fff;
-    padding: 20px;
+    padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    flex: 0 1 300px; /* Shrinkable based on content */
-    min-width: 300px; /* Minimum width for left column */
+    flex: 1; /* Slightly increase the width of the left column */
+    min-width: 100px; /* Increase the minimum width */
   }
 
 /* Add the star before each item */
@@ -62,7 +62,7 @@
     left: 0;
     top: 0;
     content: '\2605';  /* Adds a star icon after each link */
-    margin-left: 10px;  /* Adds space between text and star */
+    margin-left: 5px;  /* Adds space between text and star */
   }
 
   .left-column ul li:nth-child(1)::before {
@@ -83,8 +83,8 @@
     color: #333;
     font-size: 20px;
     display: block;
-    margin:15px;
-    padding:12px;
+    margin:10px;
+    padding:10px;
     transition: color 0.3s;
   }
 
@@ -92,23 +92,24 @@
     color: #FF3562;
   }
  
-  /* Middle Column: Contact Form - Takes equal space */
+  /* Middle Column: Contact Form */
   .middle-column {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    flex: 2; /* Takes up remaining space equally */
+    flex: 2; /* Make the middle column wider */
+    min-width: 400px; /* Increase the minimum width */
   }
   
-  /* Right Column: Other Information - Takes equal space */
+  /* Right Column: Other Information */
   .right-column {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    flex:0 1 300px; 
-    min-width:300px;
+    flex: 1; /* Keep the right column narrower */
+    min-width: 100px; /* Maintain the minimum width */
   }
   
   /* Left Column: Navigation */
@@ -119,13 +120,13 @@
   
   .left-column ul li {
     margin-bottom: 10px;
-    padding-left: 30px; /* Space for the star on the left */
+    padding-left: 20px; /* Space for the star on the left */
     position: relative; /* Position for the pseudo-element */
   }
   
   .left-column ul li a {
     text-decoration: none;
-    color: #9100AA;
+    color: #5F762E;
     font-weight:bold;
     font-size:22px;
     line-height: 1.5; /* Ensures consistent vertical alignment */
@@ -138,27 +139,27 @@
   
   /* Middle Column: Contact Form */
   .middle-column h2 {
-    color: #81C309;
+    color:#F058AE;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   
   .middle-column form {
     display: flex;
     flex-direction: column;
     gap:5px;
-    height:500px;
   }
   
   .middle-column label {
     margin: 10px 0 2px;
-    font-weight: bold;
+    font-weight: bolder;
   }
   
   .middle-column input,
   .middle-column textarea {
     padding: 10px;
-    font-size: 16px;
+    font-size: 18px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
     margin-bottom: 15px;
   }
   
@@ -300,4 +301,3 @@
   flex: 1 1 100%; /* Ensure full width for each section */
     }
   }
-  
