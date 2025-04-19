@@ -1,4 +1,4 @@
-# 💻 Silvia Wu's Blogging Corner 
+# 💻 Silvia Wu's Blogging 👉
 
 Hello everyone! Welcome to my blog. 
 I’m grateful to have you here!  🤓 
@@ -11,5 +11,6 @@ Whether you’re looking to learn, find inspiration, or simply explore, you’ll
 - Learning materials for Python, Generative AI, and data
 - My newest articles and creative projects
 
-Thank you for stopping by! Don’t hesitate to reach out via email or connect with me! 😊
+Thank you for stopping by! 
+Don’t hesitate to reach out via email or connect with me! 😊
 
