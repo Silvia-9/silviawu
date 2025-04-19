@@ -1,4 +1,4 @@
-# 💻 Silvia Wu's Blogging 👉
+#  👉Silvia Wu's Blogging 💻  
 
 Hello everyone! Welcome to my blog. 
 I’m grateful to have you here!  🤓 
