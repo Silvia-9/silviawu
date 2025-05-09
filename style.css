@@ -43,15 +43,11 @@ body {
 }
 
 #nav-ul {
-    display: flex; /* Arrange items horizontally */
-    justify-content: space-between; /* Spread the navigation items evenly */
-    align-items:left; /* Vertically align the items */
-    padding: 10px 20px; /* Add padding around the navigation bar */
-    margin: 0 auto; /* Center the navigation bar */
+    display: flex; /* Arrange navigation items horizontally */
+    gap: 20px; /* Add spacing between navigation items */
     list-style: none; /* Remove bullet points */
-    gap: 20px; /* Adjust spacing between buttons */
-    width: 60%; /* Make the navigation bar wider */
-    border-radius: 2px; /* Optional: Add rounded corners */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
 }
 
 #nav-ul > li {
@@ -84,32 +80,26 @@ body > header {
 .navbutton {
     text-decoration: none; /* Remove underline */
     color: #FF5765; /* Text color */
-    background-color:#FFDB15;/* Button background color */
+    background-color: #FFDB15; /* Button background color */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    font-size: 24px; /* Increase font size */
-    padding: 30px; /* Increase padding to make buttons longer */
-    margin: 50px;
-    border: none; /* Remove border */
-    border-radius: 40px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 25px; /* Adjust font size */
+    padding: 10px 20px; /* Add padding inside buttons */
+    border-radius: 10px; /* Add rounded corners */
     transition: background-color 0.3s ease; /* Smooth hover effect */
-    width: 30px; /* Set a fixed width for longer buttons */
-    text-align: center; /* Center-align text inside the button */
 }
 
 .navbutton:hover {
-    background-color:#05E0E9; /* Change background color on hover */
+    background-color: #f5af45; /* Change background color on hover */
 }
 
 /* Style for the secondary navigation bar */
 #secondary-nav {
-    display: flex; /* Arrange buttons horizontally */
-    justify-content: space-between; /* Center the buttons */
-    gap: 10px; /* Add spacing between buttons */
-    margin: 10px 0; /* Add vertical spacing around the nav */
-    padding: 10px 0; /* Add padding inside the nav */
-
+    display: flex; /* Arrange items horizontally */
+    justify-content: center; /* Center the navigation bar */
+    align-items: center; /* Vertically align items */
+    margin: 0 auto; /* Center the navigation bar within its container */
+    padding: 10px 0; /* Add vertical padding */
 }
 
 
@@ -287,27 +277,30 @@ article img {
 
 
 .right-column-side {
-    grid-column: 3; /* Right column */
+    grid-column: 3; /* Place it in the right column */
     text-align: left;
     background-color: #fafafa;
-    margin: 0px;                 /* Remove extra margin */
-    padding:5px;
+    margin: 0px; /* Remove extra margin */
+    padding: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    width:25%;
-
+    width: 25%; /* Adjust width as needed */
+    border: 1px solid #ccc; /* Optional: Add a border */
+    border-radius: 8px; /* Optional: Add rounded corners */
 }
 
 .right-column-side a {
     display: block; /* Each link on its own line */
     margin: 10px 0; /* Space between links */
-    text-decoration: none; /* Remove underline (optional) */
+    text-decoration: none; /* Remove underline */
     text-align: left;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
+    color: #5170D7; /* Link color */
 }
+
 .right-column-side a:hover {
     color: #1d1d1d; /* Optional: Hover effect color */
-    background-color: #FF52A2;
+    background-color: #FF52A2; /* Optional: Hover background color */
 }
 
 
