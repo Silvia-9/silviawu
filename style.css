@@ -88,13 +88,13 @@ body > header {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     font-size: 24px; /* Increase font size */
-    padding: 30px 90px; /* Increase padding to make buttons longer */
-    margin: 10px;
+    padding: 30px; /* Increase padding to make buttons longer */
+    margin: 50px;
     border: none; /* Remove border */
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 40px; /* Rounded corners */
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s ease; /* Smooth hover effect */
-    width: 200px; /* Set a fixed width for longer buttons */
+    width: 30px; /* Set a fixed width for longer buttons */
     text-align: center; /* Center-align text inside the button */
 }
 
@@ -135,12 +135,12 @@ article img {
     display:block; /* Ensure the images cover the area without distortion */
 }
 
-#article {
+.article {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 15px;
 }
 
-#article-text{
+.article-text{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 15px;
 }
