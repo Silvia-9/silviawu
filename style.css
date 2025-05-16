@@ -141,9 +141,6 @@ article img {
     margin: 20px auto;
 }
 
-#footer {
-    background-color: #f9f9f9;
-}
 
 /* Horizontal Scrolling Photo Gallery */
 
@@ -450,6 +447,293 @@ article img {
 
 #contact-form input[type="submit"]:hover {
     background-color: #A459D1;   /* Darker blue on hover */
+}
+
+/* EatWise Quiz Article Styling */
+.eatwise-article {
+    background: #d7e9fc;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    padding: 32px 24px 24px 24px;
+    margin-bottom: 32px;
+    border-left: 2px;
+    transition: box-shadow 0.2s;
+}
+.eatwise-article:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+}
+.eatwise-article header h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    color: #f147cc;
+    font-size: 28px;
+    margin-bottom: 0.2em;
+}
+.eatwise-article header h3 {
+    color: #2e2d2d;
+    font-size: 18px;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 1em;
+}
+.eatwise-article iframe {
+    border-radius: 10px;
+    background: #fff;
+    margin-bottom: 1em;
+    min-height: 700px;
+}
+.eatwise-article .article-text {
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #333;
+    line-height: 2.5;
+}
+
+/* Nimm Game Article Styling */
+.nimm-article {
+    background: #f7f5ff;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(80, 60, 180, 0.10);
+    padding: 32px 24px 24px 24px;
+    margin-bottom: 32px;
+    border: 2px;
+    transition: box-shadow 0.2s;
+}
+.nimm-article:hover {
+    box-shadow: 0 8px 24px rgba(80, 60, 180, 0.18);
+}
+.nimm-article header h2 {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: #161616;
+    margin-bottom: 0.2em;
+}
+.nimm-article header h3 {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: #242323;
+    font-size: 18px;
+    margin-bottom: 1em;
+}
+.nimm-article iframe {
+    border-radius: 10px;
+    background: #fff;
+    margin-bottom: 1em;
+    min-height: 700px;
+}
+.nimm-article .article-text {
+    font-size: 1.08em;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* I Carry Your Heart Poem Article Styling */
+.carry-heart-article {
+    background: #fce4d1;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(255, 120, 120, 0.10);
+    padding: 32px 24px 24px 24px;
+    margin-bottom: 32px;
+    transition: box-shadow 0.2s;
+}
+.carry-heart-article:hover {
+    box-shadow: 0 8px 24px rgba(255, 120, 120, 0.18);
+}
+.carry-heart-article header h2 {
+    font-family: 'Dela Gothic One', Verdana, Geneva, Tahoma, sans-serif;
+    color: #d62e2e;
+    font-size: 28px;
+    margin-bottom: 0.2em;
+}
+.carry-heart-article header h3 {
+    color: rgb(14, 13, 13);
+    font-size: 18px;
+    margin-bottom: 1em;
+}
+.carry-heart-article .article-text {
+    font-size: 18px;
+    color: #0e0d0d;
+    line-height: 2.5;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #fce4d1;
+    border-radius: 10px;
+    padding: 18px 18px 10px 10px;
+    margin-bottom: 1em;
+}
+.carry-heart-article blockquote {
+    font-style: italic;
+    color: #b44;
+    margin: 1em 0 1em 0;
+    padding-left: 16px;
+    border-radius: 8px;
+}
+.carry-heart-article footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 1em;
+}
+.carry-heart-article footer img {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+}
+.carry-heart-article footer a {
+    color: #d14c4c;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* The End of the Social Network Article Styling */
+.article.social-network-article {
+    background: #f3f8ff;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(60, 120, 255, 0.10);
+    padding: 32px 24px 24px 24px;
+    margin-bottom: 32px;
+    border-left: 4px solid #3c78ff;
+    transition: box-shadow 0.2s;
+}
+.article.social-network-article:hover {
+    box-shadow: 0 8px 24px rgba(60, 120, 255, 0.18);
+}
+.article.social-network-article header h2 {
+    font-family: 'Dela Gothic One', Verdana, Geneva, Tahoma, sans-serif;
+    color: #3c78ff;
+    font-size: 28px;
+    margin-bottom: 0.2em;
+}
+.article.social-network-article header h3 {
+    color: #2e2d2d;
+    font-size: 18px;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 1em;
+}
+.article.social-network-article .article-text {
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #222;
+    line-height: 2.5;
+    background: #fafdff;
+    border-radius: 10px;
+    padding: 18px 18px 10px 10px;
+    margin-bottom: 1em;
+}
+.article.social-network-article footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 1em;
+}
+.article.social-network-article footer img {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border: 2px solid #b3d1ff;
+}
+.article.social-network-article footer a {
+    color: #3c78ff;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* I am Nobody! Who are you? Poem Article Styling */
+.nobody-article {
+    background: #d9f0e8;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(120, 60, 180, 0.10);
+    padding: 32px 24px 24px 24px;
+    margin-bottom: 32px;
+    transition: box-shadow 0.2s;
+}
+.nobody-article:hover {
+    box-shadow: 0 8px 24px rgba(120, 60, 180, 0.18);
+}
+.nobody-article header h2 {
+    font-family: 'Dela Gothic One', Verdana, Geneva, Tahoma, sans-serif;
+    color: #16750d;
+    font-size: 28px;
+    margin-bottom: 0.2em;
+}
+.nobody-article header h3 {
+    color: #444;
+    font-size: 18px;
+    margin-bottom: 1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.nobody-article #article-text {
+    font-size: 18px;
+    color: #2d1e3a;
+    line-height: 2.5;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #d9f0e8;
+    border-radius: 10px;
+    padding: 18px 18px 10px 18px;
+    margin-bottom: 1em;
+}
+.nobody-article footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 1em;
+}
+.nobody-article footer img {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+}
+.nobody-article footer a {
+    color: #7a3eb1;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Happy Mid-Autumn Festival Article Styling */
+.article.mid-autumn-article {
+    background: #fffbe7;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(255, 200, 80, 0.10);
+    padding: 32px 24px 24px 24px;
+    margin-bottom: 32px;
+    border-left: 4px solid #ffd966;
+    transition: box-shadow 0.2s;
+}
+.article.mid-autumn-article:hover {
+    box-shadow: 0 8px 24px rgba(255, 200, 80, 0.18);
+}
+.article.mid-autumn-article header h2 {
+    font-family: 'Dela Gothic One', Verdana, Geneva, Tahoma, sans-serif;
+    color: #E3655B;
+    font-size: 28px;
+    margin-bottom: 0.2em;
+}
+.article.mid-autumn-article header h3 {
+    color: #111111;
+    font-size: 18px;
+    margin-bottom: 1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.article.mid-autumn-article figure {
+    text-align: center;
+    font-size:18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;    
+    margin-bottom: 1em;
+}
+.article.mid-autumn-article figure img {
+    border-radius: 14px;
+    max-width: 350px;
+    width: auto;           /* Change from 100% to auto */
+    display: block;
+    margin: 0.5em auto;    /* This centers the image horizontally */
+    box-shadow: 0 2px 8px rgba(255, 200, 80, 0.15);
+}
+.article.mid-autumn-article figure figcaption {
+    font-size: 1.1em;
+    color: #242423;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 0.5em;
 }
 
 /* Media Queries for Responsive Design */
