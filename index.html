@@ -37,13 +37,13 @@
 <body>
    <header id="main-header">
         <h1 id="logo">Silvia Wu's Blogging</h1>
-        <nav id="secondary-nav">
-            <ul id="nav-ul">
-                <li><a href="index.html" class="navbutton">Home</a></li>
-                <li><a href="profile.html" class="navbutton">Profile</a></li>
-                <li><a href="contact.html" class="navbutton">Contact</a></li>
-            </ul>
-        </nav>
+        <nav id="secondary-nav" aria-label="Main navigation">
+    <ul id="nav-ul">
+        <li><a href="index.html" class="navbutton" aria-current="page">Home</a></li>
+        <li><a href="profile.html" class="navbutton">Profile</a></li>
+        <li><a href="contact.html" class="navbutton">Contact</a></li>
+    </ul>
+</nav>
         <img src="Flowers in the bushes.png" alt="Flowers in the bushes" id="header-image">
     </header>
     <section id="horizontal-scrolling-photo">
@@ -71,13 +71,26 @@
     <main>
         <div class="row">
             <div class="column-middle">
+                <article class="article expense vibes-article">
+                    <header>
+                        <h2>💸Expense Vibes</h2>
+                        <h3>Posted: 23rd June 2025</h3>
+                    </header>
+                    <figure>
+                        <iframe src="https://silvia-9.github.io/expense_vibes/" width="100%" height="450" title="Expense Vibes App" aria-label="Expense Vibes App"></iframe>
+                        <figcaption>Track your expenses visually and easily.</figcaption>
+                    </figure>
+                    <p class="article-text">
+                        💰Turn your spending habits into smart savings with clean visuals, easy tracking, and effortless sharing.
+                    </p>
+                </article>
                 <article class="article eatwise-article">
                     <header>
                         <h2>✒️EatWise Quiz 📲 </h2>
                         <h3> Posted: 16th May 2025</h3>
                     </header>
                     <figure style="text-align: center;">
-                        <iframe src="https://silvia-9.github.io/eatwise_quiz/" width="100%" height="400"></iframe>
+                        <iframe src="https://silvia-9.github.io/eatwise_quiz/" width="100%" height="450"></iframe>
                     </figure>
                     <p class="article-text">  
                         🍽️ EatWise Quiz is an interactive quiz app that teaches you about healthy eating habits in a fun way. Perfect for parents with children, young adults or anyone interested in healthy eating. It also assesses you with informative questions on a responsive interface.
@@ -89,7 +102,7 @@
                         <h3> Posted: 9th May 2025</h3>
                     </header>
                     <figure style="text-align:center;">
-                        <iframe src="https://codeinplace.stanford.edu/cip5/share/3aLTPK0vcybWZmJCTNsS" width="100%" height="600"></iframe>
+                        <iframe src="https://codeinplace.stanford.edu/cip5/share/3aLTPK0vcybWZmJCTNsS" width="100%" height="450"></iframe>
                     </figure>
                     <p class="article-text">  
                         🪄 Nimm is an ancient strategy game named after the German word "take." It is also known as Tiouk Tiouk in West Africa and Tsynshidzi in China. Players take turns removing stones until none remain.
@@ -102,7 +115,7 @@
                     </header>
                     <figure style="text-align: center;">
                         <iframe src="https://script.google.com/macros/s/AKfycbyySwDRu8TvDLwiZU9RMYeqrVAv_FbKJwg9lu6p2kYQYiDQ1dNqRBwBK7pcqie8nnhw_w/exec" 
-                        width="100%" height="600" style="border: none; border-radius: 8px;"></iframe>
+                        width="100%" height="500" style="border: none; border-radius: 8px;"></iframe>
                     </figure>
                     <p class="article-text">  
                         📌 Feeling overwhelmed and drained by your daily routine? 😰<br/> 
@@ -247,7 +260,6 @@
             <div class="right-column-side">
                 <aside>
                     <p> 
-                        <a href="https://www.linkedin.com/in/shihhsuanwu/">LinkedIn</a>
                         <a href="https://docs.python.org/3/library/stdtypes.html#string-methods">Python</a>
                         <a href="https://pandas.pydata.org/pandas-docs/stable/">Pandas</a>
                         <a href="https://coddy.tech/?ref=s9BCq5">Coddy Team</a>

@@ -90,16 +90,17 @@ body > header {
 }
 
 .navbutton:hover {
-    background-color: #f5af45; /* Change background color on hover */
+    background-color: #3b28e9; /* Change background color on hover */
 }
 
 /* Style for the secondary navigation bar */
 #secondary-nav {
     display: flex; /* Arrange items horizontally */
-    justify-content: center; /* Center the navigation bar */
+    justify-content: flex-start; /* Center the navigation bar */
     align-items: center; /* Vertically align items */
-    margin: 0 auto; /* Center the navigation bar within its container */
-    padding: 10px 0; /* Add vertical padding */
+    margin: 0;
+    padding: 10px 0;
+    width: auto;
 }
 
 
@@ -290,9 +291,9 @@ article img {
     margin: 10px 0; /* Space between links */
     text-decoration: none; /* Remove underline */
     text-align: left;
-    font-size: 16px;
-    font-weight: bold;
-    color: #5170D7; /* Link color */
+    font-size: 20px;
+    font-weight: bolder;
+    color: #9946ec; /* Link color */
 }
 
 .right-column-side a:hover {
@@ -755,7 +756,20 @@ article img {
         flex-direction: column;
         align-items: center;
         gap: 10px;
+        width: 100%;
+        padding: 0;
     }
+    .navbutton {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 14px 0;
+        margin: 0 auto;
+        border-radius: 14px;
+        text-align: center;
+        box-sizing: border-box;
+        display: block;
+    }
+
    
     .column.middle, left-column-side, .right-column-side {
     width:100%;
@@ -841,5 +855,79 @@ article img {
     .column-middle,
     .right-column-side {
         grid-column: 1; /* All columns stack vertically */
+    }
+}
+
+/* New styles for vibes-article class */
+.expense.vibes-article {
+    background: linear-gradient(120deg, #e0ffe7 0%, #f7faff 100%);
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(10, 228, 64, 0.10), 0 1.5px 8px rgba(241, 30, 139, 0.08);
+    padding: 32px 24px 24px 24px;
+    margin-bottom: 32px;
+    border-left: 5px solid #0ae440;
+    transition: box-shadow 0.2s, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.expense.vibes-article:hover {
+    box-shadow: 0 8px 32px rgba(10, 228, 64, 0.18), 0 3px 16px rgba(241, 30, 139, 0.13);
+    transform: translateY(-2px); /* Only move up slightly, no scale */
+}
+
+.expense.vibes-article header h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #f98d01e8;
+    font-size: 2rem;
+    margin-bottom: 0.2em;
+    letter-spacing: 1px;
+}
+
+.expense.vibes-article header h3 {
+    color: #111010;
+    font-size: 1.1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 1em;
+    font-weight: bold;
+}
+
+.expense.vibes-article iframe {
+    border-radius: 12px;
+    border: 2px solid #0ae44033;
+    background: #fff;
+    margin-bottom: 1em;
+    min-height: 350px;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(10, 228, 64, 0.08);
+}
+
+.expense.vibes-article .article-text {
+    font-size: 1.1em;
+    color: #222;
+    line-height: 2;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #f3fff7;
+    border-radius: 10px;
+    padding: 16px 16px 10px 10px;
+    margin-bottom: 1em;
+    box-shadow: 0 1px 4px rgba(10, 228, 64, 0.05);
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    .expense.vibes-article {
+        padding: 16px 6px 16px 6px;
+        border-left-width: 3px;
+    }
+    .expense.vibes-article header h2 {
+        font-size: 1.3rem;
+    }
+    .expense.vibes-article iframe {
+        min-height: 200px;
+    }
+    .expense.vibes-article .article-text {
+        font-size: 1em;
+        padding: 10px 6px 8px 6px;
     }
 }
