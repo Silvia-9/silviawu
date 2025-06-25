@@ -1,67 +1,108 @@
 body {
-    margin:0px;
-}
-header {
-    background-color: #20DAA6;
-    color:#E3179E;
-    font-size: 30px;
+    margin: 0;
+    background: #f9f9f9;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
-    margin-top: -10px;
-    margin-bottom: -10px;
-    grid-area: header;
+    box-sizing: border-box;
+    font-size: 16px;
 }
 
+/* Header */
+header {
+    background-color: #20DAA6;
+    color: #E3179E;
+    font-size: 30px; /* px for main title */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    padding: 22px 0 16px 0;
+    grid-area: header;
+    letter-spacing: 1px;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+}
+
+/* Navigation Menu */
 #menu {
-    padding: 10px;
-    font-size: 20px;
+    padding: 0 0 8px 0; /* Reduced bottom padding for less space below buttons */
+    text-align: center;
+    width: 100%;
     grid-area: menu;
-    text-align: left;
-    background-color: antiquewhite;
-    width: 180%;
-    padding-top: 80px;
-  
+    background: none;
 }
 
 nav {
-    display: flex; /* Use flexbox for vertical layout */
-    flex-direction: column; /* Stack the navigation items vertically */
-    align-items: left; /* Center the items horizontally */
-    margin: 10px; /* Optional: Adds some space above the navigation */
-    padding: 10px;
-    margin-top: -15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Reduced gap between buttons */
+    margin: 0;
+    padding: 0;
 }
 
 nav > a {
     color: #6a06d3;
-    font-weight: bold;
-    font-size: 30px;
+    font-weight: 600;
+    font-size: 22px; /* Increased button size */
     font-family: 'Georgia', 'Times New Roman', Times, serif;
     text-decoration: none;
-    display: flex; /* Align star and text horizontally within each item */
-    align-items: center; /* Vertically align the text and star */
-    margin-bottom: 50px; 
-    height: 50px;
-    transition: color 0.3s, transform 0.3s;
-}
-
-nav > a::before {
-    content: '\2605'; /* Unicode star character (★) */
-    margin-right: 10px; /* Space between the star and the text */
-    font-size: 1.5rem; /* Adjust the size of the star */
-    color: #E0432F; /* Set the color of the star */
-    text-align: left;
+    background: #ffe066;
+    padding: 16px 32px; /* Bigger padding for larger buttons */
+    border-radius: 14px;
+    transition: background 0.2s, color 0.2s;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 }
 
 nav > a:hover {
-    color: rgb(199, 21, 21); /* Change text color on hover */
-    transform: scale(1.1); /* Slight zoom effect on hover */
+    background: #0ae440;
+    color: #fff;
 }
 
-nav > a:hover::before {
-    color: rgb(221, 139, 15); /* Change star color on hover */
+/* Main Content */
+#main-content {
+    position: relative; /* Needed for absolute positioning of audio */
+    padding: 36px 36px 28px 36px;
+    text-align: left;
+    line-height: 1.7;
+    font-size: 17px;
+    grid-area: main;
+    width: 100%;
+    max-width: 700px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    margin: 0 auto 30px auto;
 }
 
+#main-content h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 1.5rem; /* Professional section heading */
+    color: #333;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+#main-content audio {
+    position: absolute;
+    top: 36px;
+    right: 36px;
+    margin-bottom: 0;
+    width: 200px;
+    max-width: 90%;
+    z-index: 2;
+}
+
+#main-content p {
+    line-height: 3;
+    font-size: 17px;
+    text-align: left;
+    max-width: 650px;
+    margin: 80px auto 22px auto; /* Add top spacing to move paragraph down */
+    color: #222;
+}
 
 /* Container to hold header and audio */
 .header-container {
@@ -87,106 +128,178 @@ nav > a:hover::before {
     width: 200px; /* Set a fixed width for the audio control */
   }
 
-   #main-content { 
-    padding: 32px;
-    text-align:left;
-    line-height: 2;
-    font-size: 35px;
-    grid-area: main;
-    width: 100%;
-
-  }
-
-  p {
-  line-height: 2; /* Adjust the value for more or less space between lines */
-  font-size: 20px;
-  text-align: left;
-  font-family:Verdana, Geneva, Tahoma, sans-serif
-  width: 100%; /* Ensures it takes full width */
-  max-width: 750px; /* Optional: Sets a max width to prevent a very long line */
-  word-wrap: break-word; /* Breaks long words if they don't fit the container */
-  overflow-wrap: break-word; /* Ensures words break properly within container */
-  margin: 0 auto; /* Centers the paragraph */
-  }
-
-/* Container for the gallery */
-  .gallery {
-    display: flex;
-    flex-direction: column; /* Align images vertically */
-    justify-content: flex-start; /* Align images at the top */
-    align-items: center;
-    overflow: hidden; /* Hide images as they move out of view */
-    height: 100vh; /* Full screen height */
-    width: 100%;
-    position: relative;
-    animation: scrollUp 20s linear infinite; /* Animation for moving the gallery */
-  }
-  
-  /* Style for individual photo elements */
-  .photo {
+/* Gallery Styles */
+.gallery {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin: 5px 0; /* Add spacing between images */
-    width: 90%; /* Allow flexibility in width */
-    max-width: 500px; /* Limit the max width */
-  }
-  
-  img {
-    width: 100%; /* Ensure the image fills the container */
-    height: 300px; /* Fixed height for all images */
-    object-fit: cover; /* Ensures the image covers the area without distorting */
-    border-radius: 10px; /* Optional: rounded corners */
-  }
-  
-  figcaption {
-    margin-top: 10px;
-    font-size: 1.2rem;
-    color: #333;
-    font-weight: bold;
-  }
-  
-  .gallery {
-    display: flex;
-    flex-direction: column;
-    height: 1500px; /* Total height of the four images (300px each) */
-    animation: scrollUp 40s linear infinite;
-  }
-  
-  /* Adjusted animation for smooth vertical scrolling */
-  @keyframes scrollUp {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-1500px); /* Moves the gallery content up by its total height */
-    }
-  }
-
-footer {
-    padding: 16px;
-    background-color: #FAFE4B;
-    color: black;
-    font-weight: bold;
-    text-align: center;
-    grid-area: footer;
-    margin-top: -30px;
-
+    min-height: 400px;
+    width: 100%;
+    max-width: 350px;
+    grid-area: gallery;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    background: #fff;
+    margin: 0 auto 32px auto; /* Remove top margin to move it upward */
+    gap: 18px;
+    padding: 24px 0;
 }
 
+.photo {
+    width: 92%;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain; /* Show the whole image without cropping */
+    background: #f9f9f9; /* Optional: add a subtle background for letterboxing */
+    border-radius: 10px;
+    display: block;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+}
+
+figcaption {
+    margin-top: 8px;
+    font-size: 0.98rem; /* Slightly smaller for captions */
+    color: #333;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    padding: 18px;
+    background-color: #FAFE4B;
+    color: #222;
+    font-weight: 600;
+    text-align: center;
+    grid-area: footer;
+    margin-top: 0;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 -1px 8px rgba(0,0,0,0.04);
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+}
+
+/* Grid Layout */
 #grid-container {
     display: grid;
-    grid-template-rows: auto 1fr auto auto;
     grid-template-areas: 
-    "header header header"
-    "menu main photo"
-    "footer footer footer"
-    ;
-    grid-template-columns: 1fr 8fr 2fr;
-    grid-gap: 10px;
-    height:100vh;
+        "header header"
+        "menu menu"
+        "main gallery"
+        "footer footer";
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 32px;
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header { grid-area: header; }
+#menu { grid-area: menu; }
+#main-content { grid-area: main; }
+.gallery { grid-area: gallery; }
+footer { grid-area: footer; }
+
+/* Responsive: stack on small screens */
+@media (max-width: 900px) {
+    #grid-container {
+        grid-template-areas: 
+            "header"
+            "menu"
+            "main"
+            "gallery"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-gap: 18px;
+        min-height: auto;
+        max-width: 100vw;
+    }
+    #main-content, .gallery {
+        margin: 18px auto;
+        max-width: 98vw;
+    }
+    .gallery {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        max-width: 100vw;
+        min-height: unset;
+        padding: 12px 0;
+    }
+    .photo {
+        width: 45vw;
+        min-width: 120px;
+        max-width: 220px;
+        margin: 0;
+    }
+    img {
+        height: 28vw;
+        min-height: 80px;
+        max-height: 140px;
+    }
+    #menu {
+        padding-left: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        font-size: 1.3rem;
+        padding: 12px 0 0 8px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1rem;
+    }
+    #main-content {
+        padding: 10px 2vw;
+        font-size: 0.98rem;
+    }
+    #main-content audio {
+        position: static;
+        display: block;
+        margin: 12px 0 18px auto;
+        width: 100%;
+        max-width: 350px;
+    }
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+    nav > a {
+        font-size: 0.98rem;
+        padding: 8px 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .gallery {
+        flex-direction: column;
+        gap: 8px;
+        max-width: 100vw;
+        padding: 8px 0;
+    }
+    .photo {
+        width: 90vw;
+        max-width: 100%;
+    }
+    img {
+        height: 32vw;
+        min-height: 60px;
+        max-height: 120px;
+    }
+    #menu {
+        padding-left: 8px;
+    }
 }
 
 
