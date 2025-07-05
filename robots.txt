@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
+Disallow: /private/
+Disallow: /*.mp4$
+Crawl-delay: 1
 
+# Sitemap location
 Sitemap: https://silvia-9.github.io/silviawu/sitemap.xml
+
+# Preferred domain
+Host: https://silvia-9.github.io

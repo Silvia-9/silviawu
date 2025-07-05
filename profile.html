@@ -2,65 +2,194 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="google-site-verification" content="pKJjhWG-ylqnDbk5MSWaVLlC8YWbMzBGcr_06dSwpJs" />
-  <title>Silvia Wu's Blogging</title>
+  
+  <!-- Mobile-specific optimizations -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Meet Silvia Wu">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#20DAA6">
+  <meta name="robots" content="index, follow">
+  
+  <title>Profile - Silvia Wu's Blogging</title>
   <meta name="description" content="Hi, I'm Silvia Wu. Connect with me on LinkedIn to network and explore shared interests!"/>
-  <meta name="keywords" content="profile, Shih-hsuan Wu, Silvia Wu">
+  <meta name="keywords" content="profile, Shih-hsuan Wu, Silvia Wu, software developer, web developer, Taiwan, Newcastle University, international business, data analysis, multilingual">
+  <meta name="author" content="Silvia Wu (Shih-hsuan Wu)">
+  <meta name="language" content="English">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://silvia-9.github.io/silviawu/profile.html">
+  <meta property="og:title" content="Meet Silvia Wu - Software Developer & International Business Expert">
+  <meta property="og:description" content="Passionate software developer from Taiwan with expertise in international business, data analysis, and web development.">
+  <meta property="og:image" content="https://silvia-9.github.io/silviawu/Me.jpg">
+  <meta property="og:site_name" content="Silvia Wu's Blog">
+  <meta property="og:locale" content="en_US">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://silvia-9.github.io/silviawu/profile.html">
+  <meta property="twitter:title" content="Meet Silvia Wu - Software Developer & International Business Expert">
+  <meta property="twitter:description" content="Passionate software developer from Taiwan with expertise in international business, data analysis, and web development.">
+  <meta property="twitter:image" content="https://silvia-9.github.io/silviawu/Me.jpg">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://silvia-9.github.io/silviawu/profile.html">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="Profilestyle.css" as="style">
+  <link rel="preload" href="style.css" as="style">
+  <link rel="preload" href="Me.jpg" as="image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Load CSS -->
   <link rel="stylesheet" href="Profilestyle.css">
-  <link href="https://fonts.googleapis.com/css2?family=Ribeye+Marrow&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Load fonts with display=swap for better performance -->
+  <link href="https://fonts.googleapis.com/css2?family=Ribeye+Marrow&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Ribeye+Marrow&display=swap" rel="stylesheet"></noscript>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Silvia Wu",
+    "alternateName": "Shih-hsuan Wu",
+    "url": "https://silvia-9.github.io/silviawu/profile.html",
+    "image": "https://silvia-9.github.io/silviawu/Me.jpg",
+    "birthPlace": "Taiwan",
+    "nationality": "Taiwanese",
+    "knowsLanguage": ["Chinese", "English", "French"],
+    "jobTitle": "Software Developer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Newcastle University"
+    },
+    "hasOccupation": [
+      {
+        "@type": "Occupation",
+        "name": "Software Developer"
+      },
+      {
+        "@type": "Occupation",
+        "name": "International Business Development Manager"
+      },
+      {
+        "@type": "Occupation",
+        "name": "Supply Chain Manager"
+      }
+    ],
+    "knowsAbout": [
+      "JavaScript",
+      "Python", 
+      "Web Development",
+      "Data Analysis",
+      "International Business",
+      "Supply Chain Management",
+      "Product Development"
+    ],
+    "description": "Passionate software developer from Taiwan with over a decade of experience in international business, specializing in web development, data analysis, and multilingual communication.",
+    "sameAs": [
+      "https://github.com/silvia-9",
+      "https://linkedin.com/in/silvia-wu"
+    ]
+  }
+  </script>
+  
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BBHT40SPSV"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-BBHT40SPSV');
+    gtag('config', 'G-BBHT40SPSV', {
+      page_title: 'Profile - Silvia Wu\'s Blogging',
+      page_location: window.location.href,
+      custom_map: {'custom_parameter_1': 'page_type'},
+      custom_parameter_1: 'profile_page'
+    });
   </script>
 </head>
 <body>
     <div id="grid-container">
-        <header>
+        <header role="banner">
             <h1>Meet Silvia Wu</h1>
         </header>
-        <div id="menu">
-            <nav>
-                <a href="index.html"> Home📺</a>
-                <a href="profile.html">Meet Silvia Wu 🙆‍♀️</a>
-                <a href="contact.html">Write to me📬</a>
-            </nav>
-        </div>
-        <section id="main-content">
+        
+        <nav id="menu" role="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html" aria-label="Go to Home page">Home📺</a></li>
+                <li><a href="profile.html" aria-current="page" aria-label="Profile page - currently active">Meet Silvia Wu 🙆‍♀️</a></li>
+                <li><a href="contact.html" aria-label="Contact page">Write to me📬</a></li>
+            </ul>
+        </nav>
+        
+        <main id="main-content" role="main">
             <h2>🪄About me</h2>
-            <audio controls src="music.mp3" loop></audio>
-            <p>
-                Hello! My name is Silvia Wu (Chinese name: Shih-hsuan Wu). I'm originally from Taiwan and a passionate linguist, fluent in Chinese, English, and French.
-
-                My professional journey spans over a decade, encompassing diverse roles that have honed my expertise in global business. I've spent two years in international sales, three years as an international business development manager, two years contributing to new product development, and five years specializing in supply chain and logistics management. These experiences have given me a comprehensive understanding of international commerce and operations.
-
-                When I'm not diving into the world of business, I love to explore! Traveling, hiking, and discovering new countries are some of my favorite ways to spend my free time, as they constantly broaden my perspective and inspire new ideas.
-            </p>
-            <p>Please feel free to connect with me on LinkedIn!</p>
-        </section>
-        <aside class="gallery">
+            <audio controls src="music.mp3" loop preload="metadata" aria-label="Background music for Silvia Wu's profile page">
+                Your browser does not support the audio element.
+            </audio>
+            
+            <section class="bio-section">
+                <p>
+                    Hello! My name is <strong>Silvia Wu</strong> (Chinese name: <em>Shih-hsuan Wu</em>). I'm originally from Taiwan and a passionate linguist, fluent in Chinese, English, and French.
+                </p>
+                
+                <p>
+                    My professional journey spans over a decade, encompassing diverse roles that have honed my expertise in global business. I've spent two years in international sales, three years as an international business development manager, two years contributing to new product development, and five years specializing in supply chain and logistics management. These experiences have given me a comprehensive understanding of international commerce and operations.
+                </p>
+                
+                <p>
+                    Currently, I'm passionate about software development and data analysis, combining my international business background with modern technology to create innovative solutions. I enjoy working with JavaScript, Python, and various web development frameworks.
+                </p>
+                
+                <p>
+                    When I'm not diving into the world of business or coding, I love to explore! Traveling, hiking, and discovering new countries are some of my favorite ways to spend my free time, as they constantly broaden my perspective and inspire new ideas.
+                </p>
+                
+                <p class="cta-text">
+                    <strong>Please feel free to connect with me on <a href="https://linkedin.com/in/silvia-wu" target="_blank" rel="noopener noreferrer" aria-label="Connect with Silvia Wu on LinkedIn">LinkedIn</a>!</strong>
+                </p>
+            </section>
+        </main>
+        
+        <aside class="gallery" role="complementary" aria-label="Photo gallery of Silvia Wu">
+            <h3 class="sr-only">Photo Gallery</h3>
             <figure class="photo">
-              <img src="Me.jpg" alt="I am in Swisterland.">
+              <img src="Me.jpg" alt="Silvia Wu in Switzerland - professional photo" loading="lazy">
               <figcaption>Silvia Wu</figcaption>
             </figure>
             <figure class="photo">
-              <img src="Swiss.jpg" alt="I am at the Wolli-Park Leisee">
+              <img src="Swiss.jpg" alt="Silvia Wu at Wolli-Park Leisee, Switzerland - scenic mountain lake" loading="lazy">
               <figcaption>Wolli-Park Leisee</figcaption>
             </figure>
             <figure class="photo">
-              <img src="datainnovation.jpg" alt="Summer Data Innovation Bootcamp">
+              <img src="datainnovation.jpg" alt="Silvia Wu at Summer Data Innovation Bootcamp - learning and networking event" loading="lazy">
               <figcaption>Data Innovation Bootcamp</figcaption>
             </figure>
             <figure class="photo">
-              <img src="cragside.jpg" alt="Give it a go">
+              <img src="cragside.jpg" alt="Silvia Wu at Cragside National Trust property - historic house visit" loading="lazy">
               <figcaption>Cragside</figcaption>
             </figure>
         </aside>
-        <footer>&copy;2025 Silvia Wu. All rights reserved.</footer>
+        
+        <footer role="contentinfo">
+            &copy;2025 Silvia Wu. All rights reserved.
+        </footer>
     </div>
+    
+    <!-- Load JavaScript for enhanced tracking and performance -->
+    <script src="main.js" defer></script>
 </body>
 </html>
