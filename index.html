@@ -6,19 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="pKJjhWG-ylqnDbk5MSWaVLlC8YWbMzBGcr_06dSwpJs" />
     
-    <!-- Mobi                    <div itemprop="articleBody">
-                        <p class="article-text">
-                            I'm Nobody! Who are you? <br>
-                            Are you – Nobody – too? <br>
-                            Then there's a pair of us! <br>
-                            Don't tell! they'd advertise – you know! <br>
-                            <br>
-                            How dreary – to be – Somebody! <br>
-                            How public – like a Frog – <br>
-                            To tell one's name – the livelong June – <br>
-                            To an admiring Bog! <br>
-                        </p>
-                    </div> optimizations -->
+    <!-- Mobile optimizations -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -57,48 +45,81 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://silvia-9.github.io/silviawu/">
     
-    <!-- Additional SEO -->
+    <!-- Additional SEO and Performance -->
     <link rel="alternate" hreflang="en" href="https://silvia-9.github.io/silviawu/">
     <meta name="geo.region" content="GB">
     <meta name="geo.placename" content="Newcastle, UK">
     
-    <!-- Preload critical resources -->
-    <link rel="preload" href="style.css" as="style">
-    <link rel="preload" href="contact_style.css" as="style">
-    <link rel="preload" href="Flowers in the bushes.png" as="image">
+    <!-- Prefetch critical resources -->
+    <link rel="prefetch" href="profile.html">
+    <link rel="prefetch" href="contact.html">
+    
+    <!-- Preload critical resources for performance -->
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="contact_style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="Flowers in the bushes.png" as="image" fetchpriority="high">
+    <link rel="preload" href="main.js" as="script">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     
-    <!-- Load critical CSS first -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="contact_style.css">
+    <!-- Load critical CSS inline and defer non-critical -->
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all';this.onload=null;">
+    <link rel="stylesheet" href="contact_style.css" media="print" onload="this.media='all';this.onload=null;">
+    <noscript>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="contact_style.css">
+    </noscript>
     
-    <!-- Load non-critical CSS with media query trick for faster loading -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" media="print" onload="this.media='all'">
+    <!-- Load non-critical CSS with optimized loading -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" media="print" onload="this.media='all';this.onload=null;">
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css"></noscript>
     
-    <!-- Load fonts with display=swap for better performance -->
-    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <!-- Load fonts with display=swap and optimized loading -->
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet"></noscript>
-            
+    <!-- Critical CSS for faster initial render -->
     <style>
-        /* Critical CSS for faster initial render - only essential above-the-fold styles */
-        body{background-color:lightyellow;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin:0;width:100%}
+        /* Critical above-the-fold styles for performance */
+        body{background-color:lightyellow;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin:0;width:100%;line-height:1.6}
         #main-header{display:flex;justify-content:space-between;align-items:center;background-color:#0ae440;color:#f11e8b;font-size:35px;font-family:Verdana,Geneva,Tahoma,sans-serif;padding:20px}
         #logo{margin:0;padding:8px;font-family:'Dela Gothic One',sans-serif;text-shadow:2px 2px 0px white,-2px 2px 0px white,2px -2px 0px white,-2px -2px 0px white}
         #header-image{width:250px;height:auto;object-fit:cover;margin-left:20px;background-color:transparent}
+        #nav-ul{display:flex;gap:20px;list-style:none;padding:0;margin:0}
+        .navbutton{color:#f11e8b;text-decoration:none;font-weight:bold;padding:8px 16px;border-radius:4px;transition:background-color 0.3s ease}
+        .navbutton:hover{background-color:rgba(255,255,255,0.1)}
         
-        /* CSS Animation for Header */
-        @keyframes slideRight {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(0); }
+        /* Performance optimizations */
+        img{max-width:100%;height:auto}
+        iframe{max-width:100%;height:auto}
+        
+        /* Loading states */
+        .loading{opacity:0.7;pointer-events:none}
+        
+        /* Mobile-first responsive design */
+        @media (max-width: 768px) {
+            #main-header{flex-direction:column;padding:15px;font-size:28px}
+            #header-image{width:200px;margin:10px 0 0 0}
+            #nav-ul{margin-top:10px;gap:15px}
+            .navbutton{padding:6px 12px;font-size:14px}
+            #logo{font-size:24px}
         }
-        #logo { animation: slideRight 2s ease-out; }
+        
+        /* Animation for Header - GPU accelerated */
+        @keyframes slideRight {
+            0% { transform: translate3d(-100%, 0, 0); }
+            100% { transform: translate3d(0, 0, 0); }
+        }
+        #logo { animation: slideRight 1.5s ease-out; will-change: transform; }
+        
+        /* Prevent layout shift */
+        .photo-gallery-container{min-height:200px}
+        .article{margin-bottom:2rem}
     </style>
     
     <!-- Load flatpickr CSS non-blocking -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" media="print" onload="this.media='all';this.onload=null;">
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"></noscript>
 
     <!-- Google tag (gtag.js) -->
@@ -190,19 +211,19 @@
         <li><a href="contact.html" class="navbutton">Contact</a></li>
     </ul>
 </nav>
-        <img src="Flowers in the bushes.png" alt="Colorful flowers blooming in bushes - Silvia Wu's blog header image" id="header-image" loading="eager">
+        <img src="Flowers in the bushes.png" alt="Colorful flowers blooming in bushes - Silvia Wu's blog header image" id="header-image" loading="eager" fetchpriority="high" width="250" height="auto">
     </header>
     <section id="horizontal-scrolling-photo" aria-label="Photo gallery of travel destinations">
         <div class="photo-gallery-container">
             <button class="scroll-arrow left" aria-label="Scroll gallery left">&#10094;</button>
             <div class="photo-gallery">
-                <img src="edinburgh.jpg" alt="Silvia Wu visiting Edinburgh, Scotland - historic castle view" loading="lazy">
-                <img src="Northumberlandwildlifetrust.jpg" alt="Silvia Wu at Northumberland Wildlife Trust nature reserve" loading="lazy">
-                <img src="devon.jpg" alt="Silvia Wu exploring Devon countryside, England" loading="lazy">
-                <img src="Orebro.jpg" alt="Silvia Wu at Orebro park, Sweden - scenic outdoor location" loading="lazy">
-                <img src="Spain.jpg" alt="Silvia Wu traveling in Spain - cultural exploration" loading="lazy">
-                <img src="hiking.jpg" alt="Silvia Wu hiking in natural landscapes - outdoor adventure" loading="lazy">
-                <img src="Park.jpg" alt="Silvia Wu at Nauto park - recreational outdoor space" loading="lazy">
+                <img src="edinburgh.jpg" alt="Silvia Wu visiting Edinburgh, Scotland - historic castle view" loading="lazy" width="300" height="200">
+                <img src="Northumberlandwildlifetrust.jpg" alt="Silvia Wu at Northumberland Wildlife Trust nature reserve" loading="lazy" width="300" height="200">
+                <img src="devon.jpg" alt="Silvia Wu exploring Devon countryside, England" loading="lazy" width="300" height="200">
+                <img src="Orebro.jpg" alt="Silvia Wu at Orebro park, Sweden - scenic outdoor location" loading="lazy" width="300" height="200">
+                <img src="Spain.jpg" alt="Silvia Wu traveling in Spain - cultural exploration" loading="lazy" width="300" height="200">
+                <img src="hiking.jpg" alt="Silvia Wu hiking in natural landscapes - outdoor adventure" loading="lazy" width="300" height="200">
+                <img src="Park.jpg" alt="Silvia Wu at Nauto park - recreational outdoor space" loading="lazy" width="300" height="200">
             <!-- Add more images as needed -->
             </div>
             <button class="scroll-arrow right" aria-label="Scroll gallery right">&#10095;</button>
@@ -218,7 +239,7 @@
                         <time datetime="2025-06-23" itemprop="datePublished">Posted: 23rd June 2025</time>
                     </header>
                     <figure>
-                        <iframe src="https://silvia-9.github.io/expense_vibes/" width="100%" height="450" title="Expense Vibes Budget Tracking App - Interactive Demo" aria-label="Expense Vibes App Interactive Demo" loading="lazy" style="min-height: 300px;"></iframe>
+                        <iframe src="https://silvia-9.github.io/expense_vibes/" width="100%" height="450" title="Expense Vibes Budget Tracking App - Interactive Demo" aria-label="Expense Vibes App Interactive Demo" loading="lazy" style="min-height: 300px;" importance="low"></iframe>
                     </figure>
                     <div itemprop="articleBody">
                         <p class="article-text">
@@ -236,7 +257,7 @@
                         <time datetime="2025-05-16" itemprop="datePublished">Posted: 16th May 2025</time>
                     </header>
                     <figure>
-                        <iframe src="https://silvia-9.github.io/eatwise_quiz/" width="100%" height="450" title="EatWise Quiz - Interactive Healthy Eating Assessment" loading="lazy" style="min-height: 300px;"></iframe>
+                        <iframe src="https://silvia-9.github.io/eatwise_quiz/" width="100%" height="450" title="EatWise Quiz - Interactive Healthy Eating Assessment" loading="lazy" style="min-height: 300px;" importance="low"></iframe>
                     </figure>
                     <div itemprop="articleBody">
                         <p class="article-text">  
@@ -252,7 +273,7 @@
                         <time datetime="2025-05-09" itemprop="datePublished">Posted: 9th May 2025</time>
                     </header>
                     <figure>
-                        <iframe src="https://codeinplace.stanford.edu/cip5/share/3aLTPK0vcybWZmJCTNsS" width="100%" height="450" title="Nimm Game - Strategic Stone Removal Game" loading="lazy"></iframe>
+                        <iframe src="https://codeinplace.stanford.edu/cip5/share/3aLTPK0vcybWZmJCTNsS" width="100%" height="450" title="Nimm Game - Strategic Stone Removal Game" loading="lazy" importance="low"></iframe>
                     </figure>
                     <div itemprop="articleBody">
                         <p class="article-text">  
@@ -269,7 +290,7 @@
                     </header>
                     <figure>
                         <iframe src="https://script.google.com/macros/s/AKfycbyySwDRu8TvDLwiZU9RMYeqrVAv_FbKJwg9lu6p2kYQYiDQ1dNqRBwBK7pcqie8nnhw_w/exec" 
-                        width="100%" height="500" title="JokeBot - Interactive Joke Generator" loading="lazy"></iframe>
+                        width="100%" height="500" title="JokeBot - Interactive Joke Generator" loading="lazy" importance="low"></iframe>
                     </figure>
                     <div itemprop="articleBody">
                         <p class="article-text">  
@@ -287,7 +308,7 @@
                       <time datetime="2025-04-05" itemprop="datePublished">Posted: 5th April 2025</time>
                     </header>
                     <figure>
-                        <video width="100%" height="450" controls>
+                        <video width="100%" height="450" controls preload="metadata" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 240'%3E%3Crect width='320' height='240' fill='%23ddd'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23999'%3EExpense Tracker Demo%3C/text%3E%3C/svg%3E">
                             <source src="20250405_myexpensetracker.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -305,7 +326,7 @@
                     </header>
                     <figure>
                         <iframe src="https://www.loom.com/embed/01ef0caec36640ea8df552e8881a0bd9?sid=4a4ccfa1-d69f-40a1-baab-e393e1d4f710" 
-                            width="100%" height="450" title="Happy New Year 2025 Video Message" loading="lazy"></iframe>
+                            width="100%" height="450" title="Happy New Year 2025 Video Message" loading="lazy" importance="low"></iframe>
                     </figure>
                     <div itemprop="articleBody">
                         <p class="article-text">Celebrating the start of 2025 with hopes and aspirations for the year ahead.</p>
@@ -319,7 +340,7 @@
                         <time datetime="2024-09-24" itemprop="datePublished">Posted: 24th September 2024</time>
                     </header>
                     <figure>
-                        <img src="WomenHackAI_1.jpg" alt="Silvia Wu participating in Siemens WomenHack AI Bootcamp - group photo of participants" loading="lazy">
+                        <img src="WomenHackAI_1.jpg" alt="Silvia Wu participating in Siemens WomenHack AI Bootcamp - group photo of participants" loading="lazy" width="400" height="300">
                         <figcaption><b>Can you find me in this photo?</b></figcaption>
                     </figure>
                     <div itemprop="articleBody">
@@ -339,7 +360,7 @@
                         <time datetime="2024-09-17" itemprop="datePublished">Posted: 17th September 2024</time>
                     </header>
                     <figure>
-                        <img src="let's cheers.jpg" alt="Silvia Wu celebrating Mid-Autumn Festival with traditional decorations and festivities" loading="lazy">
+                        <img src="let's cheers.jpg" alt="Silvia Wu celebrating Mid-Autumn Festival with traditional decorations and festivities" loading="lazy" width="400" height="300">
                         <figcaption>Happy Mid-Autumn Festival to everyone!</figcaption>
                     </figure>
                     <div itemprop="articleBody">
@@ -367,7 +388,7 @@
                         To an admiring Bog! <br>
                     </p>
                     <footer class="article-footer mid-autumn-footer">
-                        <img src="cake.jpg" alt="Decorated birthday cake for celebration" class="footer-image">
+                        <img src="cake.jpg" alt="Decorated birthday cake for celebration" class="footer-image" loading="lazy" width="200" height="150">
                         <a href="https://poets.org/poem/im-nobody-who-are-you-260" target="_blank" rel="noopener noreferrer">Reference</a>
                     </footer>
                     <meta itemprop="author" content="Silvia Wu">
@@ -404,7 +425,7 @@
                         </blockquote>
                     </div>
                     <footer class="article-footer carry-heart-footer">
-                        <img src="coffee.jpg" alt="Steaming cup of coffee for relaxation" class="footer-image">
+                        <img src="coffee.jpg" alt="Steaming cup of coffee for relaxation" class="footer-image" loading="lazy" width="200" height="150">
                         <a href="https://allpoetry.com/i-carry-your-heart-with-me" target="_blank" rel="noopener noreferrer">Reference</a>
                     </footer>
                     <meta itemprop="author" content="Silvia Wu">
@@ -425,7 +446,7 @@
                         </p>
                     </div>
                     <footer class="article-footer social-network-footer">
-                        <img src="flower.jpg" alt="Beautiful blooming flowers in nature" class="footer-image">
+                        <img src="flower.jpg" alt="Beautiful blooming flowers in nature" class="footer-image" loading="lazy" width="200" height="150">
                         <a href="https://www.economist.com/leaders/2024/02/01/the-end-of-the-social-network" target="_blank" rel="noopener noreferrer">Reference</a>
                     </footer>
                     <meta itemprop="author" content="Silvia Wu">
@@ -522,8 +543,24 @@
     </footer>
     
     <!-- Load JavaScript at the bottom for better performance -->
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/en.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer async></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/en.js" defer async></script>
     <script src="main.js" defer></script>
+    
+    <!-- Performance monitoring script -->
+    <script>
+        // Performance monitoring
+        window.addEventListener('load', function() {
+            if ('performance' in window) {
+                const perfData = performance.getEntriesByType('navigation')[0];
+                if (perfData && typeof gtag !== 'undefined') {
+                    gtag('event', 'timing_complete', {
+                        name: 'load',
+                        value: Math.round(perfData.loadEventEnd - perfData.loadEventStart)
+                    });
+                }
+            }
+        });
+    </script>
 </body>
 </html>

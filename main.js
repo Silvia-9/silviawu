@@ -1,6 +1,6 @@
 // Main JavaScript file for performance optimization
 document.addEventListener('DOMContentLoaded', function () {
-    // Register Service Worker for mobile performance
+    // Register Service Worker for offline functionality and caching
     if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
         navigator.serviceWorker.register('/sw.js')
             .then((registration) => {
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     }
 
-    // Google Analytics page tracking
+    // Performance-optimized Google Analytics tracking
     if (typeof gtag !== 'undefined') {
         // Track page view with custom page title
         const pageTitle = document.title;
@@ -20,10 +20,11 @@ document.addEventListener('DOMContentLoaded', function () {
         gtag('config', 'G-BBHT40SPSV', {
             page_title: pageTitle,
             page_location: window.location.href,
-            page_path: pagePath
+            page_path: pagePath,
+            send_page_view: false // Prevent automatic page view
         });
         
-        // Send custom page view event
+        // Send optimized page view event
         gtag('event', 'page_view', {
             page_title: pageTitle,
             page_location: window.location.href,
@@ -31,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Mobile-optimized iframe lazy loading with Intersection Observer
+    // Performance-optimized iframe lazy loading with Intersection Observer
     const iframes = document.querySelectorAll('iframe[loading="lazy"]');
     
     if ('IntersectionObserver' in window) {
@@ -42,10 +43,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     // Only load iframe when it's about to be visible
                     if (!iframe.dataset.loaded) {
                         iframe.dataset.loaded = 'true';
-                        // Add mobile-specific parameters for better performance
+                        // Add mobile-specific optimizations
                         if (window.innerWidth <= 768) {
                             iframe.style.height = '350px'; // Smaller height on mobile
                         }
+                        // Add performance hint
+                        iframe.style.contain = 'layout style paint';
                     }
                     observer.unobserve(iframe);
                 }
@@ -60,12 +63,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Initialize flatpickr with the custom date format and English locale
+    // Initialize flatpickr with performance optimizations
     if (typeof flatpickr !== 'undefined') {
         flatpickr("#date-picker", {
             dateFormat: "M, d, Y",  // Format the date as "Jan, 16, 2024"
             altInput: true,         // Show alternative format in the input field
-            locale: "en"            // Force the calendar to be in English
+            locale: "en",           // Force the calendar to be in English
+            static: true,           // Improve mobile performance
+            disableMobile: false    // Enable mobile optimization
         });
     }
 
@@ -359,3 +364,93 @@ document.addEventListener('DOMContentLoaded', function () {
         element.style.display = 'none';
     });
 });
+
+// Performance monitoring and optimization
+window.addEventListener('load', function() {
+    // Critical Web Vitals monitoring
+    if ('performance' in window && 'PerformanceObserver' in window) {
+        // Largest Contentful Paint (LCP)
+        new PerformanceObserver((entryList) => {
+            for (const entry of entryList.getEntries()) {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'web_vitals', {
+                        name: 'LCP',
+                        value: Math.round(entry.startTime),
+                        event_category: 'Web Vitals'
+                    });
+                }
+            }
+        }).observe({entryTypes: ['largest-contentful-paint']});
+
+        // First Input Delay (FID)
+        new PerformanceObserver((entryList) => {
+            for (const entry of entryList.getEntries()) {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'web_vitals', {
+                        name: 'FID',
+                        value: Math.round(entry.processingStart - entry.startTime),
+                        event_category: 'Web Vitals'
+                    });
+                }
+            }
+        }).observe({entryTypes: ['first-input']});
+
+        // Cumulative Layout Shift (CLS)
+        let clsValue = 0;
+        new PerformanceObserver((entryList) => {
+            for (const entry of entryList.getEntries()) {
+                if (!entry.hadRecentInput) {
+                    clsValue += entry.value;
+                }
+            }
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'web_vitals', {
+                    name: 'CLS',
+                    value: Math.round(clsValue * 1000),
+                    event_category: 'Web Vitals'
+                });
+            }
+        }).observe({entryTypes: ['layout-shift']});
+    }
+    
+    // Basic performance timing for older browsers
+    const perfData = performance.getEntriesByType('navigation')[0];
+    if (perfData && typeof gtag !== 'undefined') {
+        gtag('event', 'timing_complete', {
+            name: 'load',
+            value: Math.round(perfData.loadEventEnd - perfData.loadEventStart)
+        });
+    }
+});
+
+// Optimize images with lazy loading fallback
+function optimizeImages() {
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    
+    // Fallback for browsers that don't support native lazy loading
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                    }
+                    img.classList.remove('lazy');
+                    observer.unobserve(img);
+                }
+            });
+        }, {
+            rootMargin: '50px 0px',
+            threshold: 0.01
+        });
+        
+        images.forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+}
+
+// Initialize optimizations
+optimizeImages();

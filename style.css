@@ -1,3 +1,29 @@
+/* Performance optimizations at the top */
+* {
+    box-sizing: border-box;
+}
+
+/* GPU acceleration for animations and transforms */
+.navbutton,
+#logo,
+.photo-gallery img {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Optimize image loading performance */
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+iframe {
+    max-width: 100%;
+    height: auto;
+    contain: layout style paint;
+}
+
 html {
     box-sizing: border-box;
     margin: 0;
@@ -162,14 +188,24 @@ article img {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    width: 80%;
+    width: 90%;
     padding: 0;                /* Remove vertical padding to reduce height */
     background: #fffbe7;
     border-radius: 14px;
     box-shadow: 0 2px 8px rgba(60, 120, 255, 0.07);
     margin: 0 auto 24px auto;
-    min-height: unset;         /* Ensure no minimum height is set */
+    min-height: 200px;         /* Set minimum height for layout stability */
     height: 200px;             /* Set a fixed, smaller height */
+    contain: layout style;     /* Performance optimization */
+}
+
+/* Mobile-first responsive design for photo gallery */
+@media (max-width: 768px) {
+    .photo-gallery-container {
+        width: 95%;
+        height: 150px;
+        min-height: 150px;
+    }
 }
 
 .photo-gallery {
@@ -982,104 +1018,93 @@ article img {
     }
 }
 
-/* Article footer styling */
-.article-footer {
-    padding: 10px;
-    margin-top: 15px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
+/* Additional Performance Optimizations */
+
+/* Reduce motion for accessibility and performance */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
-.article-footer.mid-autumn-footer {
-    background: #d9f0e8;
-}
-
-.article-footer.carry-heart-footer {
-    background: #fce4d1;
-}
-
-.article-footer.social-network-footer {
-    background: #f3f8ff;
-}
-
-.footer-image {
-    width: 90px;
-    height: 90px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-.footer-image[alt*="flower"] {
-    width: 80px;
-    height: 80px;
-}
-
-/* Featured image styling */
-.featured-image {
-    width: 500px;
-    max-width: 100%;
-    border: 2px solid #ccc;
-    font-size: small;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-/* Read more/less functionality */
-.more-text {
-    display: none;
-}
-
-.read-more-btn {
-    background-color: #0ae440;
-    color: #f11e8b;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.read-more-btn:hover {
-    background-color: #08c238;
-    transform: scale(1.05);
-}
-
-/* Iframe styling consistency */
-iframe {
-    border: none;
-    border-radius: 8px;
-}
-
-figure {
-    text-align: center;
-    margin: 15px 0;
-}
-
-/* Video styling */
-video {
-    border-radius: 8px;
-}
-
-@media (max-width: 768px) {
-    .footer-image {
-        width: 60px;
-        height: 60px;
+/* Optimize for touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .navbutton:hover {
+        background-color: #FFDB15; /* Remove hover effects on touch */
     }
     
-    .footer-image[alt*="flower"] {
-        width: 50px;
-        height: 50px;
+    /* Increase touch targets */
+    .navbutton {
+        min-height: 44px;
+        min-width: 44px;
     }
     
-    .featured-image {
-        width: 100%;
+    .scroll-arrow {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* Critical loading optimization */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Improve form performance on mobile */
+@media (max-width: 480px) {
+    input, textarea, select {
+        font-size: 16px; /* Prevents zoom on iOS */
     }
     
-    .article-footer {
+    #myForm {
+        padding: 15px;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+}
+
+/* Enhanced mobile navigation */
+@media (max-width: 480px) {
+    #nav-ul {
         flex-direction: column;
-        text-align: center;
         gap: 10px;
+        margin-top: 15px;
+    }
+    
+    .navbutton {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        font-size: 16px;
+    }
+    
+    #main-header {
+        padding: 10px 15px;
+        text-align: center;
+    }
+    
+    #header-image {
+        width: 150px;
+        margin: 10px auto 0;
+    }
+}
+
+/* Performance optimization for large screens */
+@media (min-width: 1200px) {
+    .photo-gallery-container {
+        width: 70%;
+    }
+    
+    .row {
+        max-width: 1200px;
+        margin: 0 auto;
     }
 }
