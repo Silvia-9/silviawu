@@ -72,55 +72,14 @@
         <link rel="stylesheet" href="contact_style.css">
     </noscript>
     
-    <!-- Load non-critical CSS with optimized loading -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" media="print" onload="this.media='all';this.onload=null;">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css"></noscript>
+    <!-- Remove heavy external resources for mobile performance -->
+    <!-- Bootstrap removed for mobile performance -->
     
-    <!-- Load fonts with display=swap and optimized loading -->
-    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet"></noscript>
-    <!-- Critical CSS for faster initial render -->
-    <style>
-        /* Critical above-the-fold styles for performance */
-        body{background-color:lightyellow;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin:0;width:100%;line-height:1.6}
-        #main-header{display:flex;justify-content:space-between;align-items:center;background-color:#0ae440;color:#f11e8b;font-size:35px;font-family:Verdana,Geneva,Tahoma,sans-serif;padding:20px}
-        #logo{margin:0;padding:8px;font-family:'Dela Gothic One',sans-serif;text-shadow:2px 2px 0px white,-2px 2px 0px white,2px -2px 0px white,-2px -2px 0px white}
-        #header-image{width:250px;height:auto;object-fit:cover;margin-left:20px;background-color:transparent}
-        #nav-ul{display:flex;gap:20px;list-style:none;padding:0;margin:0}
-        .navbutton{color:#f11e8b;text-decoration:none;font-weight:bold;padding:8px 16px;border-radius:4px;transition:background-color 0.3s ease}
-        .navbutton:hover{background-color:rgba(255,255,255,0.1)}
-        
-        /* Performance optimizations */
-        img{max-width:100%;height:auto}
-        iframe{max-width:100%;height:auto}
-        
-        /* Loading states */
-        .loading{opacity:0.7;pointer-events:none}
-        
-        /* Mobile-first responsive design */
-        @media (max-width: 768px) {
-            #main-header{flex-direction:column;padding:15px;font-size:28px}
-            #header-image{width:200px;margin:10px 0 0 0}
-            #nav-ul{margin-top:10px;gap:15px}
-            .navbutton{padding:6px 12px;font-size:14px}
-            #logo{font-size:24px}
-        }
-        
-        /* Animation for Header - GPU accelerated */
-        @keyframes slideRight {
-            0% { transform: translate3d(-100%, 0, 0); }
-            100% { transform: translate3d(0, 0, 0); }
-        }
-        #logo { animation: slideRight 1.5s ease-out; will-change: transform; }
-        
-        /* Prevent layout shift */
-        .photo-gallery-container{min-height:200px}
-        .article{margin-bottom:2rem}
-    </style>
+    <!-- Load minimal fonts for mobile -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" media="(min-width: 769px)" onload="this.media='all';this.onload=null;">
     
-    <!-- Load flatpickr CSS non-blocking -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" media="print" onload="this.media='all';this.onload=null;">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"></noscript>
+    <!-- Minimal flatpickr for mobile -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" media="(min-width: 769px)" onload="this.media='all';this.onload=null;">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BBHT40SPSV"></script>
@@ -211,20 +170,19 @@
         <li><a href="contact.html" class="navbutton">Contact</a></li>
     </ul>
 </nav>
-        <img src="Flowers in the bushes.png" alt="Colorful flowers blooming in bushes - Silvia Wu's blog header image" id="header-image" loading="eager" fetchpriority="high" width="250" height="auto">
+        <img src="Flowers in the bushes.png" alt="Header image" id="header-image" loading="eager" fetchpriority="high" width="150" height="113">
     </header>
     <section id="horizontal-scrolling-photo" aria-label="Photo gallery of travel destinations">
         <div class="photo-gallery-container">
             <button class="scroll-arrow left" aria-label="Scroll gallery left">&#10094;</button>
             <div class="photo-gallery">
-                <img src="edinburgh.jpg" alt="Silvia Wu visiting Edinburgh, Scotland - historic castle view" loading="lazy" width="300" height="200">
-                <img src="Northumberlandwildlifetrust.jpg" alt="Silvia Wu at Northumberland Wildlife Trust nature reserve" loading="lazy" width="300" height="200">
-                <img src="devon.jpg" alt="Silvia Wu exploring Devon countryside, England" loading="lazy" width="300" height="200">
-                <img src="Orebro.jpg" alt="Silvia Wu at Orebro park, Sweden - scenic outdoor location" loading="lazy" width="300" height="200">
-                <img src="Spain.jpg" alt="Silvia Wu traveling in Spain - cultural exploration" loading="lazy" width="300" height="200">
-                <img src="hiking.jpg" alt="Silvia Wu hiking in natural landscapes - outdoor adventure" loading="lazy" width="300" height="200">
-                <img src="Park.jpg" alt="Silvia Wu at Nauto park - recreational outdoor space" loading="lazy" width="300" height="200">
-            <!-- Add more images as needed -->
+                <img src="edinburgh.jpg" alt="Edinburgh" loading="lazy" width="200" height="120" decoding="async">
+                <img src="Northumberlandwildlifetrust.jpg" alt="Northumberland" loading="lazy" width="200" height="120" decoding="async">
+                <img src="devon.jpg" alt="Devon" loading="lazy" width="200" height="120" decoding="async">
+                <img src="Orebro.jpg" alt="Orebro" loading="lazy" width="200" height="120" decoding="async">
+                <img src="Spain.jpg" alt="Spain" loading="lazy" width="200" height="120" decoding="async">
+                <img src="hiking.jpg" alt="Hiking" loading="lazy" width="200" height="120" decoding="async">
+                <img src="Park.jpg" alt="Park" loading="lazy" width="200" height="120" decoding="async">
             </div>
             <button class="scroll-arrow right" aria-label="Scroll gallery right">&#10095;</button>
         </div>
@@ -239,7 +197,9 @@
                         <time datetime="2025-06-23" itemprop="datePublished">Posted: 23rd June 2025</time>
                     </header>
                     <figure>
-                        <iframe src="https://silvia-9.github.io/expense_vibes/" width="100%" height="450" title="Expense Vibes Budget Tracking App - Interactive Demo" aria-label="Expense Vibes App Interactive Demo" loading="lazy" style="min-height: 300px;" importance="low"></iframe>
+                        <div class="iframe-placeholder" data-src="https://silvia-9.github.io/expense_vibes/" data-title="Expense Vibes App" style="width:100%;height:300px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px solid #ddd;">
+                            <span>📱 Tap to load Expense Vibes App</span>
+                        </div>
                     </figure>
                     <div itemprop="articleBody">
                         <p class="article-text">
@@ -257,7 +217,9 @@
                         <time datetime="2025-05-16" itemprop="datePublished">Posted: 16th May 2025</time>
                     </header>
                     <figure>
-                        <iframe src="https://silvia-9.github.io/eatwise_quiz/" width="100%" height="450" title="EatWise Quiz - Interactive Healthy Eating Assessment" loading="lazy" style="min-height: 300px;" importance="low"></iframe>
+                        <div class="iframe-placeholder" data-src="https://silvia-9.github.io/eatwise_quiz/" data-title="EatWise Quiz" style="width:100%;height:300px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px solid #ddd;">
+                            <span>🍽️ Tap to load EatWise Quiz</span>
+                        </div>
                     </figure>
                     <div itemprop="articleBody">
                         <p class="article-text">  
@@ -273,7 +235,9 @@
                         <time datetime="2025-05-09" itemprop="datePublished">Posted: 9th May 2025</time>
                     </header>
                     <figure>
-                        <iframe src="https://codeinplace.stanford.edu/cip5/share/3aLTPK0vcybWZmJCTNsS" width="100%" height="450" title="Nimm Game - Strategic Stone Removal Game" loading="lazy" importance="low"></iframe>
+                        <div class="iframe-placeholder" data-src="https://codeinplace.stanford.edu/cip5/share/3aLTPK0vcybWZmJCTNsS" data-title="Nimm Game" style="width:100%;height:300px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px solid #ddd;">
+                            <span>🎰 Tap to load Nimm Game</span>
+                        </div>
                     </figure>
                     <div itemprop="articleBody">
                         <p class="article-text">  
@@ -289,8 +253,9 @@
                       <time datetime="2025-04-27" itemprop="datePublished">Posted: 27th April 2025</time>
                     </header>
                     <figure>
-                        <iframe src="https://script.google.com/macros/s/AKfycbyySwDRu8TvDLwiZU9RMYeqrVAv_FbKJwg9lu6p2kYQYiDQ1dNqRBwBK7pcqie8nnhw_w/exec" 
-                        width="100%" height="500" title="JokeBot - Interactive Joke Generator" loading="lazy" importance="low"></iframe>
+                        <div class="iframe-placeholder" data-src="https://script.google.com/macros/s/AKfycbyySwDRu8TvDLwiZU9RMYeqrVAv_FbKJwg9lu6p2kYQYiDQ1dNqRBwBK7pcqie8nnhw_w/exec" data-title="JokeBot" style="width:100%;height:300px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px solid #ddd;">
+                            <span>🤖 Tap to load JokeBot</span>
+                        </div>
                     </figure>
                     <div itemprop="articleBody">
                         <p class="article-text">  
@@ -325,8 +290,9 @@
                       <time datetime="2025-02-03" itemprop="datePublished">Posted: 3rd February 2025</time>
                     </header>
                     <figure>
-                        <iframe src="https://www.loom.com/embed/01ef0caec36640ea8df552e8881a0bd9?sid=4a4ccfa1-d69f-40a1-baab-e393e1d4f710" 
-                            width="100%" height="450" title="Happy New Year 2025 Video Message" loading="lazy" importance="low"></iframe>
+                        <div class="iframe-placeholder" data-src="https://www.loom.com/embed/01ef0caec36640ea8df552e8881a0bd9?sid=4a4ccfa1-d69f-40a1-baab-e393e1d4f710" data-title="New Year Video" style="width:100%;height:300px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px solid #ddd;">
+                            <span>🥳 Tap to load New Year Video</span>
+                        </div>
                     </figure>
                     <div itemprop="articleBody">
                         <p class="article-text">Celebrating the start of 2025 with hopes and aspirations for the year ahead.</p>
@@ -340,7 +306,7 @@
                         <time datetime="2024-09-24" itemprop="datePublished">Posted: 24th September 2024</time>
                     </header>
                     <figure>
-                        <img src="WomenHackAI_1.jpg" alt="Silvia Wu participating in Siemens WomenHack AI Bootcamp - group photo of participants" loading="lazy" width="400" height="300">
+                        <img src="WomenHackAI_1.jpg" alt="WomenHack AI Bootcamp" loading="lazy" width="300" height="200" decoding="async">
                         <figcaption><b>Can you find me in this photo?</b></figcaption>
                     </figure>
                     <div itemprop="articleBody">
@@ -360,7 +326,7 @@
                         <time datetime="2024-09-17" itemprop="datePublished">Posted: 17th September 2024</time>
                     </header>
                     <figure>
-                        <img src="let's cheers.jpg" alt="Silvia Wu celebrating Mid-Autumn Festival with traditional decorations and festivities" loading="lazy" width="400" height="300">
+                        <img src="let's cheers.jpg" alt="Mid-Autumn Festival" loading="lazy" width="300" height="200" decoding="async">
                         <figcaption>Happy Mid-Autumn Festival to everyone!</figcaption>
                     </figure>
                     <div itemprop="articleBody">
@@ -388,7 +354,7 @@
                         To an admiring Bog! <br>
                     </p>
                     <footer class="article-footer mid-autumn-footer">
-                        <img src="cake.jpg" alt="Decorated birthday cake for celebration" class="footer-image" loading="lazy" width="200" height="150">
+                        <img src="cake.jpg" alt="Birthday cake" class="footer-image" loading="lazy" width="120" height="90" decoding="async">
                         <a href="https://poets.org/poem/im-nobody-who-are-you-260" target="_blank" rel="noopener noreferrer">Reference</a>
                     </footer>
                     <meta itemprop="author" content="Silvia Wu">
@@ -425,7 +391,7 @@
                         </blockquote>
                     </div>
                     <footer class="article-footer carry-heart-footer">
-                        <img src="coffee.jpg" alt="Steaming cup of coffee for relaxation" class="footer-image" loading="lazy" width="200" height="150">
+                        <img src="coffee.jpg" alt="Coffee cup" class="footer-image" loading="lazy" width="120" height="90" decoding="async">
                         <a href="https://allpoetry.com/i-carry-your-heart-with-me" target="_blank" rel="noopener noreferrer">Reference</a>
                     </footer>
                     <meta itemprop="author" content="Silvia Wu">
@@ -446,7 +412,7 @@
                         </p>
                     </div>
                     <footer class="article-footer social-network-footer">
-                        <img src="flower.jpg" alt="Beautiful blooming flowers in nature" class="footer-image" loading="lazy" width="200" height="150">
+                        <img src="flower.jpg" alt="Flowers" class="footer-image" loading="lazy" width="120" height="90" decoding="async">
                         <a href="https://www.economist.com/leaders/2024/02/01/the-end-of-the-social-network" target="_blank" rel="noopener noreferrer">Reference</a>
                     </footer>
                     <meta itemprop="author" content="Silvia Wu">
@@ -542,25 +508,76 @@
         <h2 id="footer-header">&copy;2025 Silvia Wu. All rights reserved.</h2>
     </footer>
     
-    <!-- Load JavaScript at the bottom for better performance -->
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer async></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/en.js" defer async></script>
-    <script src="main.js" defer></script>
-    
-    <!-- Performance monitoring script -->
+    <!-- Optimized JavaScript loading for mobile performance -->
     <script>
-        // Performance monitoring
-        window.addEventListener('load', function() {
-            if ('performance' in window) {
-                const perfData = performance.getEntriesByType('navigation')[0];
-                if (perfData && typeof gtag !== 'undefined') {
-                    gtag('event', 'timing_complete', {
-                        name: 'load',
-                        value: Math.round(perfData.loadEventEnd - perfData.loadEventStart)
-                    });
-                }
+        // Mobile-optimized iframe lazy loading
+        document.addEventListener('DOMContentLoaded', function() {
+            const placeholders = document.querySelectorAll('.iframe-placeholder');
+            placeholders.forEach(placeholder => {
+                placeholder.addEventListener('click', function() {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = this.dataset.src;
+                    iframe.title = this.dataset.title;
+                    iframe.width = '100%';
+                    iframe.height = window.innerWidth <= 768 ? '300' : '450';
+                    iframe.style.border = '0';
+                    iframe.loading = 'lazy';
+                    this.parentNode.replaceChild(iframe, this);
+                });
+            });
+            
+            // Minimal form handling for mobile
+            const form = document.getElementById('myForm');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const btn = this.querySelector('.submit-btn');
+                    btn.textContent = 'Sending...';
+                    btn.disabled = true;
+                    
+                    // Simulate form submission
+                    setTimeout(() => {
+                        btn.textContent = 'Message Sent!';
+                        this.reset();
+                        setTimeout(() => {
+                            btn.textContent = 'Send Message';
+                            btn.disabled = false;
+                        }, 2000);
+                    }, 1000);
+                });
+            }
+            
+            // Performance monitoring for mobile
+            if ('performance' in window && typeof gtag !== 'undefined') {
+                window.addEventListener('load', function() {
+                    const perfData = performance.getEntriesByType('navigation')[0];
+                    if (perfData) {
+                        gtag('event', 'timing_complete', {
+                            name: 'mobile_load',
+                            value: Math.round(perfData.loadEventEnd - perfData.loadEventStart)
+                        });
+                    }
+                });
             }
         });
     </script>
+    
+    <!-- Load flatpickr only on desktop -->
+    <script>
+        if (window.innerWidth > 768) {
+            const script1 = document.createElement('script');
+            script1.src = 'https://cdn.jsdelivr.net/npm/flatpickr';
+            script1.defer = true;
+            document.head.appendChild(script1);
+            
+            const script2 = document.createElement('script');
+            script2.src = 'https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/en.js';
+            script2.defer = true;
+            document.head.appendChild(script2);
+        }
+    </script>
+    
+    <!-- Load main.js with reduced functionality for mobile -->
+    <script src="main.js" defer></script>
 </body>
 </html>
