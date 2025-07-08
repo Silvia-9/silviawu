@@ -83,9 +83,9 @@
     <style>
         /* Critical CSS for faster initial render - only essential above-the-fold styles */
         body{background-color:lightyellow;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin:0;width:100%}
-        #main-header{display:flex;justify-content:space-between;align-items:center;background-color:#0ae440;color:#f11e8b;font-size:35px;font-family:Verdana,Geneva,Tahoma,sans-serif;padding:20px}
+        #main-header{display:flex;justify-content:space-between;align-items:center;background-color:#0ae440;color:#f11e8b;font-size:35px;font-family:Verdana,Geneva,Tahoma,sans-serif;padding:20px;min-height:228px}
         #logo{margin:0;padding:8px;font-family:'Dela Gothic One',sans-serif;text-shadow:2px 2px 0px white,-2px 2px 0px white,2px -2px 0px white,-2px -2px 0px white}
-        #header-image{width:250px;height:auto;object-fit:cover;margin-left:20px;background-color:transparent}
+        #header-image{width:250px;height:188px;object-fit:cover;margin-left:20px;background-color:#f0f0f0}
         
         /* CSS Animation for Header */
         @keyframes slideRight {
@@ -188,19 +188,19 @@
         <li><a href="contact.html" class="navbutton">Contact</a></li>
     </ul>
 </nav>
-        <img src="Flowers in the bushes.png" alt="Colorful flowers blooming in bushes - Silvia Wu's blog header image" id="header-image" loading="eager">
+        <img src="Flowers in the bushes.png" alt="Colorful flowers blooming in bushes - Silvia Wu's blog header image" id="header-image" loading="eager" width="250" height="188">
     </header>
     <section id="horizontal-scrolling-photo" aria-label="Photo gallery of travel destinations">
         <div class="photo-gallery-container">
             <button class="scroll-arrow left" aria-label="Scroll gallery left">&#10094;</button>
             <div class="photo-gallery">
-                <img src="edinburgh.jpg" alt="Silvia Wu visiting Edinburgh, Scotland - historic castle view" loading="lazy">
-                <img src="Northumberlandwildlifetrust.jpg" alt="Silvia Wu at Northumberland Wildlife Trust nature reserve" loading="lazy">
-                <img src="devon.jpg" alt="Silvia Wu exploring Devon countryside, England" loading="lazy">
-                <img src="Orebro.jpg" alt="Silvia Wu at Orebro park, Sweden - scenic outdoor location" loading="lazy">
-                <img src="Spain.jpg" alt="Silvia Wu traveling in Spain - cultural exploration" loading="lazy">
-                <img src="hiking.jpg" alt="Silvia Wu hiking in natural landscapes - outdoor adventure" loading="lazy">
-                <img src="Park.jpg" alt="Silvia Wu at Nauto park - recreational outdoor space" loading="lazy">
+                <img src="edinburgh.jpg" alt="Silvia Wu visiting Edinburgh, Scotland - historic castle view" loading="lazy" width="180" height="135">
+                <img src="Northumberlandwildlifetrust.jpg" alt="Silvia Wu at Northumberland Wildlife Trust nature reserve" loading="lazy" width="180" height="135">
+                <img src="devon.jpg" alt="Silvia Wu exploring Devon countryside, England" loading="lazy" width="180" height="135">
+                <img src="Orebro.jpg" alt="Silvia Wu at Orebro park, Sweden - scenic outdoor location" loading="lazy" width="180" height="135">
+                <img src="Spain.jpg" alt="Silvia Wu traveling in Spain - cultural exploration" loading="lazy" width="180" height="135">
+                <img src="hiking.jpg" alt="Silvia Wu hiking in natural landscapes - outdoor adventure" loading="lazy" width="180" height="135">
+                <img src="Park.jpg" alt="Silvia Wu at Nauto park - recreational outdoor space" loading="lazy" width="180" height="135">
             <!-- Add more images as needed -->
             </div>
             <button class="scroll-arrow right" aria-label="Scroll gallery right">&#10095;</button>

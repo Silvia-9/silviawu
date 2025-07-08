@@ -4,21 +4,27 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     box-sizing: border-box;
     font-size: 16px;
+    overflow-x: hidden; /* Prevent unwanted horizontal scroll */
 }
 
 /* Header */
 header {
-    background-color: #20DAA6;
+    background: linear-gradient(90deg, #1b7bea 0%, #0ae440 100%);
     color: #E3179E;
-    font-size: 30px; /* px for main title */
+    font-size: 25px; /* px for main title */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     padding: 22px 0 16px 0;
     grid-area: header;
     letter-spacing: 1px;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
+    width: 100%;
+    left: 50%;
+    right: 50%;
+    margin-left: -50%;
+    margin-right: -50%;
+    position: relative;
+    box-sizing: border-box;
+    box-shadow: 0 2px 12px rgba(32,218,166,0.10);
 }
 
 /* Navigation Menu */
@@ -41,7 +47,23 @@ nav {
     padding: 0;
 }
 
-nav > a {
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
     color: #6a06d3;
     font-weight: 600;
     font-size: 22px; /* Increased button size */
@@ -53,10 +75,11 @@ nav > a {
     transition: background 0.2s, color 0.2s;
     margin-bottom: 10px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    display: inline-block;
 }
 
-nav > a:hover {
-    background: #0ae440;
+nav a:hover {
+    background: #70d6ff;
     color: #fff;
 }
 
@@ -171,18 +194,27 @@ figcaption {
 
 /* Footer */
 footer {
-    padding: 18px;
-    background-color: #FAFE4B;
-    color: #222;
-    font-weight: 600;
-    text-align: center;
+    padding: 28px 0 28px 0;
+    background: linear-gradient(90deg, #1b7bea 0%, #0ae440 100%);
+    color: #fff;
+    font-weight: 700;
     grid-area: footer;
     margin-top: 0;
-    border-radius: 0 0 12px 12px;
-    box-shadow: 0 -1px 8px rgba(0,0,0,0.04);
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
+    border-radius: 0;
+    box-shadow: 0 -2px 12px rgba(32,218,166,0.10);
+    position: relative;
+    box-sizing: border-box;
+    z-index: 10;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    line-height: 1.7;
+    width: 100%;
+    left: 50%;
+    right: 50%;
+    margin-left: -50%;
+    margin-right: -50%;
+    max-width: 100%;
+    text-align: center;
 }
 
 /* Grid Layout */
@@ -328,7 +360,7 @@ footer { grid-area: footer; }
 }
 
 .bio-section strong {
-    color: #20DAA6;
+    color: #dc2f02;
     font-weight: 700;
 }
 
@@ -338,16 +370,13 @@ footer { grid-area: footer; }
 }
 
 .cta-text {
-    background: linear-gradient(135deg, #20DAA6, #17c999);
-    padding: 20px;
-    border-radius: 10px;
-    border-left: 4px solid #E3179E;
+    padding: 10px;
+    border-radius: 5px;
     margin-top: 2rem;
 }
 
 .cta-text a {
-    color: #fff;
-    text-decoration: underline;
+    color: #101010;
     font-weight: bold;
 }
 
@@ -421,34 +450,7 @@ audio:focus {
 }
 
 /* Dark mode support */
-@media (prefers-color-scheme: dark) {
-    body {
-        background: #1a1a1a;
-        color: #e0e0e0;
-    }
-    
-    #main-content {
-        background: #2d2d2d;
-        color: #e0e0e0;
-    }
-    
-    .gallery {
-        background: #2d2d2d;
-    }
-    
-    .bio-section strong {
-        color: #4ade80;
-    }
-    
-    .bio-section em {
-        color: #a0a0a0;
-    }
-    
-    .cta-text {
-        background: linear-gradient(135deg, #1f5f3f, #0f4f2f);
-        color: #e0e0e0;
-    }
-}
+
 
 /* Enhanced mobile optimizations */
 @media (max-width: 600px) {
@@ -505,10 +507,11 @@ audio:focus {
         border-radius: 3px;
     }
     
-    /* Ensure images don't overflow on very small screens */
-    img {
+    /* Ensure images maintain aspect ratio on mobile but keep fixed height */
+    .gallery img {
         max-width: 100%;
-        height: auto;
+        height: 200px; /* Maintain fixed height to prevent layout shift */
+        object-fit: contain;
     }
 }
 
