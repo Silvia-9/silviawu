@@ -318,8 +318,8 @@
                     <div itemprop="articleBody">
                         <p class="article-text">
                         Last week, I had the chance to take part in a three-day online WomenHack AI bootcamp organized by Siemens. The majority of the participants were employees based in Germany. Prior to the bootcamp, I spent nearly two weeks trying to figure out how to access their Microsoft Teams platform. Just when I was about to give up, I finally succeeded in joining the group. Once the bootcamp commenced, I was assigned a task that differed from the one I had selected during registration. </p>
-                    <p class="more-text"> However, I quickly adjusted to the new assignment and grasped what was required. It turned out to be a process quite similar to what I had experienced in a previous summer data innovation bootcamp, albeit with different tasks and a focus on Siemens' power system consulting. Our group's objective was to develop a chatbot to assist with daily operations. Throughout this bootcamp, I learned how to create a minimum viable product (MVP) independently, which was a refreshing experience, and I discovered new ways to present my pitch. Additionally, I found solutions to challenges from the earlier bootcamp and, most importantly, I gained valuable experience in collaborating with teammates from various countries.</p>
-                    <button class="read-more-btn" data-target="article-text">Read more</button>
+                    <p class="more-text" id="womenhack-more" hidden> However, I quickly adjusted to the new assignment and grasped what was required. It turned out to be a process quite similar to what I had experienced in a previous summer data innovation bootcamp, albeit with different tasks and a focus on Siemens' power system consulting. Our group's objective was to develop a chatbot to assist with daily operations. Throughout this bootcamp, I learned how to create a minimum viable product (MVP) independently, which was a refreshing experience, and I discovered new ways to present my pitch. Additionally, I found solutions to challenges from the earlier bootcamp and, most importantly, I gained valuable experience in collaborating with teammates from various countries.</p>
+                    <button class="read-more-btn" data-target="womenhack-more" aria-expanded="false" aria-controls="womenhack-more">Read more</button>
                     </div>
                     <meta itemprop="author" content="Silvia Wu">
                     <meta itemprop="dateModified" content="2024-09-24">
@@ -519,7 +519,7 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/en.js" defer></script>
     <script src="main.js" defer></script>
     <script>
-      // Ensure Home link always scrolls to the top/article 1
+      // Ensure Home link always scrolls to the top/article 1 and improve WomenHack AI Read more/less
       document.addEventListener('DOMContentLoaded', function() {
         var homeLink = document.getElementById('home-link');
         if (homeLink) {
@@ -529,6 +529,25 @@
               window.scrollTo({ top: 0, behavior: 'smooth' });
               var topAnchor = document.getElementById('top');
               if (topAnchor) topAnchor.focus();
+            }
+          });
+        }
+
+        // Read more/less functionality for WomenHack AI article
+        var readMoreBtn = document.querySelector('.read-more-btn[data-target="womenhack-more"]');
+        var moreText = document.getElementById('womenhack-more');
+        if (readMoreBtn && moreText) {
+          readMoreBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            var expanded = readMoreBtn.getAttribute('aria-expanded') === 'true';
+            if (expanded) {
+              moreText.hidden = true;
+              readMoreBtn.textContent = 'Read more';
+              readMoreBtn.setAttribute('aria-expanded', 'false');
+            } else {
+              moreText.hidden = false;
+              readMoreBtn.textContent = 'Read less';
+              readMoreBtn.setAttribute('aria-expanded', 'true');
             }
           });
         }
