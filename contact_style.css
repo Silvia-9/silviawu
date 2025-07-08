@@ -57,12 +57,13 @@
 
 /* Add the star before each item */
   .left-column ul li::before {
-    font-size: 1.4rem;
-    position: absolute;
-    left: 0;
-    top: 0;
-    content: '\2605';  /* Adds a star icon after each link */
-    margin-left: 5px;  /* Adds space between text and star */
+    font-size: 1.5rem;
+    content: '\2605';
+    margin-right: -12px;
+    margin-left: 16px;
+    color: #FFD700;
+    filter: drop-shadow(0 1px 2px #bdbdbd);
+    z-index: 2;
   }
 
   .left-column ul li:nth-child(1)::before {
@@ -120,23 +121,35 @@
   
   .left-column ul li {
     margin-bottom: 10px;
-    padding-left: 20px; /* Space for the star on the left */
-    position: relative; /* Position for the pseudo-element */
-        background: #E1EFF6;
+    padding-left: 0;
+    position: relative;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
   }
   
   .left-column ul li a {
     text-decoration: none;
-    color: #4361EE;
-
-    font-weight:bold;
-    font-size:22px;
-    line-height: 1.5; /* Ensures consistent vertical alignment */
-    display: block;
+    color: #1e1d1d;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 1.5;
+    display: inline-block;
+    border-radius: 20px;
+    padding: 10px 32px 10px 40px; /* more left padding for star */
+    box-shadow: 0 2px 8px rgba(100, 71, 146, 0.1);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    border: 2px solid #ED6B86;
+    transition: background 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s;
   }
   
   .left-column ul li a:hover {
-    text-decoration: underline;
+    background: linear-gradient(90deg, #4776e6 0%, #8e54e9 100%);
+    color: #fff;
+    border: 2px solid #ffb347;
+    box-shadow: 0 4px 16px rgba(142, 84, 233, 0.18);
+    text-decoration: none;
   }
   
   /* Middle Column: Contact Form */
