@@ -80,20 +80,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet"></noscript>
             
-    <style>
-        /* Critical CSS for faster initial render - only essential above-the-fold styles */
-        body{background-color:lightyellow;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin:0;width:100%}
-        #main-header{display:flex;justify-content:space-between;align-items:center;background-color:#0ae440;color:#f11e8b;font-size:35px;font-family:Verdana,Geneva,Tahoma,sans-serif;padding:20px;min-height:228px}
-        #logo{margin:0;padding:8px;font-family:'Dela Gothic One',sans-serif;text-shadow:2px 2px 0px white,-2px 2px 0px white,2px -2px 0px white,-2px -2px 0px white}
-        #header-image{width:250px;height:188px;object-fit:cover;margin-left:20px;background-color:#f0f0f0}
-        
-        /* CSS Animation for Header */
-        @keyframes slideRight {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(0); }
-        }
-        #logo { animation: slideRight 2s ease-out; }
-    </style>
+    
     
     <!-- Load flatpickr CSS non-blocking -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" media="print" onload="this.media='all'">
@@ -180,16 +167,22 @@
 </head>
 <body>
    <header id="main-header">
-        <h1 id="logo">Silvia Wu's Blogging</h1>
-        <nav id="secondary-nav" aria-label="Main navigation">
-    <ul id="nav-ul">
-        <li><a href="index.html" class="navbutton" aria-current="page">Home</a></li>
-        <li><a href="profile.html" class="navbutton">Profile</a></li>
-        <li><a href="contact.html" class="navbutton">Contact</a></li>
-    </ul>
-</nav>
-        <img src="Flowers in the bushes.png" alt="Colorful flowers blooming in bushes - Silvia Wu's blog header image" id="header-image" loading="eager" width="250" height="188">
-    </header>
+  <div class="header-content">
+    <div class="header-left">
+      <img src="Flowers in the bushes.png" alt="Colorful flowers blooming in bushes - Silvia Wu's blog header image" id="header-image" loading="eager" width="250" height="188">
+    </div>
+    <div class="header-right">
+      <h1 id="logo">Silvia Wu's Blogging</h1>
+      <nav id="secondary-nav" aria-label="Main navigation">
+        <ul id="nav-ul">
+          <li><a href="index.html" class="navbutton" aria-current="page" id="home-link"><span class="star-icon">★</span> Home</a></li>
+          <li><a href="profile.html" class="navbutton"><span class="star-icon">★</span> Profile</a></li>
+          <li><a href="contact.html" class="navbutton"><span class="star-icon">★</span> Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
     <section id="horizontal-scrolling-photo" aria-label="Photo gallery of travel destinations">
         <div class="photo-gallery-container">
             <button class="scroll-arrow left" aria-label="Scroll gallery left">&#10094;</button>
@@ -210,6 +203,8 @@
     <main role="main">
         <div class="row">
             <div class="column-middle">
+                <!-- Anchor to top for Home navigation -->
+                <a id="top"></a>
                 <article class="article expense vibes-article" itemscope itemtype="https://schema.org/BlogPosting">
                     <header>
                         <h2 itemprop="headline">💸Expense Vibes - Smart Budget Tracking App</h2>
@@ -323,7 +318,7 @@
                     <div itemprop="articleBody">
                         <p class="article-text">
                         Last week, I had the chance to take part in a three-day online WomenHack AI bootcamp organized by Siemens. The majority of the participants were employees based in Germany. Prior to the bootcamp, I spent nearly two weeks trying to figure out how to access their Microsoft Teams platform. Just when I was about to give up, I finally succeeded in joining the group. Once the bootcamp commenced, I was assigned a task that differed from the one I had selected during registration. </p>
-                    <p class="more-text" id="article-text"> However, I quickly adjusted to the new assignment and grasped what was required. It turned out to be a process quite similar to what I had experienced in a previous summer data innovation bootcamp, albeit with different tasks and a focus on Siemens' power system consulting. Our group's objective was to develop a chatbot to assist with daily operations. Throughout this bootcamp, I learned how to create a minimum viable product (MVP) independently, which was a refreshing experience, and I discovered new ways to present my pitch. Additionally, I found solutions to challenges from the earlier bootcamp and, most importantly, I gained valuable experience in collaborating with teammates from various countries.</p>
+                    <p class="more-text"> However, I quickly adjusted to the new assignment and grasped what was required. It turned out to be a process quite similar to what I had experienced in a previous summer data innovation bootcamp, albeit with different tasks and a focus on Siemens' power system consulting. Our group's objective was to develop a chatbot to assist with daily operations. Throughout this bootcamp, I learned how to create a minimum viable product (MVP) independently, which was a refreshing experience, and I discovered new ways to present my pitch. Additionally, I found solutions to challenges from the earlier bootcamp and, most importantly, I gained valuable experience in collaborating with teammates from various countries.</p>
                     <button class="read-more-btn" data-target="article-text">Read more</button>
                     </div>
                     <meta itemprop="author" content="Silvia Wu">
@@ -353,7 +348,7 @@
                         <h2 itemprop="headline">🥸I am Nobody! Who are you?</h2>
                         <time datetime="2024-09-12" itemprop="datePublished">Posted: 12th September 2024</time>
                     </header>
-                    <p id="article-text">
+                    <p>
                         I’m Nobody! Who are you? <br>
                         Are you – Nobody – too? <br>
                         Then there’s a pair of us! <br>
@@ -523,5 +518,21 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/en.js" defer></script>
     <script src="main.js" defer></script>
+    <script>
+      // Ensure Home link always scrolls to the top/article 1
+      document.addEventListener('DOMContentLoaded', function() {
+        var homeLink = document.getElementById('home-link');
+        if (homeLink) {
+          homeLink.addEventListener('click', function(e) {
+            if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '') {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+              var topAnchor = document.getElementById('top');
+              if (topAnchor) topAnchor.focus();
+            }
+          });
+        }
+      });
+    </script>
 </body>
 </html>
