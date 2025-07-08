@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="pKJjhWG-ylqnDbk5MSWaVLlC8YWbMzBGcr_06dSwpJs" />
   
   <!-- Mobile-specific optimizations -->
@@ -42,13 +41,11 @@
   
   <!-- Preload critical resources -->
   <link rel="preload" href="contact_style.css" as="style">
-  <link rel="preload" href="style.css" as="style">
   <link rel="preconnect" href="https://sheetdb.io">
   <link rel="preconnect" href="https://www.googletagmanager.com">
   
   <!-- Load CSS -->
   <link rel="stylesheet" href="contact_style.css">
-  <link rel="stylesheet" href="style.css">
   
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -89,138 +86,72 @@
 </head>
 
 <body>
-  <header class="header" role="banner">
+  <header class="header">
     <div class="container">
-      <h1>📤Write to Me 😉</h1>
+      <h1>📤Write to Me 😉 </h1>
     </div>
   </header>
 
-  <main class="main-content" role="main">
+  <main class="main-content">
     <div class="container">
       <div class="flex-container">
 
         <!-- Left Column: Navigation Menu -->
-        <nav class="left-column" role="navigation" aria-label="Main navigation">
+        <div class="left-column">
           <ul>
-            <li><a href="index.html" aria-label="Go to Home page">Home🎈</a></li>
-            <li><a href="profile.html" aria-label="Learn more about Silvia Wu">Meet Silvia Wu 🙆‍♀️</a></li>
-            <li><a href="contact.html" aria-current="page" aria-label="Contact page - currently active">Write to Me🤓</a></li>
+            <li><a href="index.html">Home🎈</a></li>
+            <li><a href="profile.html">Meet Silvia Wu 🙆‍♀️</a></li>
+            <li><a href="contact.html">Write to Me🤓</a></li>
           </ul>
-        </nav>
+        </div>
 
         <!-- Middle Column: Contact Form -->
-        <section class="middle-column" role="main">
+        <div class="middle-column">
           <h2>Contact me</h2>
-          <form id="contactForm" aria-label="Contact form to send message to Silvia Wu" novalidate>
-            <div class="form-group">
-              <label for="name">Name:<span class="required" aria-label="required">*</span></label>
-              <input type="text" id="name" name="name" placeholder="Enter your full name" required 
-                     aria-describedby="name-help" autocomplete="name">
-              <small id="name-help" class="help-text">Your full name is required</small>
-            </div>
+          <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your name is required" required>
 
-            <div class="form-group">
-              <label for="email">Email:<span class="required" aria-label="required">*</span></label>
-              <input type="email" id="email" name="email" placeholder="Enter your email address" required 
-                     aria-describedby="email-help" autocomplete="email">
-              <small id="email-help" class="help-text">Your email address for response</small>
-            </div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your email is required" required>
 
-            <div class="form-group">
-              <label for="message">Message:<span class="required" aria-label="required">*</span></label>
-              <textarea id="message" name="message" rows="10" placeholder="Share your thoughts, feedback, or collaboration ideas..." 
-                        required aria-describedby="message-help"></textarea>
-              <small id="message-help" class="help-text">Write your message or inquiry</small>
-            </div>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="10" placeholder="Your message" required></textarea>
 
-            <button type="submit" class="submit-btn" aria-describedby="submit-help">
-              <span class="btn-text">Send Message</span>
-              <span class="btn-loading" style="display: none;">Sending...</span>
-            </button>
-            <small id="submit-help" class="help-text">Click to send your message</small>
+            <button type="submit">Submit</button>
           </form>
-        </section>
+        </div>
 
-        <!-- Right Column: Social Links and Newsletter -->
-        <aside class="right-column" role="complementary" aria-label="Social media links and newsletter">
-          <section>
-            <h2>Connect with Me</h2>
-            <nav aria-label="Social media links">
-              <ul>
-                <li><a href="https://www.linkedin.com/in/shihhsuanwu/" target="_blank" rel="noopener noreferrer" 
-                       aria-label="Connect with Silvia Wu on LinkedIn">LinkedIn</a></li>
-                <li><a href="https://www.instagram.com/silviawu2004/" target="_blank" rel="noopener noreferrer" 
-                       aria-label="Follow Silvia Wu on Instagram">Instagram</a></li>
-                <li><a href="https://www.facebook.com/profile.php?id=100001961780388" target="_blank" rel="noopener noreferrer" 
-                       aria-label="Connect with Silvia Wu on Facebook">Facebook</a></li>
-              </ul>
-            </nav>
-          </section>
+        <!-- Right Column: Other Information -->
+        <div class="right-column">
+          <h2>Other Information</h2>
+          <ul>
+            <li><a href="https://www.linkedin.com/in/shihhsuanwu/">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/silviawu2004/">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100001961780388">Facebook</a></li>
+          </ul>
 
-          <!-- Newsletter Section -->
-          <section>
-            <h3>Stay Updated</h3>
-            <p>Subscribe to get notified about new posts and projects!</p>
-            <form id="newsletterForm" aria-label="Newsletter subscription form" novalidate>
-              <div class="form-group">
-                <label for="newsletter-email" class="sr-only">Email for newsletter</label>
-                <input type="email" id="newsletter-email" name="email" placeholder="Enter your email" required 
-                       aria-describedby="newsletter-help" autocomplete="email">
-                <small id="newsletter-help" class="help-text">Get updates on new posts and projects</small>
-              </div>
-              <button type="submit" class="subscribe-btn">Subscribe</button>
-            </form>
-          </section>
-        </aside>
+          <!-- Subscribe Section -->
+          <h3>Newsletter</h3>
+          <form action="#" method="post">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
 
+      </div>
+    </div>
   </main>
 
-  <footer class="footer" role="contentinfo">
+  <footer class="footer">
     <div class="container">
       <p>&copy; 2025 Silvia Wu. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Load JavaScript at the bottom for better performance -->
-  <script src="main.js" defer></script>
-  
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const form = document.getElementById('contactForm');
-      const submitBtn = form.querySelector('.submit-btn');
-      const btnText = submitBtn.querySelector('.btn-text');
-      const btnLoading = submitBtn.querySelector('.btn-loading');
-
-      // Form validation styling
-      function addValidationStyling() {
-        const inputs = form.querySelectorAll('input, textarea');
-        inputs.forEach(input => {
-          input.addEventListener('invalid', function(e) {
-            e.preventDefault();
-            this.classList.add('error');
-            const helpText = document.getElementById(this.getAttribute('aria-describedby'));
-            if (helpText) {
-              helpText.style.color = '#e74c3c';
-              helpText.textContent = this.validationMessage;
-            }
-          });
-          
-          input.addEventListener('input', function() {
-            if (this.validity.valid) {
-              this.classList.remove('error');
-              const helpText = document.getElementById(this.getAttribute('aria-describedby'));
-              if (helpText) {
-                helpText.style.color = '';
-                if (this.id === 'name') helpText.textContent = 'Your full name is required';
-                if (this.id === 'email') helpText.textContent = 'Your email address for response';
-                if (this.id === 'message') helpText.textContent = 'Write your message or inquiry';
-              }
-            }
-          });
-        });
-      }
-
-      addValidationStyling();
 
       form.addEventListener('submit', async function (event) {
         event.preventDefault();
@@ -230,17 +161,10 @@
           return;
         }
 
-        // Show loading state
-        submitBtn.disabled = true;
-        btnText.style.display = 'none';
-        btnLoading.style.display = 'inline';
-
         const formData = {
-          name: document.getElementById('name').value.trim(),
-          email: document.getElementById('email').value.trim(),
-          message: document.getElementById('message').value.trim(),
-          timestamp: new Date().toISOString(),
-          source: 'contact_page'
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          message: document.getElementById('message').value
         };
 
         console.log('Form Data:', formData);
@@ -258,82 +182,20 @@
           console.log('API Response for contact:', responseData);
 
           if (response.ok) {
-            // Success feedback
-            const successMsg = document.createElement('div');
-            successMsg.className = 'success-message';
-            successMsg.innerHTML = '✅ Your message has been sent successfully! I\'ll get back to you soon.';
-            form.insertBefore(successMsg, form.firstChild);
+            alert('Your form has been submitted successfully!');
             form.reset();
-            
-            // Track successful form submission
-            if (typeof gtag !== 'undefined') {
-              gtag('event', 'form_submit', {
-                event_category: 'Contact',
-                event_label: 'Contact Form Success',
-                value: 1
-              });
-            }
-            
-            // Remove success message after 5 seconds
-            setTimeout(() => {
-              if (successMsg.parentNode) {
-                successMsg.parentNode.removeChild(successMsg);
-              }
-            }, 5000);
           } else {
-            throw new Error('Server response was not ok');
+            alert('There was an issue submitting the form. Please try again.');
           }
         } catch (error) {
           console.error('Error:', error);
-          const errorMsg = document.createElement('div');
-          errorMsg.className = 'error-message';
-          errorMsg.innerHTML = '❌ There was an error sending your message. Please try again or contact me via social media.';
-          form.insertBefore(errorMsg, form.firstChild);
-          
-          // Remove error message after 7 seconds
-          setTimeout(() => {
-            if (errorMsg.parentNode) {
-              errorMsg.parentNode.removeChild(errorMsg);
-            }
-          }, 7000);
-        } finally {
-          // Reset button state
-          submitBtn.disabled = false;
-          btnText.style.display = 'inline';
-          btnLoading.style.display = 'none';
+          alert('There was an error submitting the form.');
         }
       });
-
-      // Newsletter form handling
-      const newsletterForm = document.getElementById('newsletterForm');
-      if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(event) {
-          event.preventDefault();
-          const email = document.getElementById('newsletter-email').value.trim();
-          
-          if (email && email.includes('@')) {
-            alert('Thank you for subscribing! You\'ll receive updates about new posts and projects.');
-            newsletterForm.reset();
-            
-            // Track newsletter subscription
-            if (typeof gtag !== 'undefined') {
-              gtag('event', 'newsletter_subscribe', {
-                event_category: 'Engagement',
-                event_label: 'Newsletter Subscription',
-                value: 1
-              });
-            }
-          } else {
-            alert('Please enter a valid email address.');
-          }
-        });
-      }
     });
   </script>
 </body>
 </html>
-
-
 
 
 
