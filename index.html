@@ -164,6 +164,9 @@
       ]
     }
     </script>
+    <style>
+      /* Gallery styles moved to style.css */
+    </style>
 </head>
 <body>
    <header id="main-header">
@@ -184,21 +187,20 @@
   </div>
 </header>
     <section id="horizontal-scrolling-photo" aria-label="Photo gallery of travel destinations">
-        <div class="photo-gallery-container">
-            <button class="scroll-arrow left" aria-label="Scroll gallery left">&#10094;</button>
-            <div class="photo-gallery">
-                <img src="edinburgh.jpg" alt="Silvia Wu visiting Edinburgh, Scotland - historic castle view" loading="lazy" width="180" height="135">
-                <img src="Northumberlandwildlifetrust.jpg" alt="Silvia Wu at Northumberland Wildlife Trust nature reserve" loading="lazy" width="180" height="135">
-                <img src="devon.jpg" alt="Silvia Wu exploring Devon countryside, England" loading="lazy" width="180" height="135">
-                <img src="Orebro.jpg" alt="Silvia Wu at Orebro park, Sweden - scenic outdoor location" loading="lazy" width="180" height="135">
-                <img src="Spain.jpg" alt="Silvia Wu traveling in Spain - cultural exploration" loading="lazy" width="180" height="135">
-                <img src="hiking.jpg" alt="Silvia Wu hiking in natural landscapes - outdoor adventure" loading="lazy" width="180" height="135">
-                <img src="Park.jpg" alt="Silvia Wu at Nauto park - recreational outdoor space" loading="lazy" width="180" height="135">
+    <div class="photo-gallery-container" style="position:relative;">
+        <div class="photo-gallery">
+            <img src="edinburgh.jpg" alt="visit Edinburgh, Scotland - historic castle view" loading="lazy">
+            <img src="Northumberlandwildlifetrust.jpg" alt="Northumberland Wildlife Trust nature reserve" loading="lazy">
+            <img src="devon.jpg" alt="exploring Devon in England" loading="lazy">
+            <img src="Orebro.jpg" alt="visit Orebro park, Sweden - scenic outdoor location" loading="lazy">
+            <img src="Spain.jpg" alt="visit Spain - cultural exploration" loading="lazy">
+            <img src="hiking.jpg" alt="hiking in natural landscapes - outdoor adventure" loading="lazy">
+            <img src="Park.jpg" alt="visit Nauto park - recreational outdoor space" loading="lazy">
             <!-- Add more images as needed -->
-            </div>
-            <button class="scroll-arrow right" aria-label="Scroll gallery right">&#10095;</button>
         </div>
-    </section>
+        <div class="gallery-dots" id="gallery-dots"></div>
+    </div>
+</section>
 
     <main role="main">
         <div class="row">
@@ -207,7 +209,7 @@
                 <a id="top"></a>
                 <article class="article expense vibes-article" itemscope itemtype="https://schema.org/BlogPosting">
                     <header>
-                        <h2 itemprop="headline">💸Expense Vibes - Smart Budget Tracking App</h2>
+                        <h2 itemprop="headline">💸Expense Vibes</h2>
                         <time datetime="2025-06-23" itemprop="datePublished">Posted: 23rd June 2025</time>
                     </header>
                     <figure>
@@ -217,7 +219,7 @@
                         <p class="article-text">
                             💰Turn your spending habits into smart savings with clean visuals, easy tracking, and effortless sharing. This web application helps you monitor your expenses with intuitive charts and analytics.
                             <br>
-                            👉<a href="https://silvia-9.github.io/expense_vibes/" target="_blank" rel="noopener noreferrer" itemprop="url">View Expense Vibes App</a>
+                            👉<a href="https://silvia-9.github.io/expense_vibes/" target="_blank" rel="noopener noreferrer" itemprop="url">Expense Vibes</a>
                         </p>
                     </div>
                     <meta itemprop="author" content="Silvia Wu">
@@ -225,7 +227,7 @@
                 </article>
                 <article class="article eatwise-article" itemscope itemtype="https://schema.org/BlogPosting">
                     <header>
-                        <h2 itemprop="headline">✒️EatWise Quiz - Interactive Healthy Eating App 📲</h2>
+                        <h2 itemprop="headline">EatWise Quiz📲</h2>
                         <time datetime="2025-05-16" itemprop="datePublished">Posted: 16th May 2025</time>
                     </header>
                     <figure>
@@ -244,12 +246,13 @@
                         <h2 itemprop="headline">🎰 The Game of Nimm 👉 </h2>
                         <time datetime="2025-05-09" itemprop="datePublished">Posted: 9th May 2025</time>
                     </header>
-                    <figure>
-                        <iframe src="https://codeinplace.stanford.edu/cip5/share/3aLTPK0vcybWZmJCTNsS" width="100%" height="450" title="Nimm Game - Strategic Stone Removal Game" loading="lazy"></iframe>
-                    </figure>
+                <figure>
+                        <img src="The Game of Nimm.png" alt="The Game of Nimm" style="width:100%;max-width:450px;height:auto;display:block;margin:0 auto;" loading="lazy">
+                </figure>
                     <div itemprop="articleBody">
                         <p class="article-text">  
-                            🪄 Nimm is an ancient strategy game named after the German word "take." It is also known as Tiouk Tiouk in West Africa and Tsynshidzi in China. Players take turns removing stones until none remain.
+                        🪄 Nimm is an ancient strategy game named after the German word "take." It is also known as Tiouk Tiouk in West Africa and Tsynshidzi in China. Players take turns removing stones until none remain.</br>
+                        👉<a href="https://codeinplace.stanford.edu/cip5/share/3aLTPK0vcybWZmJCTNsS" target="_blank" rel="noopener noreferrer" itemprop="url">The Game of Nimm</a>
                         </p>
                     </div>
                     <meta itemprop="author" content="Silvia Wu">
@@ -266,9 +269,9 @@
                     </figure>
                     <div itemprop="articleBody">
                         <p class="article-text">  
-                            📌 Feeling overwhelmed and drained by your daily routine? 😰<br/> 
-                            👉 Meet <strong>Jamie</strong>, your JokeBot 🤡, always ready to lift your spirits!<br/> 
-                            ✨ Get ready to smile and recharge your energy with a little help from Jamie. 😉
+                        📌 Feeling overwhelmed and drained by your daily routine? 😰<br/> 
+                        👉 Meet <strong>Jamie</strong>, your JokeBot 🤡, always ready to lift your spirits!<br/> 
+                        ✨ Get ready to smile and recharge your energy with a little help from Jamie. 😉
                         </p>
                     </div>
                     <meta itemprop="author" content="Silvia Wu">
@@ -293,7 +296,7 @@
                 </article>
                 <article class="article new-year-article" itemscope itemtype="https://schema.org/BlogPosting">
                     <header>
-                      <h2 itemprop="headline">🥳Happy New Year</h2>
+                      <h2 itemprop="headline">🥳Happy New Year!!</h2>
                       <time datetime="2025-02-03" itemprop="datePublished">Posted: 3rd February 2025</time>
                     </header>
                     <figure>
@@ -301,7 +304,7 @@
                             width="100%" height="450" title="Happy New Year 2025 Video Message" loading="lazy"></iframe>
                     </figure>
                     <div itemprop="articleBody">
-                        <p class="article-text">Celebrating the start of 2025 with hopes and aspirations for the year ahead.</p>
+                        <p class="article-text">Welcoming 2025 with optimism and dreams for the year to come.</p>
                     </div>
                     <meta itemprop="author" content="Silvia Wu">
                     <meta itemprop="dateModified" content="2025-02-03">
@@ -312,13 +315,13 @@
                         <time datetime="2024-09-24" itemprop="datePublished">Posted: 24th September 2024</time>
                     </header>
                     <figure>
-                        <img src="WomenHackAI_1.jpg" alt="Silvia Wu participating in Siemens WomenHack AI Bootcamp - group photo of participants" loading="lazy">
+                        <img src="WomenHackAI_1.jpg" alt="participate in Siemens WomenHack AI Bootcamp - group photo of participants" loading="lazy">
                         <figcaption><b>Can you find me in this photo?</b></figcaption>
                     </figure>
                     <div itemprop="articleBody">
                         <p class="article-text">
                         Last week, I had the chance to take part in a three-day online WomenHack AI bootcamp organized by Siemens. The majority of the participants were employees based in Germany. Prior to the bootcamp, I spent nearly two weeks trying to figure out how to access their Microsoft Teams platform. Just when I was about to give up, I finally succeeded in joining the group. Once the bootcamp commenced, I was assigned a task that differed from the one I had selected during registration. </p>
-                    <p class="more-text" id="womenhack-more" hidden> However, I quickly adjusted to the new assignment and grasped what was required. It turned out to be a process quite similar to what I had experienced in a previous summer data innovation bootcamp, albeit with different tasks and a focus on Siemens' power system consulting. Our group's objective was to develop a chatbot to assist with daily operations. Throughout this bootcamp, I learned how to create a minimum viable product (MVP) independently, which was a refreshing experience, and I discovered new ways to present my pitch. Additionally, I found solutions to challenges from the earlier bootcamp and, most importantly, I gained valuable experience in collaborating with teammates from various countries.</p>
+                    <p class="more-text" id="womenhack-more" hidden> However, I quickly adjusted to the new assignment and grasped what was        required. It turned out to be a process quite similar to what I had experienced in a previous summer data innovation bootcamp, albeit with different tasks and a focus on Siemens' power system consulting. Our group's objective was to develop a chatbot to assist with daily operations. Throughout this bootcamp, I learned how to create a minimum viable product (MVP) independently, which was a refreshing experience, and I discovered new ways to present my pitch. Additionally, I found solutions to challenges from the earlier bootcamp and, most importantly, I gained valuable experience in collaborating with teammates from various countries.</p>
                     <button class="read-more-btn" data-target="womenhack-more" aria-expanded="false" aria-controls="womenhack-more">Read more</button>
                     </div>
                     <meta itemprop="author" content="Silvia Wu">
@@ -336,7 +339,7 @@
                         <figcaption>Happy Mid-Autumn Festival to everyone!</figcaption>
                     </figure>
                     <div itemprop="articleBody">
-                        <p class="article-text">Celebrating the traditional Mid-Autumn Festival with family and friends, embracing cultural traditions and sharing joy.</p>
+                        <p class="article-text">Gather with loved ones to celebrate the cherished Mid-Autumn Festival, a time to honor cultural traditions and create lasting memories. Share laughter, delicious mooncakes, and the beauty of glowing lanterns under the night sky. Embrace the warmth of togetherness while appreciating the rich heritage this festival brings. Let joy and harmony light up the evening!</p>
                     </div>
                     <meta itemprop="author" content="Silvia Wu">
                     <meta itemprop="dateModified" content="2024-09-17">
@@ -545,5 +548,96 @@
         }
       });
     </script>
+<script>
+// Auto-slide photo gallery: side-to-side (ping-pong), with 4 navigation dots (one per group of 4 images)
+(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    var gallery = document.querySelector('.photo-gallery');
+    var dotsContainer = document.getElementById('gallery-dots');
+    if (!gallery || !dotsContainer) return;
+    var images = gallery.querySelectorAll('img');
+    if (images.length === 0) return;
+
+    var imagesPerGroup = 4;
+    var numDots = Math.ceil(images.length / imagesPerGroup);
+    var currentGroup = 0;
+    var interval = 2500;
+    var timer;
+    var direction = 1; // 1: right, -1: left
+
+    gallery.style.scrollSnapType = 'x mandatory';
+    images.forEach(function(img) { img.style.scrollSnapAlign = 'start'; });
+
+    // Create only 4 dots (or numDots)
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < numDots; i++) {
+      var dot = document.createElement('button');
+      dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to group ' + (i + 1));
+      dot.addEventListener('click', function() {
+        goToGroup(i);
+      });
+      dotsContainer.appendChild(dot);
+    }
+    var dots = dotsContainer.querySelectorAll('.gallery-dot');
+
+    function goToGroup(groupIdx, auto) {
+      currentGroup = groupIdx;
+      var imgIdx = groupIdx * imagesPerGroup;
+      if (imgIdx >= images.length) imgIdx = images.length - 1;
+      // Calculate the scroll position for the group
+      var targetImg = images[imgIdx];
+      if (targetImg) {
+        // Get the left offset of the target image relative to the gallery
+        var galleryRect = gallery.getBoundingClientRect();
+        var imgRect = targetImg.getBoundingClientRect();
+        var scrollLeft = targetImg.offsetLeft - gallery.scrollLeft;
+        // Use scrollTo for smooth horizontal movement without page jump
+        gallery.scrollTo({
+          left: targetImg.offsetLeft,
+          behavior: auto ? 'auto' : 'smooth'
+        });
+      }
+      updateDots();
+      if (!auto) resetTimer();
+    }
+
+    function updateDots() {
+      dots.forEach(function(dot, i) {
+        dot.classList.toggle('active', i === currentGroup);
+      });
+    }
+
+    function nextGroup() {
+      if (direction === 1 && currentGroup >= numDots - 1) {
+        direction = -1;
+      } else if (direction === -1 && currentGroup <= 0) {
+        direction = 1;
+      }
+      currentGroup += direction;
+      if (currentGroup < 0) currentGroup = 0;
+      if (currentGroup > numDots - 1) currentGroup = numDots - 1;
+      goToGroup(currentGroup, true);
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      timer = setInterval(nextGroup, interval);
+    }
+
+    // Wait for all images to load for accurate snapping
+    var loaded = 0;
+    images.forEach(function(img) {
+      if (img.complete) loaded++;
+      else img.addEventListener('load', function() { loaded++; if (loaded === images.length) startSlider(); });
+    });
+    if (loaded === images.length) startSlider();
+
+    function startSlider() {
+      resetTimer();
+    }
+  });
+})();
+</script>
 </body>
 </html>
