@@ -1,29 +1,31 @@
 body {
     margin: 0;
-    background: #f9f9f9;
+    background: #f5f7fa;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     box-sizing: border-box;
     font-size: 16px;
+    color: #333;
 }
 
 /* Header */
 header {
-    background-color: #20DAA6;
+    background-color: #2c2c2c;
     color: #E3179E;
-    font-size: 30px; /* px for main title */
+    font-size: 32px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
-    padding: 22px 0 16px 0;
     grid-area: header;
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
 
 /* Navigation Menu */
 #menu {
-    padding: 0 0 8px 0; /* Reduced bottom padding for less space below buttons */
+    padding: 16px;
     text-align: center;
     width: 100%;
     grid-area: menu;
@@ -36,54 +38,65 @@ nav {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 15px; /* Reduced gap between buttons */
+    gap: 50px;
     margin: 0;
-    padding: 0;
+    padding: 0 16px;
 }
 
 nav > a {
     color: #6a06d3;
-    font-weight: 600;
-    font-size: 22px; /* Increased button size */
+    font-weight: 700;
+    font-size: 18px;
     font-family: 'Georgia', 'Times New Roman', Times, serif;
     text-decoration: none;
     background: #ffe066;
-    padding: 16px 32px; /* Bigger padding for larger buttons */
-    border-radius: 14px;
-    transition: background 0.2s, color 0.2s;
+    padding: 14px 28px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
     margin-bottom: 10px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: inline-block;
 }
 
 nav > a:hover {
     background: #0ae440;
     color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(10,228,64,0.25);
 }
 
 /* Main Content */
 #main-content {
-    position: relative; /* Needed for absolute positioning of audio */
-    padding: 36px 36px 28px 36px;
+    position: relative;
+    padding: 38px 40px 30px 40px;
     text-align: left;
-    line-height: 1.7;
-    font-size: 17px;
+    line-height: 1.8;
+    font-size: 16px;
     grid-area: main;
     width: 100%;
     max-width: 700px;
     background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    border-radius: 14px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.1);
     margin: 0 auto 30px auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#main-content:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 32px rgba(0,0,0,0.14);
 }
 
 #main-content h2 {
     margin-top: 0;
-    margin-bottom: 18px;
-    font-size: 1.5rem; /* Professional section heading */
-    color: #333;
-    letter-spacing: 0.5px;
-    font-weight: 600;
+    margin-bottom: 24px;
+    font-size: 1.6rem;
+    color: #2c2c2c;
+    letter-spacing: 0.8px;
+    font-weight: 700;
     text-align: center;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #ffe066;
 }
 
 #main-content audio {
@@ -97,12 +110,13 @@ nav > a:hover {
 }
 
 #main-content p {
-    line-height: 3;
-    font-size: 17px;
+    line-height: 2.0;
+    font-size: 16px;
     text-align: left;
     max-width: 650px;
-    margin: 20px auto 20px auto; /* Reduced top and bottom margin from 80px/22px to 10px */
+    margin: 28px auto;
     color: #222;
+    letter-spacing: 0.3px;
 }
 
 /* Container to hold header and audio */
@@ -116,12 +130,19 @@ nav > a:hover {
   
   /* Styling the header text */
   #main-content h1 {
-    margin: 10px;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #333;
-    text-align:center;
+    margin: 8px 0 20px 0;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #E3179E;
+    text-align: center;
     width: 100%;
+    letter-spacing: 1px;
+    padding-bottom: 16px;
+    border-bottom: 3px solid #ffe066;
+    background: linear-gradient(120deg, #E3179E 0%, #ce129c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
   
   /* Styling the audio control */
@@ -134,56 +155,77 @@ nav > a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 400px;
+    min-height: 250px;
     width: 100%;
     max-width: 350px;
     grid-area: gallery;
-    border-radius: 12px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
     background: #fff;
-    margin: 0 auto 32px auto; /* Remove top margin to move it upward */
-    gap: 18px;
-    padding: 24px 0;
+    margin: 0 auto 32px auto;
+    gap: 24px;
+    padding: 32px 24px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(227, 23, 158, 0.08);
+}
+
+.gallery:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 40px rgba(0,0,0,0.16);
 }
 
 .photo {
-    width: 92%;
-    max-width: 320px;
+    width: 100%;
+    max-width: 300px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 img {
     width: 100%;
     height: 200px;
-    object-fit: contain; /* Show the whole image without cropping */
-    background: #f9f9f9; /* Optional: add a subtle background for letterboxing */
-    border-radius: 10px;
+    object-fit: contain;
+    background: linear-gradient(135deg, #f9f9f9 0%, #f5f5f5 100%);
+    border-radius: 12px;
     display: block;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    border: 2px solid rgba(227, 23, 158, 0.06);
+    transition: all 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.06);
+    box-shadow: 0 8px 28px rgba(227, 23, 158, 0.15);
+    border-color: rgba(227, 23, 158, 0.15);
 }
 
 figcaption {
-    margin-top: 8px;
-    font-size: 0.98rem; /* Slightly smaller for captions */
-    color: #333;
-    font-weight: 500;
+    margin-top: 12px;
+    font-size: 0.95rem;
+    color: #2c2c2c;
+    font-weight: 600;
     text-align: center;
+    letter-spacing: 0.4px;
+    line-height: 1.4;
 }
 
 /* Footer */
 footer {
-    padding: 18px;
-    background-color: #FAFE4B;
-    color: #222;
-    font-weight: 600;
+    padding: 24px;
+    background-color: #161616;
+    color: #ce129c;
+    font-weight: 700;
     text-align: center;
     grid-area: footer;
     margin-top: 0;
-    border-radius: 0 0 12px 12px;
-    box-shadow: 0 -1px 8px rgba(0,0,0,0.04);
+    border-radius: 0;
+    box-shadow: 0 -4px 16px rgba(0,0,0,0.12);
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
+    letter-spacing: 0.5px;
 }
 
 /* Grid Layout */

@@ -17,11 +17,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Silvia Wu's Blog">
-    <meta name="format-detection" content="telephone=no">
     
     <!-- Performance and SEO optimizations -->
     <meta name="theme-color" content="#0ae440">
@@ -70,6 +65,7 @@
     
     <!-- Load critical CSS first -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="photo-album-fixes.css">
     <link rel="stylesheet" href="contact_style.css">
     
     <!-- Load non-critical CSS with media query trick for faster loading -->
@@ -79,7 +75,7 @@
     <!-- Load fonts with display=swap for better performance -->
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet"></noscript>
-            
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">        
     
     
     <!-- Load flatpickr CSS non-blocking -->
@@ -90,6 +86,55 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BBHT40SPSV"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
+        document.addEventListener("DOMContentLoaded", () => {
+            const filters = document.querySelectorAll('.month-filter');
+            const showAllBtn = document.getElementById('show-all');
+
+            // 1. Initial Highlight for March 2026
+            const now = new Date();
+            const curYear = "2026";
+            const curMonth = "03";
+
+            filters.forEach(btn => {
+                if (btn.dataset.year === curYear && btn.dataset.month === curMonth) {
+                    btn.classList.add('active');
+                }
+
+                // 2. Handle Manual Month Clicks
+                btn.addEventListener('click', () => {
+                    const year = btn.getAttribute('data-year');
+                    const month = btn.getAttribute('data-month');
+                    
+                    // Find article with matching year and month
+                    const article = document.querySelector(`article[data-year="${year}"][data-month="${month}"]`);
+                    
+                    if (article) {
+                        // Scroll to article with smooth animation
+                        setTimeout(() => {
+                            article.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 100);
+                    } else {
+                        console.warn(`No article found for year ${year}, month ${month}`);
+                    }
+                    
+                    // Update active states
+                    filters.forEach(f => f.classList.remove('active'));
+                    showAllBtn.classList.remove('active-view');
+                    btn.classList.add('active');
+                });
+            });
+
+            // 3. Handle Show All Click
+            showAllBtn.addEventListener('click', () => {
+                filters.forEach(f => f.classList.remove('active'));
+                showAllBtn.classList.add('active-view');
+                // Scroll to top of articles
+                const mainContent = document.querySelector('.column-middle');
+                if (mainContent) {
+                    mainContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-BBHT40SPSV', {
@@ -99,6 +144,9 @@
         custom_parameter_1: 'homepage'
       });
     </script>
+    <!-- Sidebar positioning script removed to restore previous behavior -->
+    </body>
+    </html>
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -163,194 +211,283 @@
       ]
     }
     </script>
-    <style>
-      /* Gallery styles moved to style.css */
-    </style>
 </head>
 <body>
-   <header id="main-header">
-  <div class="header-content">
-    <div class="header-left">
-      <img src="Flowers in the bushes.png" alt="Colorful flowers blooming in bushes - Silvia Wu's blog header image" id="header-image" loading="eager" width="250" height="188">
-    </div>
-    <div class="header-right">
-      <h1 id="logo">Silvia Wu's Blogging</h1>
-      <nav id="secondary-nav" aria-label="Main navigation">
-        <ul id="nav-ul">
-          <li><a href="index.html" class="navbutton" aria-current="page" id="home-link"><span class="star-icon">★</span> Home</a></li>
-          <li><a href="profile.html" class="navbutton"><span class="star-icon">★</span> Profile</a></li>
-          <li><a href="contact.html" class="navbutton"><span class="star-icon">★</span> Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-</header>
-    <section id="horizontal-scrolling-photo" aria-label="Photo gallery of travel destinations">
-    <div class="photo-gallery-container" style="position:relative;">
-        <div class="photo-gallery">
-            <img src="edinburgh.jpg" alt="visit Edinburgh, Scotland - historic castle view" loading="lazy">
-            <img src="Northumberlandwildlifetrust.jpg" alt="Northumberland Wildlife Trust nature reserve" loading="lazy">
-            <img src="devon.jpg" alt="exploring Devon in England" loading="lazy">
-            <img src="Orebro.jpg" alt="visit Orebro park, Sweden - scenic outdoor location" loading="lazy">
-            <img src="Spain.jpg" alt="visit Spain - cultural exploration" loading="lazy">
-            <img src="hiking.jpg" alt="hiking in natural landscapes - outdoor adventure" loading="lazy">
-            <img src="Park.jpg" alt="visit Nauto park - recreational outdoor space" loading="lazy">
-            <!-- Add more images as needed -->
+     <header id="main-header">
+    <div class="header-content">
+        <div class="header-left">
+            <h1 id="logo">👩Silvia Wu's Blogging🎏</h1>
         </div>
-        <div class="gallery-dots" id="gallery-dots"></div>
+        <div class="header-right">
+            <nav id="secondary-nav" aria-label="Main navigation">
+                <ul id="nav-ul">
+                    <li><a href="index.html" class="navbutton" aria-current="page" id="home-link"><span class="star-icon">🎪</span> Home</a></li>
+                    <li><a href="profile.html" class="navbutton"><span class="star-icon">📔</span> Profile</a></li>
+                    <li><a href="contact.html" class="navbutton"><span class="star-icon">📞</span> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
-</section>
+</header>
 
-    <main role="main">
+    <main>
+        <section id="horizontal-scrolling-photo" aria-label="Photo gallery of travel destinations">
+        <div class="photo-gallery-container" style="position:relative;">
+            <div class="photo-gallery">
+                <img src="edinburgh.jpg" alt="visit Edinburgh, Scotland - historic castle view" loading="lazy">
+                <img src="Northumberlandwildlifetrust.jpg" alt="Northumberland Wildlife Trust nature reserve" loading="lazy">
+                <img src="devon.jpg" alt="exploring Devon in England" loading="lazy">
+                <img src="Orebro.jpg" alt="visit Orebro park, Sweden - scenic outdoor location" loading="lazy">
+                <img src="Spain.jpg" alt="visit Spain - cultural exploration" loading="lazy">
+                <img src="hiking.jpg" alt="hiking in natural landscapes - outdoor adventure" loading="lazy">
+                <img src="Park.jpg" alt="visit Nauto park - recreational outdoor space" loading="lazy">
+                <!-- Add more images as needed -->
+            </div>
+            <div class="gallery-dots" id="gallery-dots"></div>
+        </div>
+        </section>
+        <!-- Left article quick links grouped by year/month (months are buttons that filter main articles) -->
+        <aside id="left-article-nav" aria-label="Article quick links">
+            <nav>
+                <div class="nav-header">Archive</div>
+                <ul class="by-year"> 
+                    <li class="year">
+                        <span>2026</span>
+                        <ul class="by-month">
+                            <li class="month"><button class="month-filter" data-year="2026" data-month="04">April</button></li>
+                            <li class="month"><button class="month-filter" data-year="2026" data-month="02">February</button></li>
+                        </ul>
+                    </li>
+                    <li class="year">
+                        <span>2025</span>
+                        <ul class="by-month">
+                            <li class="month"><button class="month-filter" data-year="2025" data-month="06">June</button></li>
+                            <li class="month"><button class="month-filter" data-year="2025" data-month="05">May</button></li>
+                            <li class="month"><button class="month-filter" data-year="2025" data-month="04">April</button></li>
+                            <li class="month"><button class="month-filter" data-year="2025" data-month="02">February</button></li>
+                        </ul>
+                    </li>
+                    <li class="year">
+                        <span>2024</span>
+                        <ul class="by-month">
+                            <li class="month"><button class="month-filter" data-year="2024" data-month="09">September</button></li>
+                        </ul>
+                    </li>
+                </ul>
+                <button id="show-all">View All</button>
+            </nav>
+        </aside>
+
         <div class="row">
             <div class="column-middle">
-                <!-- Anchor to top for Home navigation -->
-                <a id="top"></a>
-                <article class="article expense vibes-article" itemscope itemtype="https://schema.org/BlogPosting">
+                <article id="happy-easter" class="article easter-article" data-year="2026" data-month="04">
                     <header>
-                        <h2 itemprop="headline">💸Expense Vibes</h2>
-                        <time datetime="2025-06-23" itemprop="datePublished">Posted: 23rd June 2025</time>
+                        <h2> Happy Easter! </h2>
+                        <h3>Posted: 5th April 2026</h3>
+                    </header>
+                    
+                    <!-- Card Flipper Container -->
+                    <div class="card-flipper-container">
+                        <div class="card-flipper">
+                            <div class="card-flip-wrapper">
+                                <div class="flip-card card-font" data-card="0">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                            <img src="Card_font.png" alt="Card font image" loading="lazy">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flip-card card-1" data-card="1">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                            <img src="Easter_2026-04-05.jpeg" alt="Happy Easter image 1" loading="lazy">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flip-card card-text" data-card="2">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                            <div class="card-message">
+                                                <p class="article-text">Wishing everyone a joyful Easter filled with love, happiness, and the warmth of spring! May this season bring renewed hope and countless blessings to all. 🐰🌷🥚</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <script src="card-flipper.js"></script>
+                </article>
+
+                <article id="techex-global" class="article TechExglobal-article" data-year="2026" data-month="02">
+                    <header>
+                        <h2> TechEx Global </h2>
+                        <h3>Posted: 27th February 2026</h3>
+                    </header>
+                    <div class="photo-album" aria-label="Photo album" tabindex="0">
+                        <figure class="preview" aria-live="polite" aria-atomic="true">
+                            <img src="Image 2026-02-27_2.jpeg" alt="TechEx Global image" loading="lazy">
+                        </figure>
+                        <ul class="thumbnails" role="list">
+                            <li role="listitem">
+                                <button type="button" class="thumb" data-index="0" data-src="Image 2026-02-27_2.jpeg" aria-label="TechEx Global" aria-pressed="false">
+                                    <img src="Image 2026-02-27_2.jpeg" alt="TechEx Global" loading="lazy">
+                                </button>
+                            </li>
+                            <li role="listitem">
+                                <button type="button" class="thumb" data-index="1" data-src="Image 2026-02-27_3.jpeg" aria-label="Olympics" aria-pressed="false">
+                                    <img src="Image 2026-02-27_3.jpeg" alt="Olympics" loading="lazy">
+                                </button>
+                            </li>
+                            <li role="listitem">
+                                <button type="button" class="thumb" data-index="2" data-src="Image 2026-02-27_5.jpeg" aria-label="Salesforce" aria-pressed="false">
+                                    <img src="Image 2026-02-27_5.jpeg" alt="Salesforce thumbnail" loading="lazy">
+                                </button>
+                            </li>
+                            <li role="listitem">
+                                <button type="button" class="thumb" data-index="3" data-src="Developed _day _2026-03-26.jpeg" aria-label="Developed" aria-pressed="false">
+                                    <img src="Developed _day _2026-03-26.jpeg" alt="Developed" loading="lazy">
+                                </button>
+                            </li>
+                            <li role="listitem">
+                                <button type="button" class="thumb" data-index="4" data-src="Image 2026-02-27_1.jpeg" aria-label="AI & Bigdata" aria-pressed="false">
+                                    <img src="Image 2026-02-27_1.jpeg" alt="AI & Bigdata thumbnail" loading="lazy">
+                                </button>
+                            </li>
+                            <li role="listitem">
+                                <button type="button" class="thumb" data-index="5" data-src="Image 2026-02-27_4.jpeg" aria-label="My photo" aria-pressed="false">
+                                    <img src="Image 2026-02-27_4.jpeg" alt="My photo thumbnail" loading="lazy">
+                                </button>
+                            </li>
+                            <li role="listitem">
+                                <button type="button" class="thumb" data-index="6" data-src="Image 2026-02-27_6.jpeg" aria-label="Tk maxx bus" aria-pressed="false">
+                                    <img src="Image 2026-02-27_6.jpeg" alt="Tk maxx bus thumbnail" loading="lazy">
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="article-text">
+                        <a href="https://www.olympia.co.uk/events/techex-global" target="_blank" rel="noopener noreferrer" class="event-cta-link">Visit TechEx Global</a>
+                    </p>
+                </article>
+                <article id="expense-vibes" class="article expense vibes-article" data-year="2025" data-month="06">
+                    <header>
+                        <h2>💸Expense Vibes</h2>
+                        <h3>Posted: 23rd June 2025</h3>
                     </header>
                     <figure>
-                        <iframe src="https://silvia-9.github.io/expense_vibes/" width="100%" height="450" title="Expense Vibes Budget Tracking App - Interactive Demo" aria-label="Expense Vibes App Interactive Demo" loading="lazy" style="min-height: 300px;"></iframe>
+                        <iframe src="https://silvia-9.github.io/expense_vibes/" width="100%" height="450" title="Expense Vibes App" aria-label="Expense Vibes App"></iframe>
                     </figure>
-                    <div itemprop="articleBody">
-                        <p class="article-text">
-                            💰Turn your spending habits into smart savings with clean visuals, easy tracking, and effortless sharing. This web application helps you monitor your expenses with intuitive charts and analytics.
-                            <br>
-                            👉<a href="https://silvia-9.github.io/expense_vibes/" target="_blank" rel="noopener noreferrer" itemprop="url">Expense Vibes</a>
-                        </p>
-                    </div>
-                    <meta itemprop="author" content="Silvia Wu">
-                    <meta itemprop="dateModified" content="2025-06-23">
+                    <p class="article-text">
+                        💰Turn your spending habits into smart savings with clean visuals, easy tracking, and effortless sharing.
+                        <br>
+                        👉<a href="https://silvia-9.github.io/expense_vibes/" target="_blank" rel="noopener noreferrer">https://silvia-9.github.io/expense_vibes/</a>
+                    </p>
                 </article>
-                <article class="article eatwise-article" itemscope itemtype="https://schema.org/BlogPosting">
+                <article id="eatwise-quiz" class="article eatwise-article" data-year="2025" data-month="05">
                     <header>
-                        <h2 itemprop="headline">EatWise Quiz📲</h2>
-                        <time datetime="2025-05-16" itemprop="datePublished">Posted: 16th May 2025</time>
+                        <h2>✒️EatWise Quiz 📲 </h2>
+                        <h3> Posted: 16th May 2025</h3>
                     </header>
-                    <figure>
-                        <iframe src="https://silvia-9.github.io/eatwise_quiz/" width="100%" height="450" title="EatWise Quiz - Interactive Healthy Eating Assessment" loading="lazy" style="min-height: 300px;"></iframe>
+                    <figure style="text-align: center;">
+                        <iframe src="https://silvia-9.github.io/eatwise_quiz/" width="100%" height="450"></iframe>
                     </figure>
-                    <div itemprop="articleBody">
-                        <p class="article-text">  
-                            🍽️ EatWise Quiz is an interactive quiz application that teaches healthy eating habits through engaging questions and immediate feedback. Perfect for parents with children, young adults, or anyone interested in improving their nutrition knowledge. Features a responsive interface with informative assessments.
-                        </p>
-                    </div>
-                    <meta itemprop="author" content="Silvia Wu">
-                    <meta itemprop="dateModified" content="2025-05-16">
+                    <p class="article-text">  
+                        🍽️ EatWise Quiz is an interactive quiz app that teaches you about healthy eating habits in a fun way. Perfect for parents with children, young adults or anyone interested in healthy eating. It also assesses you with informative questions on a responsive interface.
+                    </p>
                 </article>
-                <article class="article nimm-article" itemscope itemtype="https://schema.org/BlogPosting">
+                <article id="nimm-game" class="article nimm-article" data-year="2025" data-month="05">
                     <header>
-                        <h2 itemprop="headline">🎰 The Game of Nimm 👉 </h2>
-                        <time datetime="2025-05-09" itemprop="datePublished">Posted: 9th May 2025</time>
+                        <h2>🎰 The Game of Nimm 👉 </h2>
+                        <h3> Posted: 9th May 2025</h3>
                     </header>
-                <figure>
-                        <img src="The Game of Nimm.png" alt="The Game of Nimm" style="width:100%;max-width:450px;height:auto;display:block;margin:0 auto;" loading="lazy">
-                </figure>
-                    <div itemprop="articleBody">
-                        <p class="article-text">  
-                        🪄 Nimm is an ancient strategy game named after the German word "take." It is also known as Tiouk Tiouk in West Africa and Tsynshidzi in China. Players take turns removing stones until none remain.</br>
-                        👉<a href="https://codeinplace.stanford.edu/cip5/share/3aLTPK0vcybWZmJCTNsS" target="_blank" rel="noopener noreferrer" itemprop="url">The Game of Nimm</a>
-                        </p>
-                    </div>
-                    <meta itemprop="author" content="Silvia Wu">
-                    <meta itemprop="dateModified" content="2025-05-09">
+                    <p class="article-text">  
+                        🪄 Nimm is an ancient strategy game named after the German word "take". It is also known as Tiouk Tiouk in West Africa and Tsynshidzi in China. Players take turns removing stones until none remain.
+                    </p>
+                        <br>
+                        <figure style="text-align:center;">
+                        <iframe src="https://codeinplace.stanford.edu/cip5/share/3aLTPK0vcybWZmJCTNsS" width="100%" height="450"></iframe>
+                    </figure>
+
                 </article>
-                <article class="article jokebot-article" itemscope itemtype="https://schema.org/BlogPosting">
+                <article id="jokebot" class="article" data-year="2025" data-month="04">
                     <header>
-                      <h2 itemprop="headline">🤖Cheer up with JokeBot!✨ </h2>
-                      <time datetime="2025-04-27" itemprop="datePublished">Posted: 27th April 2025</time>
+                      <h2>🤖Cheer up with JokeBot!✨ </h2>
+                      <h3> Posted: 27th April 2025</h3>
                     </header>
-                    <figure>
+                    <figure style="text-align: center;">
                         <iframe src="https://script.google.com/macros/s/AKfycbyySwDRu8TvDLwiZU9RMYeqrVAv_FbKJwg9lu6p2kYQYiDQ1dNqRBwBK7pcqie8nnhw_w/exec" 
-                        width="100%" height="500" title="JokeBot - Interactive Joke Generator" loading="lazy"></iframe>
+                        width="100%" height="500" style="border: none; border-radius: 8px;"></iframe>
                     </figure>
-                    <div itemprop="articleBody">
-                        <p class="article-text">  
+                    <p class="article-text">  
                         📌 Feeling overwhelmed and drained by your daily routine? 😰<br/> 
                         👉 Meet <strong>Jamie</strong>, your JokeBot 🤡, always ready to lift your spirits!<br/> 
                         ✨ Get ready to smile and recharge your energy with a little help from Jamie. 😉
-                        </p>
-                    </div>
-                    <meta itemprop="author" content="Silvia Wu">
-                    <meta itemprop="dateModified" content="2025-04-27">
+                    </p>
                 </article>
-                <article class="article expense-tracker-article" itemscope itemtype="https://schema.org/BlogPosting">
+                <article id="expense-tracker" class="article expense tracker-article" data-year="2025" data-month="04">
                     <header>
-                      <h2 itemprop="headline">👉Track every penny with ease!📝</h2>
-                      <time datetime="2025-04-05" itemprop="datePublished">Posted: 5th April 2025</time>
+                      <h2>👉Track every penny with ease!📝</h2>
+                      <h3> Posted: 5th April 2025</h3>
                     </header>
-                    <figure>
+                    <figure style="text-align:center;">
                         <video width="100%" height="450" controls>
                             <source src="20250405_myexpensetracker.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
                         </video>
                     </figure>
-                    <div itemprop="articleBody">
-                        <p class="article-text">With Expense Tracker, managing your finances becomes a breeze. You can efficiently document each expense and instantly access a summary of your overall spending habits.</p>
-                    </div>
-                    <meta itemprop="author" content="Silvia Wu">
-                    <meta itemprop="dateModified" content="2025-04-05">
+                    <p class="article-text"> With Expense Tracker, managing your finances becomes a breeze. You can efficiently document each expense and instantly access a summary of your overall spending habits.</p>
                 </article>
-                <article class="article new-year-article" itemscope itemtype="https://schema.org/BlogPosting">
+                <article id="happy-new-year" class="article" data-year="2025" data-month="02">
                     <header>
-                      <h2 itemprop="headline">🥳Happy New Year!!</h2>
-                      <time datetime="2025-02-03" itemprop="datePublished">Posted: 3rd February 2025</time>
+                      <h2>🥳Happy New Year</h2>
+                      <h3> Posted: 3rd February 2025</h3>
                     </header>
-                    <figure>
+                    <figure style="text-align:center;">
                         <iframe src="https://www.loom.com/embed/01ef0caec36640ea8df552e8881a0bd9?sid=4a4ccfa1-d69f-40a1-baab-e393e1d4f710" 
-                            width="100%" height="450" title="Happy New Year 2025 Video Message" loading="lazy"></iframe>
+                            width="100%" height="450" style="border: none; border-radius: 8px;"></iframe>
+                        <figcaption>
+                            <a href="https://www.loom.com/share/01ef0caec36640ea8df552e8881a0bd9?sid=4a4ccfa1-d69f-40a1-baab-e393e1d4f710" target="_blank">
+                            </a>
+                        </figcaption>
                     </figure>
-                    <div itemprop="articleBody">
-                        <p class="article-text">Welcoming 2025 with optimism and dreams for the year to come.</p>
-                    </div>
-                    <meta itemprop="author" content="Silvia Wu">
-                    <meta itemprop="dateModified" content="2025-02-03">
                 </article>
-                <article class="article womenhack-article" itemscope itemtype="https://schema.org/BlogPosting">
+                <article id="womenhack-ai" class="article" data-year="2024" data-month="09">
                     <header> 
-                        <h2 itemprop="headline">😵‍💫WomenHack AI</h2>
-                        <time datetime="2024-09-24" itemprop="datePublished">Posted: 24th September 2024</time>
+                        <h2>😵‍💫WomenHack AI</h2>
+                        <h3>Posted: 24th September 2024</h3>
                     </header>
                     <figure>
-                        <img src="WomenHackAI_1.jpg" alt="participate in Siemens WomenHack AI Bootcamp - group photo of participants" loading="lazy">
-                        <figcaption><b>Can you find me in this photo?</b></figcaption>
+                        <img src="WomenHackAI_1.jpg" alt="Participants at Siemens WomenHack AI Bootcamp">
+                        <figcaption> <b>Can you find me in this photo?</b> </figcaption>
                     </figure>
-                    <div itemprop="articleBody">
-                        <p class="article-text">
-                        Last week, I had the chance to take part in a three-day online WomenHack AI bootcamp organized by Siemens. The majority of the participants were employees based in Germany. Prior to the bootcamp, I spent nearly two weeks trying to figure out how to access their Microsoft Teams platform. Just when I was about to give up, I finally succeeded in joining the group. Once the bootcamp commenced, I was assigned a task that differed from the one I had selected during registration. </p>
-                    <p class="more-text" id="womenhack-more" hidden> However, I quickly adjusted to the new assignment and grasped what was        required. It turned out to be a process quite similar to what I had experienced in a previous summer data innovation bootcamp, albeit with different tasks and a focus on Siemens' power system consulting. Our group's objective was to develop a chatbot to assist with daily operations. Throughout this bootcamp, I learned how to create a minimum viable product (MVP) independently, which was a refreshing experience, and I discovered new ways to present my pitch. Additionally, I found solutions to challenges from the earlier bootcamp and, most importantly, I gained valuable experience in collaborating with teammates from various countries.</p>
-                    <button class="read-more-btn" data-target="womenhack-more" aria-expanded="false" aria-controls="womenhack-more">Read more</button>
-                    </div>
-                    <meta itemprop="author" content="Silvia Wu">
-                    <meta itemprop="dateModified" content="2024-09-24">
+                    <p class="article-text">
+                    Last week, I had the chance to take part in a three-day online WomenHack AI bootcamp organized by Siemens. The majority of the participants were employees based in Germany. Prior to the bootcamp, I spent nearly two weeks trying to figure out how to access their Microsoft Teams platform. Just when I was about to give up, I finally succeeded in joining the group. Once the bootcamp commenced, I was assigned a task that differed from the one I had selected during registration. </p>
+                    <p class="more-text" id="article-text"> However, I quickly adjusted to the new assignment and grasped what was required. It turned out to be a process quite similar to what I had experienced in a previous summer data innovation bootcamp, albeit with different tasks and a focus on Siemens' power system consulting. Our group's objective was to develop a chatbot to assist with daily operations. Throughout this bootcamp, I learned how to create a minimum viable product (MVP) independently, which was a refreshing experience, and I discovered new ways to present my pitch. Additionally, I found solutions to challenges from the earlier bootcamp and, most importantly, I gained valuable experience in collaborating with teammates from various countries.</p>
+                    <button class="read-more-btn" onclick="toggleContent()">Read more</button>
+                    <script src="button.js"></script>
                 </article>
-
-           
-                <article class="article mid-autumn-article" itemscope itemtype="https://schema.org/BlogPosting">
+                      
+                <article id="mid-autumn" class="article mid-autumn-article" data-year="2024" data-month="09">
                     <header>
-                        <h2 itemprop="headline">🎇Happy Mid-Autumn Festival🍻</h2>
-                        <time datetime="2024-09-17" itemprop="datePublished">Posted: 17th September 2024</time>
+                        <h2>🎇Happy Mid-Autumn Festival🍻</h2>
+                        <h3>Posted: 17th September 2024</h3>
                     </header>
                     <figure>
-                        <img src="let's cheers.jpg" alt="Silvia Wu celebrating Mid-Autumn Festival with traditional decorations and festivities" loading="lazy">
+                        <img src="let's cheers.jpg" alt="Mid-Autumn Festival">
                         <figcaption>Happy Mid-Autumn Festival to everyone!</figcaption>
                     </figure>
-                    <div itemprop="articleBody">
-                        <p class="article-text">Gather with loved ones to celebrate the cherished Mid-Autumn Festival, a time to honor cultural traditions and create lasting memories. Share laughter, delicious mooncakes, and the beauty of glowing lanterns under the night sky. Embrace the warmth of togetherness while appreciating the rich heritage this festival brings. Let joy and harmony light up the evening!</p>
-                    </div>
-                    <meta itemprop="author" content="Silvia Wu">
-                    <meta itemprop="dateModified" content="2024-09-17">
                 </article>
          
 
-                <article class="article nobody-article" itemscope itemtype="https://schema.org/BlogPosting">
+                <article id="nobody" class="article nobody-article" data-year="2024" data-month="09">
                     <header>
-                        <h2 itemprop="headline">🥸I am Nobody! Who are you?</h2>
-                        <time datetime="2024-09-12" itemprop="datePublished">Posted: 12th September 2024</time>
+                        <h2>🥸I am Nobody! Who are you?</h2>
+                        <h3>Posted: 12th September 2024</h3>
                     </header>
-                    <p>
+                    <p id="article-text">
                         I’m Nobody! Who are you? <br>
                         Are you – Nobody – too? <br>
                         Then there’s a pair of us! <br>
@@ -361,282 +498,391 @@
                         To tell one’s name – the livelong June – <br>
                         To an admiring Bog! <br>
                     </p>
-                    <footer class="article-footer mid-autumn-footer">
-                        <img src="cake.jpg" alt="Decorated birthday cake for celebration" class="footer-image" loading="lazy">
-                        <a href="https://poets.org/poem/im-nobody-who-are-you-260" target="_blank" rel="noopener noreferrer">Reference</a>
+                    <footer id="footer" style="background: #d9f0e8;">
+                        <img src="cake.jpg" alt="cake" style="width:90px;height:90px;">
+                        <a href="https://poets.org/poem/im-nobody-who-are-you-260" target="_blank">Reference</a>
                     </footer>
-                    <meta itemprop="author" content="Silvia Wu">
-                    <meta itemprop="dateModified" content="2024-09-12">
                 </article>
 
-                <article class="article carry-heart-article" itemscope itemtype="https://schema.org/BlogPosting">
+                <article id="carry-heart" class="article carry-heart-article" data-year="2024" data-month="09">
                     <header>
-                        <h2 itemprop="headline">I Carry Your Heart❣️</h2>
-                        <time datetime="2024-09-05" itemprop="datePublished">Posted: 5th September 2024</time>
+                        <h2>I Carry Your Heart❣️</h2>
+                        <h3>Posted: 5th September 2024</h3>
                     </header>
-                    <div itemprop="articleBody">
-                        <p class="article-text">
-                            i carry your heart with me (i carry it in <br>
-                            my heart) i am never without it (anywhere <br>
-                            i go you go, my dear; and whatever is done <br>
-                            by only me is your doing, my darling) <br>
-                                                         i fear 
-                            no fate (for you are my fate, my sweet) i want <br>
-                            no world (for beautiful you are my world, my true) <br>
-                            and it's you are whatever a moon has always meant <br>
-                            and whatever a sun will always sing is you <br>
-                                                            
-                            here is the deepest secret nobody knows <br>
-                            (here is the root of the root and the bud of the bud <br>
-                            and the sky of the sky of a tree called life; which grows <br>
-                            higher than soul can hope or mind can hide) <br>
-                            and this is the wonder that's keeping the stars apart <br>
-                              
-                            i carry your heart (i carry it in my heart) <br>
-                        </p> 
-                        <blockquote>
-                            "I carry <a href="https://allpoetry.com/i-carry-your-heart-with-me" target="_blank" rel="noopener noreferrer">your heart</a> with me!"- <cite> E.E. Cummings, 1904-1962</cite>
-                        </blockquote>
-                    </div>
-                    <footer class="article-footer carry-heart-footer">
-                        <img src="coffee.jpg" alt="Steaming cup of coffee for relaxation" class="footer-image" loading="lazy">
-                        <a href="https://allpoetry.com/i-carry-your-heart-with-me" target="_blank" rel="noopener noreferrer">Reference</a>
+                    <p class="article-text">
+                        i carry your heart with me (i carry it in <br>
+                        my heart) i am never without it (anywhere <br>
+                        i go you go, my dear; and whatever is done <br>
+                        by only me is your doing, my darling) <br>
+                                                     i fear 
+                        no fate (for you are my fate, my sweet) i want <br>
+                        no world (for beautiful you are my world, my true) <br>
+                        and it's you are whatever a moon has always meant <br>
+                        and whatever a sun will always sing is you <br>
+                                                        
+                        here is the deepest secret nobody knows <br>
+                        (here is the root of the root and the bud of the bud <br>
+                        and the sky of the sky of a tree called life; which grows <br>
+                        higher than soul can hope or mind can hide) <br>
+                        and this is the wonder that's keeping the stars apart <br>
+                          
+                        i carry your heart (i carry it in my heart) <br>
+                    </p> 
+                    <blockquote>
+                        "I carry <a href="">your heart</a> with me!"- <cite> E.E. Cummings, 1904-1962</cite>
+                    </blockquote>
+                    <footer id="footer" style="background: #fce4d1;">
+                        <img src="coffee.jpg" alt="coffee" style="width:90px;height:90px;">
+                        <a href="https://allpoetry.com/i-carry-your-heart-with-me" target="_blank">Reference</a>
                     </footer>
-                    <meta itemprop="author" content="Silvia Wu">
-                    <meta itemprop="dateModified" content="2024-09-05">
                 </article>
          
             
-                <article class="article social-network-article" itemscope itemtype="https://schema.org/BlogPosting">
+                <article id="social-network" class="article social-network-article" data-year="2024" data-month="09">
                     <header>
-                        <h2 itemprop="headline">The End of the Social Network</h2>
-                        <time datetime="2024-09-01" itemprop="datePublished">Posted: 1st September 2024</time>
+                        <h2>The End of the Social Network</h2>
+                        <h3>Posted: 1st September 2024</h3>
                     </header>
-                    <div itemprop="articleBody">
-                        <p class="article-text">
-                            <b>Social media is no longer very social.</b>
-                            <br>An article from The Economist highlights a significant decline in the way Americans document their lives online, dropping from 40% to 28% since 2020. The piece also raises concerns about the potential shutdown of messaging platforms like WhatsApp and Telegram (Wilson, 2024).
-                            This topic takes me back to my college years when I first started chronicling my life online. At that time, blogging, sharing images, and voicing opinions were incredibly popular. However, my journey took a negative turn when my blog was compromised, leading to the loss of all my photographs. This unfortunate event prompted me to transition to private posts, where I now preserve my memories for personal contemplation. Looking forward, I anticipate that more individuals will prefer using images and videos to document their daily lives, choosing visual storytelling over traditional written accounts. 
-                        </p>
-                    </div>
-                    <footer class="article-footer social-network-footer">
-                        <img src="flower.jpg" alt="Beautiful blooming flowers in nature" class="footer-image" loading="lazy">
-                        <a href="https://www.economist.com/leaders/2024/02/01/the-end-of-the-social-network" target="_blank" rel="noopener noreferrer">Reference</a>
+                    <p class="article-text">
+                        <b>Social media is no longer very social.</b>
+                        <br>An article from The Economist highlights a significant decline in the way Americans document their lives online, dropping from 40% to 28% since 2020. The piece also raises concerns about the potential shutdown of messaging platforms like WhatsApp and Telegram (Wilson, 2024).
+                        This topic takes me back to my college years when I first started chronicling my life online. At that time, blogging, sharing images, and voicing opinions were incredibly popular. However, my journey took a negative turn when my blog was compromised, leading to the loss of all my photographs. This unfortunate event prompted me to transition to private posts, where I now preserve my memories for personal contemplation. Looking forward, I anticipate that more individuals will prefer using images and videos to document their daily lives, choosing visual storytelling over traditional written accounts. 
+                    </p>
+                    <footer id="footer" style="background: #f3f8ff;">
+                        <img src="flower.jpg" alt="flowers" style="width:80px;height:80px;">
+                        <a href="https://www.economist.com/leaders/2024/02/01/the-end-of-the-social-network" target="_blank">Reference</a>
                     </footer>
-                    <meta itemprop="author" content="Silvia Wu">
-                    <meta itemprop="dateModified" content="2024-09-01">
                 </article>
             </div>
-            <aside class="right-column-side" role="complementary" aria-label="Useful resources and links">
-                <section>
-                    <h3>Recommended Resources</h3>
-                    <nav aria-label="External resources">
-                        <ul>
-                            <li><a href="https://docs.python.org/3/library/stdtypes.html#string-methods" target="_blank" rel="noopener noreferrer">Python Documentation</a></li>
-                            <li><a href="https://pandas.pydata.org/pandas-docs/stable/" target="_blank" rel="noopener noreferrer">Pandas Documentation</a></li>
-                            <li><a href="https://coddy.tech/?ref=s9BCq5" target="_blank" rel="noopener noreferrer">Coddy Programming Platform</a></li>
-                            <li><a href="https://microsoft.github.io/generative-ai-for-beginners/#/" target="_blank" rel="noopener noreferrer">Generative AI for Beginners</a></li>
-                            <li><a href="https://cloud.google.com/looker-studio?hl=en" target="_blank" rel="noopener noreferrer">Google Looker Studio</a></li>
-                            <li><a href="https://databox.com/" target="_blank" rel="noopener noreferrer">Databox Analytics</a></li>
-                            <li><a href="https://github.com/microsoft/ai-for-beginners" target="_blank" rel="noopener noreferrer">AI for Beginners Course</a></li>
-                            <li><a href="https://github.com/microsoft/ai-agents-for-beginners?tab=readme-ov-file" target="_blank" rel="noopener noreferrer">AI Agents Tutorial</a></li>
-                            <li><a href="https://github.com/microsoft/rag-time" target="_blank" rel="noopener noreferrer">RAG Time Repository</a></li>
-                        </ul>
-                    </nav>
-                </section>
-            </aside>
+                <aside id="right-column-side">
+                    <p>
+                        <a href="https://docs.python.org/3/library/stdtypes.html#string-methods"><i class="fa-brands fa-python icon-python"></i> Python</a>
+                        <a href="https://pandas.pydata.org/pandas-docs/stable/"><i class="fa-solid fa-table icon-pandas"></i> Pandas</a>
+                        <a href="https://coddy.tech/?ref=s9BCq5"><i class="fa-solid fa-code icon-coddy"></i> Coddy Team</a>
+                        <a href="https://microsoft.github.io/generative-ai-for-beginners/#/"><i class="fa-solid fa-brain icon-ai"></i> Generative AI</a>
+                        <a href="https://cloud.google.com/looker-studio?hl=en"><i class="fa-solid fa-chart-column icon-looker"></i> Looker Studio</a>
+                        <a href="https://databox.com/"><i class="fa-solid fa-box icon-databox"></i> Databox</a>
+                        <a href="https://github.com/microsoft/ai-for-beginners"><i class="fa-brands fa-github icon-github"></i> AI Beginners</a>
+                        <a href="https://github.com/microsoft/ai-agents-for-beginners"><i class="fa-solid fa-robot icon-agents"></i> AI Agents</a>
+                        <a href="https://github.com/microsoft/rag-time"><i class="fa-solid fa-clock icon-rag"></i> RAG Time</a>
+                    </p>
+                </aside>
         </div>
     </main>
 
-    <section id="contact-form" aria-label="Contact form" role="region">
-        <h2>Leave Your Messages</h2>
-        <p>Connect with me! Share your thoughts, feedback, or collaboration ideas.</p>
-        <form id="myForm" aria-label="Contact form for visitors" novalidate>
-            <div class="form-group">
-                <label for="date-picker">Date:<span class="required" aria-label="required">*</span></label>
-                <input type="date" name="date" id="date-picker" required aria-describedby="date-help" autocomplete="off">
-            </div>
+    <section id="contact-form">
+        <h5> Leave your messages </h5>
+        <form id="myForm">
+            <label for="date">Date:<span style="color: red;">*</span></label>
+            <input type="date" name="date" id="date-picker">
+            <br>
 
-            <div class="form-group">
-                <label for="first_name">First name:<span class="required" aria-label="required">*</span></label>
-                <input type="text" id="first_name" name="first_name" required aria-describedby="first-name-help" autocomplete="given-name">
-            </div>
+            <label for="first_name">First name:<span style="color: red;">*</span></label>
+            <input type="text" id="first_name"name="first_name" required>
+            <br>
 
-            <div class="form-group">
-                <label for="last_name">Last name:<span class="required" aria-label="required">*</span></label>
-                <input type="text" id="last_name" name="last_name" required aria-describedby="last-name-help" autocomplete="family-name">
-            </div>
+            <label for="last_name">Last name:<span style="color: red;">*</span></label>
+            <input type="text" id="last_name"name="last_name" required>
+            <br>
 
-            <div class="form-group">
-                <label for="email">Email:<span class="required" aria-label="required">*</span></label>
-                <input type="email" id="email" name="email" required aria-describedby="email-help" autocomplete="email">
-            </div>
+            <label for="email">Email:<span style="color: red;">*</span></label>
+            <input type="email" id="email" name="email" required>
+            <br>
 
-            <div class="form-group">
-                <label for="telephone">Telephone:</label>
-                <input type="tel" id="telephone" name="telephone" aria-describedby="phone-help" autocomplete="tel">
-            </div>
+            <label for="Telephone">Telephone:</label>
+            <input type="text" id="telephone" name="telephone" >
+            <br>
 
-            <div class="form-group">
-                <label for="country">Country:<span class="required" aria-label="required">*</span></label>
-                <select name="country" id="country" required aria-describedby="country-help" autocomplete="country-name">
-                    <option value="" disabled selected>Select a country</option>
-                    <option value="USA">USA</option>
-                    <option value="Canada">Canada</option>
-                    <option value="Europe">Europe</option>
-                    <option value="England">England</option>
-                    <option value="Scotland">Scotland</option>
-                    <option value="Wales">Wales</option>
-                    <option value="Northern_ireland">Northern Ireland</option>
-                    <option value="Others">Others</option>
-                </select>
-            </div>
+            <label for="country">Country:<span style="color: red;">*</span></label>
+            <select name="country" id="country" required>
+                <option value="" disabled selected>Select a country</option>
+                <option value="USA">USA</option>
+                <option value="Canada">Canada</option>
+                <option value="Europe">Europe</option>
+                <option value="England">England</option>
+                <option value="Scotland">Scotland</option>
+                <option value="Wales">Wales</option>
+                <option value="Northern_ireland">Northern Ireland</option>
+                <option value="Others">Others</option>
+            </select><br>
 
-            <div class="form-group">
-                <label for="bio">Comment:<span class="required" aria-label="required">*</span></label>
-                <textarea name="bio" id="bio" cols="30" rows="5" required aria-describedby="comment-help" placeholder="Share your thoughts, feedback, or questions..."></textarea>
-            </div>
+            <label for="bio">Comment:<span style="color: red;">*</span></label>
+             <textarea name="bio" id="bio" cols="30" rows="5"  required></textarea>
+             <br>
                    
-            <button type="submit" class="submit-btn" aria-describedby="submit-help">
-                <span class="btn-text">Send Message</span>
-                <span class="btn-loading" style="display: none;">Sending...</span>
-            </button>
+         
+            <input type="submit" value="Send">
+
         </form>
     </section>
      
-    <footer role="contentinfo">
-        <h2 id="footer-header">&copy;2025 Silvia Wu. All rights reserved.</h2>
+    <footer>
+        <h2 id="footer-header"> &copy;2025 Silvia Wu. All rights reserved.</h2>
     </footer>
-    
-    <!-- Load JavaScript at the bottom for better performance -->
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/en.js" defer></script>
-    <script src="main.js" defer></script>
     <script>
-      // Ensure Home link always scrolls to the top/article 1 and improve WomenHack AI Read more/less
-      document.addEventListener('DOMContentLoaded', function() {
-        var homeLink = document.getElementById('home-link');
-        if (homeLink) {
-          homeLink.addEventListener('click', function(e) {
-            if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '') {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-              var topAnchor = document.getElementById('top');
-              if (topAnchor) topAnchor.focus();
-            }
-          });
-        }
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize flatpickr with the custom date format and English locale
+            flatpickr("#date-picker", {
+                dateFormat: "M, d, Y",  // Format the date as "Jan, 16, 2024"
+                altInput: true,         // Show alternative format in the input field
+                locale: "en"            // Force the calendar to be in English
+            });
 
-        // Read more/less functionality for WomenHack AI article
-        var readMoreBtn = document.querySelector('.read-more-btn[data-target="womenhack-more"]');
-        var moreText = document.getElementById('womenhack-more');
-        if (readMoreBtn && moreText) {
-          readMoreBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            var expanded = readMoreBtn.getAttribute('aria-expanded') === 'true';
-            if (expanded) {
-              moreText.hidden = true;
-              readMoreBtn.textContent = 'Read more';
-              readMoreBtn.setAttribute('aria-expanded', 'false');
-            } else {
-              moreText.hidden = false;
-              readMoreBtn.textContent = 'Read less';
-              readMoreBtn.setAttribute('aria-expanded', 'true');
-            }
-          });
-        }
-      });
-    </script>
-<script>
-// Auto-slide photo gallery: side-to-side (ping-pong), with 4 navigation dots (one per group of 4 images)
-(function() {
-  document.addEventListener('DOMContentLoaded', function() {
-    var gallery = document.querySelector('.photo-gallery');
-    var dotsContainer = document.getElementById('gallery-dots');
-    if (!gallery || !dotsContainer) return;
-    var images = gallery.querySelectorAll('img');
-    if (images.length === 0) return;
+            const form = document.getElementById('myForm');
 
-    var imagesPerGroup = 4;
-    var numDots = Math.ceil(images.length / imagesPerGroup);
-    var currentGroup = 0;
-    var interval = 2500;
-    var timer;
-    var direction = 1; // 1: right, -1: left
+            form.addEventListener('submit', async function (event) {
+                event.preventDefault();  // Prevent form from submitting automatically
 
-    gallery.style.scrollSnapType = 'x mandatory';
-    images.forEach(function(img) { img.style.scrollSnapAlign = 'start'; });
+                // Check if the form is valid
+                if (!form.checkValidity()) {
+                    form.reportValidity();  // Show validation messages
+                    return;  // Exit to prevent form submission
+                }
 
-    // Create only 4 dots (or numDots)
-    dotsContainer.innerHTML = '';
-    for (let i = 0; i < numDots; i++) {
-      var dot = document.createElement('button');
-      dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
-      dot.setAttribute('aria-label', 'Go to group ' + (i + 1));
-      dot.addEventListener('click', function() {
-        goToGroup(i);
-      });
-      dotsContainer.appendChild(dot);
-    }
-    var dots = dotsContainer.querySelectorAll('.gallery-dot');
+                // If the form is valid, collect the form data
+                const data = {
+                    date: document.getElementById('date-picker').value,
+                    first_name: document.getElementById('first_name').value,
+                    last_name: document.getElementById('last_name').value,
+                    email: document.getElementById('email').value,
+                    country: document.getElementById('country').value,
+                    bio: document.getElementById('bio').value
+                };
 
-    function goToGroup(groupIdx, auto) {
-      currentGroup = groupIdx;
-      var imgIdx = groupIdx * imagesPerGroup;
-      if (imgIdx >= images.length) imgIdx = images.length - 1;
-      // Calculate the scroll position for the group
-      var targetImg = images[imgIdx];
-      if (targetImg) {
-        // Get the left offset of the target image relative to the gallery
-        var galleryRect = gallery.getBoundingClientRect();
-        var imgRect = targetImg.getBoundingClientRect();
-        var scrollLeft = targetImg.offsetLeft - gallery.scrollLeft;
-        // Use scrollTo for smooth horizontal movement without page jump
-        gallery.scrollTo({
-          left: targetImg.offsetLeft,
-          behavior: auto ? 'auto' : 'smooth'
+                console.log('Form Data:', data);  // Log the form data
+
+                try {
+                    const response = await fetch('https://sheetdb.io/api/v1/zxuvhmfu8aghd', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify( data )   // Send data directly (no "data" wrapper)
+                    });
+
+                    // Log response
+                    const responseData = await response.json();
+                    console.log('API Response:', responseData);  // Log the API response
+
+                    if (response.ok) {
+                        alert('Your form was submitted successfully!');
+                        form.reset();  // Reset the form after successful submission
+                    } else {
+                        alert('The form submission was unsuccessful.');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('There was an error submitting the form.');
+                }
+            });
         });
-      }
-      updateDots();
-      if (!auto) resetTimer();
-    }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const leftArrow = document.querySelector('.scroll-arrow.left');
+            const rightArrow = document.querySelector('.scroll-arrow.right');
+            const gallery = document.querySelector('.photo-gallery');
+            const dotsContainer = document.getElementById('gallery-dots');
 
-    function updateDots() {
-      dots.forEach(function(dot, i) {
-        dot.classList.toggle('active', i === currentGroup);
-      });
-    }
+            if (!gallery) {
+                console.error('Photo gallery not found');
+                return;
+            }
 
-    function nextGroup() {
-      if (direction === 1 && currentGroup >= numDots - 1) {
-        direction = -1;
-      } else if (direction === -1 && currentGroup <= 0) {
-        direction = 1;
-      }
-      currentGroup += direction;
-      if (currentGroup < 0) currentGroup = 0;
-      if (currentGroup > numDots - 1) currentGroup = numDots - 1;
-      goToGroup(currentGroup, true);
-    }
+            const images = Array.from(gallery.querySelectorAll('img'));
 
-    function resetTimer() {
-      clearInterval(timer);
-      timer = setInterval(nextGroup, interval);
-    }
+            // Build gallery dots based on images
+            if (dotsContainer && images.length) {
+                dotsContainer.innerHTML = '';
+                images.forEach((img, idx) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'gallery-dot' + (idx === 0 ? ' active' : '');
+                    btn.setAttribute('aria-label', `Go to slide ${idx + 1}`);
+                    btn.addEventListener('click', () => {
+                        gallery.scrollTo({ left: img.offsetLeft - gallery.offsetLeft, behavior: 'smooth' });
+                        setActiveDot(idx);
+                    });
+                    dotsContainer.appendChild(btn);
+                });
+            }
 
-    // Wait for all images to load for accurate snapping
-    var loaded = 0;
-    images.forEach(function(img) {
-      if (img.complete) loaded++;
-      else img.addEventListener('load', function() { loaded++; if (loaded === images.length) startSlider(); });
+            function setActiveDot(activeIdx) {
+                if (!dotsContainer) return;
+                const dots = dotsContainer.querySelectorAll('.gallery-dot');
+                dots.forEach((d, i) => d.classList.toggle('active', i === activeIdx));
+            }
+
+            // Arrow click handlers (if present)
+            if (leftArrow) leftArrow.addEventListener('click', () => gallery.scrollBy({ left: -200, behavior: 'smooth' }));
+            if (rightArrow) rightArrow.addEventListener('click', () => gallery.scrollBy({ left: 200, behavior: 'smooth' }));
+
+            // Update active dot based on scroll position (debounced)
+            let scrollTimeout = null;
+            gallery.addEventListener('scroll', () => {
+                if (scrollTimeout) clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    const galleryLeft = gallery.scrollLeft;
+                    let nearest = 0;
+                    let minDiff = Infinity;
+                    images.forEach((img, i) => {
+                        const diff = Math.abs(img.offsetLeft - galleryLeft);
+                        if (diff < minDiff) { minDiff = diff; nearest = i; }
+                    });
+                    setActiveDot(nearest);
+                }, 120);
+            });
+
+            // Autoplay: advance to next slide every 4s
+            const AUTOPLAY_DELAY = 4000;
+            let autoplayTimer = null;
+
+            function scrollToNext() {
+                const dots = dotsContainer ? Array.from(dotsContainer.querySelectorAll('.gallery-dot')) : [];
+                const activeIndex = dots.findIndex(d => d.classList.contains('active'));
+                const next = (activeIndex + 1) % images.length;
+                const img = images[next];
+                if (img) gallery.scrollTo({ left: img.offsetLeft - gallery.offsetLeft, behavior: 'smooth' });
+                setActiveDot(next);
+            }
+
+            function startAutoplay() {
+                stopAutoplay();
+                autoplayTimer = setInterval(scrollToNext, AUTOPLAY_DELAY);
+            }
+
+            function stopAutoplay() {
+                if (autoplayTimer) { clearInterval(autoplayTimer); autoplayTimer = null; }
+            }
+
+            // Pause autoplay on hover/focus for accessibility
+            const pauseTargets = [gallery, leftArrow, rightArrow, dotsContainer].filter(Boolean);
+            pauseTargets.forEach(el => {
+                el.addEventListener('mouseenter', stopAutoplay);
+                el.addEventListener('mouseleave', startAutoplay);
+                el.addEventListener('focusin', stopAutoplay);
+                el.addEventListener('focusout', startAutoplay);
+            });
+
+            // Start autoplay if there is more than one image
+            if (images.length > 1) startAutoplay();
+        });
+    </script>
+        <script>
+            // Photo-album autoplay + interaction
+            document.addEventListener('DOMContentLoaded', function () {
+                const AUTOPLAY_DELAY = 3000; // ms
+                document.querySelectorAll('.photo-album').forEach(album => {
+                    const previewImg = album.querySelector('.preview img');
+                    const thumbs = Array.from(album.querySelectorAll('.thumb'));
+                    if (!previewImg || thumbs.length === 0) return;
+
+                    let current = thumbs.findIndex(t => t.classList.contains('active'));
+                    if (current === -1) current = 0;
+
+                    function showIndex(i) {
+                        const btn = thumbs[i];
+                        const src = btn.dataset.src || btn.querySelector('img')?.src;
+                        const alt = btn.querySelector('img')?.alt || '';
+                        if (!src) return;
+                        previewImg.style.opacity = '0.02';
+                        setTimeout(() => {
+                            previewImg.src = src;
+                            previewImg.alt = alt;
+                            previewImg.style.opacity = '';
+                        }, 120);
+                        thumbs.forEach(t => t.classList.toggle('active', t === btn));
+                        current = i;
+                    }
+
+                    thumbs.forEach((btn, i) => {
+                        btn.addEventListener('click', () => showIndex(i));
+                        btn.addEventListener('keydown', (e) => {
+                            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); showIndex(i); }
+                        });
+                    });
+
+                    let timer = null;
+                    function start() { stop(); if (thumbs.length > 1) timer = setInterval(() => showIndex((current + 1) % thumbs.length), AUTOPLAY_DELAY); }
+                    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+                    // Pause on hover/focus
+                    album.addEventListener('mouseenter', stop);
+                    album.addEventListener('mouseleave', start);
+                    album.addEventListener('focusin', stop);
+                    album.addEventListener('focusout', start);
+
+                    // start autoplay
+                    start();
+                });
+            });
+        </script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.photo-gallery').forEach(gallery => {
+        // per-gallery delay (ms) via data-delay attribute, default 3000
+        const defaultDelay = 3000;
+        const configured = parseInt(gallery.dataset.delay, 10);
+        const DELAY = Number.isFinite(configured) && configured > 100 ? configured : defaultDelay;
+
+        // opt-out with data-autoscroll="false"
+        if (gallery.dataset.autoscroll === 'false') return;
+
+        const images = Array.from(gallery.querySelectorAll('img'));
+        if (images.length < 2) return;
+
+        // page-based autoplay: advance by one full visible page (approx 4 images)
+        let timer = null;
+        let currentPage = 0;
+
+        function pageWidth() {
+            return gallery.clientWidth || Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        }
+
+        function pagesCount() {
+            const pw = pageWidth();
+            return Math.max(1, Math.ceil(gallery.scrollWidth / pw));
+        }
+
+        function scrollToPage(pageIndex) {
+            const pw = pageWidth();
+            const left = Math.round(pageIndex * pw);
+            gallery.scrollTo({ left, behavior: 'smooth' });
+            currentPage = pageIndex;
+        }
+
+        function next() {
+            const total = pagesCount();
+            const nextPage = (currentPage + 1) % total;
+            scrollToPage(nextPage);
+        }
+
+        function start() { stop(); timer = setInterval(next, DELAY); }
+        function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+        // Pause on hover/focus for accessibility
+        gallery.addEventListener('mouseenter', stop);
+        gallery.addEventListener('mouseleave', start);
+        gallery.addEventListener('focusin', stop);
+        gallery.addEventListener('focusout', start);
+
+        // Sync currentPage when user scrolls manually
+        let scrollDebounce = null;
+        gallery.addEventListener('scroll', () => {
+            if (scrollDebounce) clearTimeout(scrollDebounce);
+            scrollDebounce = setTimeout(() => {
+                const pw = pageWidth();
+                currentPage = Math.round(gallery.scrollLeft / pw);
+            }, 120);
+        });
+
+        // Recompute currentPage on resize to keep in sync
+        window.addEventListener('resize', () => { currentPage = Math.round(gallery.scrollLeft / pageWidth()); });
+
+        // start autoplay
+        start();
     });
-    if (loaded === images.length) startSlider();
-
-    function startSlider() {
-      resetTimer();
-    }
-  });
-})();
+});
 </script>
+
 </body>
 </html>
